@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
+import ThemeModeToggler from 'components/ThemeModeToggler';
 
 import { NavItem } from './components';
 
@@ -47,7 +49,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box>
           <NavItem
-            title={'Landings'}
+            title={'Home'}
             id={'landing-pages'}
             items={landingPages}
             colorInvert={colorInvert}
@@ -55,7 +57,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Company'}
+            title={'Konzultace'}
             id={'company-pages'}
             items={companyPages}
             colorInvert={colorInvert}
@@ -63,7 +65,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Account'}
+            title={'Workshopy'}
             id={'account-pages'}
             items={accountPages}
             colorInvert={colorInvert}
@@ -71,7 +73,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Pages'}
+            title={'Meditace'}
             id={'secondary-pages'}
             items={secondaryPages}
             colorInvert={colorInvert}
@@ -79,7 +81,25 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Blog'}
+            title={
+              <>
+                Kurzy
+                <Box
+                  padding={0.5}
+                  display={'inline-flex'}
+                  borderRadius={1}
+                  bgcolor={'primary.main'}
+                  marginLeft={1}
+                >
+                  <Typography
+                    variant={'caption'}
+                    sx={{ color: 'common.white', lineHeight: 1 }}
+                  >
+                    nové
+                  </Typography>
+                </Box>
+              </>
+            }
             id={'blog-pages'}
             items={blogPages}
             colorInvert={colorInvert}
@@ -87,7 +107,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Portfolio'}
+            title={'Blog'}
             id={'portfolio-pages'}
             items={portfolioPages}
             colorInvert={colorInvert}
@@ -104,6 +124,9 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           >
             Kontakt
           </Button>
+        </Box>
+        <Box>
+          <ThemeModeToggler />
         </Box>
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>

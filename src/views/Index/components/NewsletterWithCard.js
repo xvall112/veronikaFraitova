@@ -14,6 +14,7 @@ const NewsletterWithCard = () => {
       component={Card}
       boxShadow={1}
       paddingY={3}
+      paddingX={2}
       sx={{ borderTop: `2px solid ${theme.palette.primary.main}` }}
     >
       <CardContent>
