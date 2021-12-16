@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -9,6 +10,14 @@ import ThemeModeToggler from 'components/ThemeModeToggler';
 
 import { NavItem } from './components';
 
+const mock = [
+  { title: 'Home', link: '/' },
+  { title: 'Konzultace', link: '/konzultace' },
+  { title: 'Workshopy', link: '/workshopy' },
+  { title: 'Meditace', link: '/meditace' },
+  { title: 'Kurzy', link: '/kurzy' },
+  { title: 'Blog', link: '/blog' },
+];
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   const theme = useTheme();
   const { mode } = theme.palette;
@@ -30,7 +39,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     >
       <Box
         display={'flex'}
-        component="a"
+        component={Link}
         href="/"
         title="theFront"
         width={{ xs: 100, md: 120 }}
@@ -46,8 +55,38 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           width={1}
         />
       </Box>
-      <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
-        <Box>
+      <Box
+        sx={{ display: { xs: 'none', md: 'flex' } }}
+        alignItems={'center'}
+        justifyContent={'space-between'}
+      >
+        {mock.map((item, index) => {
+          return (
+            <Box
+              key={index}
+              paddingX={2}
+              display={'flex'}
+              alignItems={'center'}
+              transition={'1s'}
+            >
+              <Box
+                component={Link}
+                color={'text.primary'}
+                activeStyle={{
+                  color: theme.palette.primary.main,
+                  fontWeight: '700',
+                  transform: 'translate(0px,-2px)',
+                }}
+                to={item.link}
+                fontWeight={400}
+                sx={{ textDecoration: 'none !important' }}
+              >
+                <Typography>{item.title}</Typography>
+              </Box>
+            </Box>
+          );
+        })}
+        {/*  <Box>
           <NavItem
             title={'Home'}
             id={'landing-pages'}
@@ -112,7 +151,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             items={portfolioPages}
             colorInvert={colorInvert}
           />
-        </Box>
+        </Box> */}
         <Box marginLeft={4}>
           <Button
             variant="contained"

@@ -147,7 +147,7 @@ const Blog = () => {
               <Box
                 component={Card}
                 padding={4}
-                borderRadius={2}
+                borderRadius={theme.borderRadius}
                 boxShadow={1}
                 width={1}
                 height={1}

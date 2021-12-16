@@ -10,6 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import { alpha } from '@mui/material/styles';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const mock = [
   {
@@ -116,9 +117,131 @@ const AboutMe = () => {
 
   return (
     <Box>
+      <Box marginBottom={2}>
+        <Grid
+          container
+          spacing={2}
+          sx={{ display: { xs: 'none', sm: 'flex' } }}
+        >
+          <Grid
+            item
+            container
+            justifyContent={'flex-end'}
+            alignItems={'flex-end'}
+            xs={4}
+            sx={{
+              '& .lazy-load-image-loaded': {
+                width: '80%',
+                height: '80%',
+                display: 'flex !important',
+              },
+            }}
+          >
+            <Box
+              component={LazyLoadImage}
+              height={1}
+              width={1}
+              borderRadius={2}
+              src={'https://assets.maccarianagency.com/backgrounds/img21.jpg'}
+              alt="..."
+              effect="blur"
+              sx={{
+                objectFit: 'cover',
+                filter:
+                  theme.palette.mode === 'dark' ? 'brightness(0.6)' : 'none',
+              }}
+            />
+          </Grid>
+          <Grid
+            item
+            container
+            justifyContent={'flex-start'}
+            alignItems={'flex-end'}
+            xs={8}
+            sx={{
+              '& .lazy-load-image-loaded': {
+                display: 'flex !important',
+                width: 1,
+              },
+            }}
+          >
+            <Box
+              component={LazyLoadImage}
+              height={1}
+              width={1}
+              borderRadius={2}
+              src={'https://assets.maccarianagency.com/backgrounds/img22.jpg'}
+              alt="..."
+              effect="blur"
+              sx={{
+                objectFit: 'cover',
+                filter:
+                  theme.palette.mode === 'dark' ? 'brightness(0.6)' : 'none',
+              }}
+            />
+          </Grid>
+          <Grid
+            item
+            container
+            justifyContent={'flex-end'}
+            alignItems={'flex-start'}
+            xs={8}
+            sx={{
+              '& .lazy-load-image-loaded': {
+                display: 'flex !important',
+                width: 1,
+              },
+            }}
+          >
+            <Box
+              component={LazyLoadImage}
+              height={1}
+              width={1}
+              borderRadius={2}
+              src={'https://assets.maccarianagency.com/backgrounds/img24.jpg'}
+              alt="..."
+              effect="blur"
+              sx={{
+                objectFit: 'cover',
+                filter:
+                  theme.palette.mode === 'dark' ? 'brightness(0.6)' : 'none',
+              }}
+            />
+          </Grid>
+          <Grid
+            item
+            container
+            justifyContent={'flex-start'}
+            alignItems={'flex-start'}
+            xs={4}
+            sx={{
+              '& .lazy-load-image-loaded': {
+                width: '80%',
+                height: '80%',
+                display: 'flex !important',
+              },
+            }}
+          >
+            <Box
+              component={LazyLoadImage}
+              height={1}
+              width={1}
+              borderRadius={2}
+              src={'https://assets.maccarianagency.com/backgrounds/img25.jpg'}
+              alt="..."
+              effect="blur"
+              sx={{
+                objectFit: 'cover',
+                filter:
+                  theme.palette.mode === 'dark' ? 'brightness(0.6)' : 'none',
+              }}
+            />
+          </Grid>
+        </Grid>
+      </Box>
       <Grid
         container
-        spacing={6}
+        spacing={2}
         direction={isMd ? 'row' : 'column'}
         alignItems="flex-start"
       >
@@ -132,12 +255,10 @@ const AboutMe = () => {
         >
           <Box
             component={Card}
-            padding={4}
-            variant={'outlined'}
-            borderRadius={2}
+            padding={{ xs: 2, md: 4 }}
+            borderRadius={theme.borderRadius}
             width={1}
             sx={{
-              borderTop: `2px solid ${theme.palette.primary.main}`,
               position: 'sticky',
               top: '20px',
             }}
@@ -187,7 +308,7 @@ const AboutMe = () => {
           md={6}
           data-aos={isMd ? 'fade-right' : 'fade-up'}
         >
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             {mock.map((item, index) => (
               <Grid
                 item
@@ -209,13 +330,9 @@ const AboutMe = () => {
                 >
                   <Box
                     component={Card}
-                    padding={4}
-                    variant={'outlined'}
-                    borderRadius={2}
+                    padding={{ xs: 2, md: 4 }}
+                    borderRadius={theme.borderRadius}
                     width={1}
-                    sx={{
-                      borderTop: `2px solid ${theme.palette.primary.main}`,
-                    }}
                   >
                     <Box display={'flex'} flexDirection={'column'}>
                       <Box
@@ -237,7 +354,7 @@ const AboutMe = () => {
                       >
                         {item.title}
                       </Typography>
-                      <Typography color="text.secondary">
+                      <Typography color="text.secondary" textAlign={'justify'}>
                         {item.subtitle}
                       </Typography>
                       <Box sx={{ flexGrow: 1 }} />

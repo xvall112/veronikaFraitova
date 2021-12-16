@@ -107,6 +107,7 @@ const Faq = () => {
       component={Card}
       variant={'outlined'}
       bgcolor={'transparent'}
+      borderRadius={theme.borderRadius}
       sx={{
         cursor: 'pointer',
         '&:hover': {

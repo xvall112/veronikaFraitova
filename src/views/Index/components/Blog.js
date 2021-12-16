@@ -70,6 +70,7 @@ const Result = () => {
                 width={1}
                 height={1}
                 boxShadow={2}
+                borderRadius={theme.borderRadius}
                 display={'flex'}
                 flexDirection={'column'}
                 sx={{ backgroundImage: 'none' }}

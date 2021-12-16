@@ -15,6 +15,7 @@ const getTheme = (mode, themeToggler) =>
           fontWeight: 'medium',
         },
       },
+      borderRadius: 6,
       zIndex: {
         appBar: 1200,
         drawer: 1300,
@@ -24,7 +25,7 @@ const getTheme = (mode, themeToggler) =>
           styleOverrides: {
             root: {
               fontWeight: 400,
-              borderRadius: 5,
+              borderRadius: 6,
               paddingTop: 10,
               paddingBottom: 10,
             },
@@ -51,7 +52,7 @@ const getTheme = (mode, themeToggler) =>
         MuiCard: {
           styleOverrides: {
             root: {
-              borderRadius: 8,
+              borderRadius: 10,
             },
           },
         },
