@@ -142,7 +142,9 @@ const AboutMe = () => {
               height={1}
               width={1}
               borderRadius={2}
-              src={'https://assets.maccarianagency.com/backgrounds/img21.jpg'}
+              src={
+                'https://images.ctfassets.net/108q9jxb4j44/4kgYaVPDD9zyBkhjYWDTYW/9c1fdeb47db898b61f4ddbbaee4d23a0/ed51cae5-cf89-4e72-b622-700a674831d4.jpg'
+              }
               alt="..."
               effect="blur"
               sx={{
@@ -170,7 +172,9 @@ const AboutMe = () => {
               height={1}
               width={1}
               borderRadius={2}
-              src={'https://assets.maccarianagency.com/backgrounds/img22.jpg'}
+              src={
+                'https://images.ctfassets.net/108q9jxb4j44/1uPfruDYAyBNpU3iX5BIkD/782b71932fae590b1d75da85ac800ed1/b5f30f10-18bb-4fe2-a8de-37f7220dc2d0.jpg'
+              }
               alt="..."
               effect="blur"
               sx={{
@@ -198,7 +202,9 @@ const AboutMe = () => {
               height={1}
               width={1}
               borderRadius={2}
-              src={'https://assets.maccarianagency.com/backgrounds/img24.jpg'}
+              src={
+                'https://images.ctfassets.net/108q9jxb4j44/1P7pdvjGXjwWinHBYNWa1K/c1b04f7b6156dc1e06e90656667b1445/9cf39ee6-3236-4953-bdcc-58fa207d86f1.jpg'
+              }
               alt="..."
               effect="blur"
               sx={{
@@ -227,7 +233,9 @@ const AboutMe = () => {
               height={1}
               width={1}
               borderRadius={2}
-              src={'https://assets.maccarianagency.com/backgrounds/img25.jpg'}
+              src={
+                'https://images.ctfassets.net/108q9jxb4j44/2MhcOSY0q2QSEGhxOh9zc7/156738f0d63ffe5f6e4de79995ca894c/cca604bf-97cf-4059-b180-6f03fd1217b8.jpg'
+              }
               alt="..."
               effect="blur"
               sx={{

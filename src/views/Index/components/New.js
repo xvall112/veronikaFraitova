@@ -1,59 +1,34 @@
 import React from 'react';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { colors } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useTheme } from '@mui/material/styles';
 
+export const newQuery = graphql`
+  {
+    meditace: allContentfulEshop(limit: 4) {
+      nodes {
+        slug
+        cena
+        title
+      }
+    }
+    workshop: allContentfulWorkshopAkce {
+      nodes {
+        slug
+        title
+        misto
+      }
+    }
+  }
+`;
+
 const mock = {
-  /*  account: {
-    title: 'Nabízím',
-    subtitle: 'Let’s try to fix your account issues.',
-    items: [
-      {
-        title: 'Find account number',
-        updated: '1 week ago',
-      },
-      {
-        title: 'ATMs and ATM fees',
-        updated: 'a day ago',
-      },
-      {
-        title: 'Business retirement services',
-        updated: '2 month ago',
-      },
-      {
-        title: 'Planning for major life events',
-        updated: '4 days ago',
-      },
-    ],
-  }, */
-  billing: {
-    title: 'Meditace',
-    subtitle: 'Zdarma, placené, na míru',
-    items: [
-      {
-        title: 'Business online banking and services',
-        updated: '1 week ago',
-      },
-      {
-        title: 'Business loans, lines & leasing',
-        updated: 'a day ago',
-      },
-      {
-        title: 'Mortgage basics',
-        updated: '2 month ago',
-      },
-      {
-        title: 'Credit cards',
-        updated: '4 days ago',
-      },
-    ],
-  },
   organizations: {
     title: 'Kurzy',
     subtitle: 'Naše novinka',
@@ -101,36 +76,42 @@ const mock = {
 };
 
 const Faq = () => {
+  const data = useStaticQuery(newQuery);
   const theme = useTheme();
-  const renderFaqBox = (title = '', subtitle = '') => (
-    <Box
-      component={Card}
-      variant={'outlined'}
-      bgcolor={'transparent'}
-      borderRadius={theme.borderRadius}
-      sx={{
-        cursor: 'pointer',
-        '&:hover': {
-          boxShadow: 2,
-        },
-      }}
-    >
-      <CardContent>
-        <Box
-          display={'flex'}
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          flex={'1 1 100%'}
-          justifyContent={{ sm: 'space-between' }}
-          alignItems={{ sm: 'center' }}
-        >
-          <Typography fontWeight={700} sx={{ marginBottom: { xs: 1, sm: 0 } }}>
-            {title}
-          </Typography>
-          <Typography variant={'caption'} color={'text.secondary'}>
-            {subtitle}
-          </Typography>
-        </Box>
-      </CardContent>
+  const renderFaqBox = (title = '', subtitle = '', slug = '/') => (
+    <Box component={Link} to={slug} sx={{ textDecoration: 'none !important' }}>
+      <Box
+        component={Card}
+        variant={'outlined'}
+        bgcolor={'transparent'}
+        borderRadius={theme.borderRadius}
+        sx={{
+          cursor: 'pointer',
+          '&:hover': {
+            boxShadow: 2,
+          },
+        }}
+      >
+        <CardContent>
+          <Box
+            display={'flex'}
+            flexDirection={{ xs: 'column', sm: 'row' }}
+            flex={'1 1 100%'}
+            justifyContent={{ sm: 'space-between' }}
+            alignItems={{ sm: 'center' }}
+          >
+            <Typography
+              fontWeight={700}
+              sx={{ marginBottom: { xs: 1, sm: 0 } }}
+            >
+              {title}
+            </Typography>
+            <Typography variant={'caption'} color={'text.secondary'}>
+              {subtitle}
+            </Typography>
+          </Box>
+        </CardContent>
+      </Box>
     </Box>
   );
   return (
@@ -165,16 +146,20 @@ const Faq = () => {
               </Box>
             </Box>
             <Typography variant={'h6'} fontWeight={700} gutterBottom>
-              {mock.billing.title}
+              Meditace
             </Typography>
             <Typography color={'text.secondary'}>
-              {mock.billing.subtitle}
+              Zdarma, placené, na míru
             </Typography>
           </Box>
           <Grid container spacing={2}>
-            {mock.billing.items.map((item, index) => (
+            {data.meditace.nodes.map((item, index) => (
               <Grid item xs={12} key={index}>
-                {renderFaqBox(item.title, `Last updated ${item.updated}`)}
+                {renderFaqBox(
+                  item.title,
+                  item.cena === 0 ? 'Zdarma' : `${item.cena} Kč`,
+                  `/meditace/${item.slug}`,
+                )}
               </Grid>
             ))}
           </Grid>
@@ -251,16 +236,20 @@ const Faq = () => {
               </Box>
             </Box>
             <Typography variant={'h6'} fontWeight={700} gutterBottom>
-              {mock.customizing.title}
+              Workshopy
             </Typography>
             <Typography color={'text.secondary'}>
-              {mock.customizing.subtitle}
+              Přijď změnit svůj život
             </Typography>
           </Box>
           <Grid container spacing={2}>
-            {mock.customizing.items.map((item, index) => (
+            {data.workshop.nodes.map((item, index) => (
               <Grid item xs={12} key={index}>
-                {renderFaqBox(item.title, `Last updated ${item.updated}`)}
+                {renderFaqBox(
+                  item.title,
+                  ` ${item.misto}`,
+                  `/workshopy/${item.slug}`,
+                )}
               </Grid>
             ))}
           </Grid>

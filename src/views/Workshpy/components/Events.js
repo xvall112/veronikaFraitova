@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -9,6 +11,23 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+
+export const query = graphql`
+  {
+    allContentfulWorkshopAkce {
+      nodes {
+        title
+        slug
+        misto
+        image {
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          title
+        }
+        do
+      }
+    }
+  }
+`;
 
 const mock = [
   {
@@ -32,10 +51,8 @@ const mock = [
 ];
 
 const Events = () => {
+  const data = useStaticQuery(query);
   const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
-  });
 
   return (
     <Box>
@@ -53,7 +70,7 @@ const Events = () => {
         </Typography>
       </Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {data.allContentfulWorkshopAkce.nodes.map((item, i) => (
           <Grid
             item
             xs={12}
@@ -64,7 +81,14 @@ const Events = () => {
             data-aos-offset={100}
             data-aos-duration={600}
           >
-            <Box display={'block'} width={1} height={1}>
+            <Box
+              component={Link}
+              to={`/workshopy/${item.slug}`}
+              display={'block'}
+              width={1}
+              height={1}
+              sx={{ textDecoration: 'none !important' }}
+            >
               <Box
                 component={Card}
                 width={1}
@@ -74,13 +98,17 @@ const Events = () => {
               >
                 <CardMedia
                   title={item.title}
-                  image={item.media}
                   sx={{
                     position: 'relative',
                     height: { xs: 240, sm: 340, md: 280 },
                     overflow: 'hidden',
                   }}
-                />
+                >
+                  <GatsbyImage
+                    image={item.image.gatsbyImageData}
+                    alt={item.image.title}
+                  />
+                </CardMedia>
                 <CardContent>
                   <Typography
                     variant={'h6'}
@@ -114,7 +142,7 @@ const Events = () => {
                       />
                     </Box>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                      {item.location}
+                      {item.misto}
                     </Typography>
                   </Box>
                   <Box display={'flex'} alignItems={'center'}>
@@ -136,7 +164,7 @@ const Events = () => {
                       />
                     </Box>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                      {item.time}
+                      {item.do}
                     </Typography>
                   </Box>
                   <CardActions sx={{ justifyContent: 'flex-end' }}>

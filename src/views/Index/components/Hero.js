@@ -1,5 +1,5 @@
 import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { StaticImage } from 'gatsby-plugin-image';
 import { alpha, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
@@ -37,7 +37,7 @@ const Hero = () => {
                   )} 0%)`,
                 }}
               >
-                Veronika Frajtová
+                Veronika Fraitová
               </Typography>
             </Typography>
           </Box>
@@ -98,27 +98,13 @@ const Hero = () => {
         justifyContent={'center'}
         xs={12}
         md={6}
-        sx={{
-          '& .lazy-load-image-background.lazy-load-image-loaded': {
-            width: '100%',
-            height: '100%',
-          },
-        }}
       >
-        <Box
-          component={LazyLoadImage}
-          height={1}
-          width={1}
-          src={'https://assets.maccarianagency.com/backgrounds/img8.jpg'}
-          alt="..."
-          effect="blur"
-          borderRadius={2}
-          maxWidth={600}
-          maxHeight={500}
-          sx={{
-            objectFit: 'cover',
+        <StaticImage
+          src="../../../images/me.jpeg"
+          alt="me"
+          style={{
             boxShadow: '19px 20px 0px 0 rgb(140 152 164 / 13%)',
-            filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
+            borderRadius: '50px',
           }}
         />
       </Grid>

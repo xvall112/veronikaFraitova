@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import Slider from 'react-slick';
 import { alpha, useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -10,31 +11,22 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const mock = [
+export const query = graphql`
   {
-    feedback:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    name: 'Clara Bertoletti',
-    title: 'MUI lover',
-    avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-  },
-  {
-    feedback:
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    name: 'Jhon Anderson',
-    title: 'Senior Frontend Developer',
-    avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
-  },
-  {
-    feedback:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    name: 'Chary Smith',
-    title: 'SEO at Comoti',
-    avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-  },
-];
+    allContentfulRecenze {
+      nodes {
+        jmeno
+        oblast
+        text {
+          text
+        }
+      }
+    }
+  }
+`;
 
 const Reviews = () => {
+  const data = useStaticQuery(query);
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -134,7 +126,7 @@ const Reviews = () => {
           }}
         >
           <Slider {...sliderOpts}>
-            {mock.map((item, i) => (
+            {data.allContentfulRecenze.nodes.map((item, i) => (
               <Box key={i}>
                 <Card
                   sx={{
@@ -145,7 +137,7 @@ const Reviews = () => {
                   }}
                 >
                   <CardMedia
-                    image={item.avatar}
+                    image="https://assets.maccarianagency.com/avatars/img1.jpg"
                     sx={{
                       height: 300,
                       width: '100%',
@@ -169,7 +161,7 @@ const Reviews = () => {
                           textAlign: { xs: 'center', md: 'left' },
                         }}
                       >
-                        {item.feedback}
+                        {item.text.text}
                       </Typography>
                       <ListItem
                         component="div"
@@ -178,8 +170,8 @@ const Reviews = () => {
                       >
                         <ListItemText
                           sx={{ margin: 0 }}
-                          primary={item.name}
-                          secondary={item.title}
+                          primary={item.jmeno}
+                          secondary={item.oblast}
                           primaryTypographyProps={{
                             variant: 'h6',
                             fontWeight: 'bold',

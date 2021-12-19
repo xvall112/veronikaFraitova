@@ -1,6 +1,7 @@
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -11,46 +12,30 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import { useTheme } from '@mui/material/styles';
 
-const mock = [
+export const query = graphql`
   {
-    media: 'https://assets.maccarianagency.com/backgrounds/img37.png',
-    title: 'Music player',
-    price: '$320',
-  },
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img38.png',
-    title: 'Headphones',
-    price: '$450',
-  },
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img39.png',
-    title: 'Wireless headpohones',
-    price: '$280',
-  },
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img40.png',
-    title: 'Bluetooth headphones',
-    price: '$300',
-  },
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img41.png',
-    title: 'Headphones',
-    price: '$280',
-  },
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img42.png',
-    title: 'Music player',
-    price: '$340',
-  },
-];
+    allContentfulEshop {
+      nodes {
+        slug
+        title
+        obrazek {
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 30)
+          title
+        }
+        cena
+      }
+    }
+  }
+`;
 
 const Products = () => {
+  const data = useStaticQuery(query);
   const theme = useTheme();
 
   return (
     <Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {data.allContentfulEshop.nodes.map((item, i) => (
           <Grid
             item
             xs={12}
@@ -64,7 +49,7 @@ const Products = () => {
           >
             <Box
               component={Link}
-              to="/"
+              to={`/meditace/${item.slug}`}
               display={'block'}
               width={1}
               height={1}
@@ -82,30 +67,31 @@ const Products = () => {
                     position: 'relative',
                     height: { xs: 240, sm: 340, md: 280 },
                     overflow: 'hidden',
-                    padding: 3,
                     paddingBottom: 0,
                     background: theme.palette.alternate.main,
-                    display: 'flex',
-                    alignItems: 'flex-end',
-                    justifyContent: 'center',
                   }}
                 >
                   <Box
-                    component={LazyLoadImage}
-                    effect="blur"
-                    src={item.media}
-                    sx={{
-                      '& img': {
-                        objectFit: 'contain',
-                      },
+                    component={GatsbyImage}
+                    image={item.obrazek.gatsbyImageData}
+                    alt={item.obrazek.title}
+                    style={{
+                      height: '100%',
+                      width: '100%',
+
+                      // You can set a maximum height for the image, if you wish.
+                      // maxHeight: 600,
                     }}
+                    formats={['auto', 'webp', 'avif']}
                   />
                 </CardMedia>
-                <CardContent>
+                <Box component={CardContent}>
                   <Typography
+                    height={{ sx: 'auto', md: '100px' }}
                     variant={'h6'}
                     align={'left'}
                     sx={{ fontWeight: 700 }}
+                    overflow={'hidden'}
                   >
                     {item.title}
                   </Typography>
@@ -130,9 +116,10 @@ const Products = () => {
                       ))}
                     </Box>
                   </Box>
+
                   <CardActions sx={{ justifyContent: 'space-between' }}>
                     <Typography sx={{ fontWeight: 700 }} color={'primary'}>
-                      {item.price}
+                      {item.cena === 0 ? 'Zdarma' : `${item.cena} Kč`}
                     </Typography>
                     <Button
                       variant={'outlined'}
@@ -154,10 +141,10 @@ const Products = () => {
                         </Box>
                       }
                     >
-                      Koupit
+                      {item.cena === 0 ? 'Stáhnout' : 'Koupit'}
                     </Button>
                   </CardActions>
-                </CardContent>
+                </Box>
               </Box>
             </Box>
           </Grid>

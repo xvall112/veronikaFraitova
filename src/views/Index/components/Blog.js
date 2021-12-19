@@ -1,7 +1,8 @@
 import React from 'react';
+import { useStaticQuery, graphql, navigate } from 'gatsby';
 import { Link } from 'gatsby';
 import { useTheme } from '@mui/material/styles';
-import Divider from '@mui/material/Divider';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,51 +10,38 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
 
-const mock = [
+export const query = graphql`
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img2.jpg',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    title: 'Lorem ipsum dolor sit amet,',
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img4.jpg',
-    },
-    date: '04 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
-    description: 'Excepteur sint occaecat cupidatat non proident',
-    title: 'Consectetur adipiscing elit',
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img5.jpg',
-    },
-    date: '12 Sep',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img4.jpg',
-    description: 'Eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    title: 'Labore et dolore magna aliqua',
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
-    },
-    date: '22 Nov',
-  },
-];
+    allContentfulBlogPost(limit: 3) {
+      nodes {
+        image {
+          title
+          gatsbyImageData
+          file {
+            url
+          }
+        }
+        title
+        uvodniText
+
+        slug
+      }
+    }
+  }
+`;
 
 const Result = () => {
+  const data = useStaticQuery(query);
   const theme = useTheme();
   return (
     <Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {data.allContentfulBlogPost.nodes.map((item, i) => (
           <Grid item xs={12} sm={6} md={4} key={i}>
             <Box
               component={Link}
-              to={''}
+              to={`/blog/${item.slug}`}
               display={'block'}
               width={1}
               height={1}
@@ -76,8 +64,8 @@ const Result = () => {
                 sx={{ backgroundImage: 'none' }}
               >
                 <CardMedia
-                  image={item.image}
-                  title={item.title}
+                  image={item.image.file.url}
+                  title={item.image.title}
                   sx={{
                     height: { xs: 300, md: 360 },
                     position: 'relative',
@@ -111,33 +99,10 @@ const Result = () => {
                     {item.title}
                   </Typography>
                   <Typography color="text.secondary">
-                    {item.description}
+                    {item.uvodniText}
                   </Typography>
                 </Box>
-                <Box flexGrow={1} />
-                <Box padding={2} display={'flex'} flexDirection={'column'}>
-                  <Box marginBottom={2}>
-                    <Divider />
-                  </Box>
-                  <Box
-                    display={'flex'}
-                    justifyContent={'space-between'}
-                    alignItems={'center'}
-                  >
-                    <Box display={'flex'} alignItems={'center'}>
-                      <Avatar
-                        src={item.author.avatar}
-                        sx={{ marginRight: 1 }}
-                      />
-                      <Typography color={'text.secondary'}>
-                        {item.author.name}
-                      </Typography>
-                    </Box>
-                    <Typography color={'text.secondary'}>
-                      {item.date}
-                    </Typography>
-                  </Box>
-                </Box>
+                <Box flexGrow={1} marginBottom={2} />
               </Box>
             </Box>
           </Grid>
@@ -145,6 +110,9 @@ const Result = () => {
         <Grid item container justifyContent={'center'} xs={12}>
           <Button
             fullWidth
+            onClick={() => {
+              navigate('/blog');
+            }}
             variant={'outlined'}
             size={'large'}
             sx={{ height: 54, maxWidth: 400, justifyContent: 'space-between' }}

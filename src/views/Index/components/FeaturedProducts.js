@@ -26,7 +26,9 @@ const FeaturedProducts = () => {
               color="text.primary"
               sx={{ color: '#222B45' }}
             >
-              Vytvořila jsem pro vás úžasný kurz Jméno popis
+              Připravila jsem pro tebe užasný nový kurz Probuzení ženství.
+              Uvnitř kurzu tě čeká spoustu zajímavých informací, meditací,
+              aktivních meditací, cvičení, tanec...
             </Typography>
           </Box>
           <Box

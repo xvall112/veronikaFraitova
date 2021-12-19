@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -8,8 +9,6 @@ import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import ThemeModeToggler from 'components/ThemeModeToggler';
 
-import { NavItem } from './components';
-
 const mock = [
   { title: 'Home', link: '/' },
   { title: 'Konzultace', link: '/konzultace' },
@@ -18,17 +17,8 @@ const mock = [
   { title: 'Kurzy', link: '/kurzy' },
   { title: 'Blog', link: '/blog' },
 ];
-const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
+const Topbar = ({ onSidebarOpen }) => {
   const theme = useTheme();
-  const { mode } = theme.palette;
-  const {
-    landings: landingPages,
-    secondary: secondaryPages,
-    company: companyPages,
-    account: accountPages,
-    portfolio: portfolioPages,
-    blog: blogPages,
-  } = pages;
 
   return (
     <Box
@@ -39,21 +29,26 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     >
       <Box
         display={'flex'}
+        alignItems={'center'}
         component={Link}
         href="/"
         title="theFront"
-        width={{ xs: 100, md: 120 }}
+        width={{ xs: 100, md: 320 }}
+        sx={{
+          textDecoration: 'none !important',
+          color: theme.palette.text.primary,
+        }}
       >
-        <Box
-          component={'img'}
-          src={
-            mode === 'light' && !colorInvert
-              ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-              : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-          }
-          height={1}
-          width={1}
+        <StaticImage
+          src="../../../../images/logo.png"
+          alt="Logo"
+          placeholder="blurred"
+          layout="fixed"
+          height={40}
         />
+        <Typography variant={'body1'} marginLeft={1}>
+          OpenYourEyes
+        </Typography>
       </Box>
       <Box
         sx={{ display: { xs: 'none', md: 'flex' } }}
@@ -72,6 +67,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
               <Box
                 component={Link}
                 color={'text.primary'}
+                partiallyActive={item.link === '/' ? false : true}
                 activeStyle={{
                   color: theme.palette.primary.main,
                   fontWeight: '700',
@@ -86,72 +82,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             </Box>
           );
         })}
-        {/*  <Box>
-          <NavItem
-            title={'Home'}
-            id={'landing-pages'}
-            items={landingPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Konzultace'}
-            id={'company-pages'}
-            items={companyPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Workshopy'}
-            id={'account-pages'}
-            items={accountPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Meditace'}
-            id={'secondary-pages'}
-            items={secondaryPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={
-              <>
-                Kurzy
-                <Box
-                  padding={0.5}
-                  display={'inline-flex'}
-                  borderRadius={1}
-                  bgcolor={'primary.main'}
-                  marginLeft={1}
-                >
-                  <Typography
-                    variant={'caption'}
-                    sx={{ color: 'common.white', lineHeight: 1 }}
-                  >
-                    nové
-                  </Typography>
-                </Box>
-              </>
-            }
-            id={'blog-pages'}
-            items={blogPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Blog'}
-            id={'portfolio-pages'}
-            items={portfolioPages}
-            colorInvert={colorInvert}
-          />
-        </Box> */}
+
         <Box marginLeft={4}>
           <Button
             variant="contained"

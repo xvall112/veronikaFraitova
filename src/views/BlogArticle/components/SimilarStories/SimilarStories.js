@@ -1,86 +1,67 @@
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
+import { navigate, Link, graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
 
-const mock = [
+export const query = graphql`
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-    title: 'Eiusmod tempor incididunt',
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
-    title: 'Sed ut perspiciatis',
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
-    },
-    date: '02 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
-    description:
-      'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
-    title: 'Unde omnis iste natus',
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-    },
-    date: '05 Mar',
-  },
-];
+    allContentfulBlogPost(limit: 3) {
+      nodes {
+        title
+        uvodniText
+        slug
+        image {
+          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          title
+        }
+      }
+    }
+  }
+`;
 
 const SimilarStories = () => {
   const theme = useTheme();
+  const data = useStaticQuery(query);
   return (
     <Box>
       <Box
         display={'flex'}
         justifyContent={'space-between'}
-        alignItems={{ xs: 'flex-start', sm: 'center' }}
-        flexDirection={{ xs: 'column', sm: 'row' }}
+        alignItems={{ xs: 'center' }}
+        flexDirection={{ sm: 'row' }}
         marginBottom={4}
       >
         <Box>
           <Typography fontWeight={700} variant={'h6'} gutterBottom>
-            Similar stories
-          </Typography>
-          <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
+            Další články
           </Typography>
         </Box>
-        <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
+        <Box display="flex" marginTop={{ xs: 0, md: 0 }}>
           <Box
             component={Button}
             variant="outlined"
             color="primary"
             size="large"
             marginLeft={2}
+            onClick={() => navigate('/blog')}
           >
-            View all
+            Prozkoumat vše
           </Box>
         </Box>
       </Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {data.allContentfulBlogPost.nodes.map((item, i) => (
           <Grid item xs={12} md={4} key={i}>
             <Box
-              component={'a'}
-              href={''}
+              component={Link}
+              to={`/blog/${item.slug}`}
               display={'block'}
               width={1}
               height={1}
@@ -102,13 +83,18 @@ const SimilarStories = () => {
                 sx={{ backgroundImage: 'none' }}
               >
                 <CardMedia
-                  image={item.image}
                   title={item.title}
                   sx={{
                     height: { xs: 300, md: 360 },
                     position: 'relative',
                   }}
                 >
+                  <GatsbyImage
+                    image={item.image.gatsbyImageData}
+                    alt={item.image.title}
+                    formats={['auto', 'webp', 'avif']}
+                    style={{ height: '100%', zIndex: 1 }}
+                  />
                   <Box
                     component={'svg'}
                     viewBox="0 0 2880 480"
@@ -116,12 +102,14 @@ const SimilarStories = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     sx={{
                       position: 'absolute',
+                      left: 0,
                       bottom: 0,
                       color: theme.palette.background.paper,
                       transform: 'scale(2)',
                       height: 'auto',
                       width: 1,
                       transformOrigin: 'top center',
+                      zIndex: 2,
                     }}
                   >
                     <path
@@ -132,38 +120,19 @@ const SimilarStories = () => {
                     />
                   </Box>
                 </CardMedia>
-                <Box component={CardContent} position={'relative'}>
+                <Box
+                  component={CardContent}
+                  position={'relative'}
+                  sx={{ zIndex: 3 }}
+                >
                   <Typography variant={'h6'} gutterBottom>
                     {item.title}
                   </Typography>
                   <Typography color="text.secondary">
-                    {item.description}
+                    {item.uvodniText}
                   </Typography>
                 </Box>
-                <Box flexGrow={1} />
-                <Box padding={2} display={'flex'} flexDirection={'column'}>
-                  <Box marginBottom={2}>
-                    <Divider />
-                  </Box>
-                  <Box
-                    display={'flex'}
-                    justifyContent={'space-between'}
-                    alignItems={'center'}
-                  >
-                    <Box display={'flex'} alignItems={'center'}>
-                      <Avatar
-                        src={item.author.avatar}
-                        sx={{ marginRight: 1 }}
-                      />
-                      <Typography color={'text.secondary'}>
-                        {item.author.name}
-                      </Typography>
-                    </Box>
-                    <Typography color={'text.secondary'}>
-                      {item.date}
-                    </Typography>
-                  </Box>
-                </Box>
+                <Box flexGrow={1} marginBottom={2} />
               </Box>
             </Box>
           </Grid>

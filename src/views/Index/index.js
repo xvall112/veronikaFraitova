@@ -6,14 +6,12 @@ import AboutMe from './components/AboutMe';
 import Box from '@mui/material/Box';
 import Offers from './components/Offers';
 import Blog from './components/Blog';
-import LiveEnergy from './components/LiveEnergy';
-import Newsletter from './components/Newsletter';
+
 import New from './components/New';
 import { alpha, useTheme } from '@mui/material/styles';
 import FeaturedProducts from './components/FeaturedProducts';
 import Title from '../../components/Title';
 import Reviews from '../../components/Reviews';
-import Cakry from './components/Cakry';
 
 const Index = () => {
   const theme = useTheme();
@@ -45,16 +43,12 @@ const Index = () => {
           <AboutMe />
         </Container>
       </Box>
-      <Container>
-        <LiveEnergy />
-      </Container>
+
       <Container>
         <Title title="NABÍZÍM" />
         <Offers />
       </Container>
-      <Container>
-        <Cakry />
-      </Container>
+
       <Box
         component={'svg'}
         preserveAspectRatio="none"
@@ -80,9 +74,6 @@ const Index = () => {
       </Box>
       <Container>
         <Reviews />
-      </Container>
-      <Container>
-        <Newsletter />
       </Container>
     </Main>
   );

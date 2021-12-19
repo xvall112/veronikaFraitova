@@ -1,42 +1,24 @@
-import React, { useEffect } from 'react';
-import { alpha } from '@mui/material/styles';
+import React from 'react';
+import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
 
+import PropTypes from 'prop-types';
 import Container from 'components/Container';
 
-const Hero = () => {
-  useEffect(() => {
-    const jarallaxInit = async () => {
-      const jarallaxElems = document.querySelectorAll('.jarallax');
-      if (!jarallaxElems || (jarallaxElems && jarallaxElems.length === 0)) {
-        return;
-      }
-
-      const { jarallax } = await import('jarallax');
-      jarallax(jarallaxElems, { speed: 0.2 });
-    };
-
-    jarallaxInit();
-  });
+const Hero = ({ title }) => {
+  const theme = useTheme();
 
   return (
     <Box
-      className={'jarallax'}
-      data-jarallax
-      data-speed="0.2"
       position={'relative'}
-      minHeight={{ xs: 400, sm: 500, md: 600 }}
+      minHeight={{ xs: 400, sm: 500, md: 500 }}
       display={'flex'}
       marginTop={-13}
       paddingTop={13}
       alignItems={'center'}
-      id="agency__portfolio-item--js-scroll"
     >
       <Box
-        className={'jarallax-img'}
         sx={{
           position: 'absolute',
           objectFit: 'cover',
@@ -47,11 +29,6 @@ const Hero = () => {
           width: '100%',
           height: '100%',
           zIndex: -1,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundImage:
-            'url(https://assets.maccarianagency.com/backgrounds/img3.jpg)',
         }}
       />
       <Box
@@ -63,7 +40,7 @@ const Hero = () => {
           bottom: 0,
           width: 1,
           height: 1,
-          background: alpha('#161c2d', 0.6),
+          background: alpha(theme.palette.primary.main, 0.1),
           zIndex: 1,
         }}
       />
@@ -71,15 +48,16 @@ const Hero = () => {
         <Box>
           <Typography
             variant="h3"
+            textAlign="center"
             sx={{
               fontWeight: 400,
-              color: 'common.white',
+              color: theme.palette.text.primary,
               marginBottom: 2,
             }}
           >
-            Remote work is the future, but should you go remote?
+            {title}
           </Typography>
-          <Box display={'flex'} alignItems={'center'}>
+          {/*  <Box display={'flex'} alignItems={'center'}>
             <Avatar
               sx={{ width: 60, height: 60, marginRight: 2 }}
               src={'https://assets.maccarianagency.com/avatars/img3.jpg'}
@@ -96,11 +74,13 @@ const Hero = () => {
                 sx: { color: alpha('#ffffff', 0.8) },
               }}
             />
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </Box>
   );
 };
-
+Hero.propTypes = {
+  title: PropTypes.string,
+};
 export default Hero;

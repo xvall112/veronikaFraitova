@@ -1,5 +1,5 @@
-import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import React, { useState } from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -8,28 +8,35 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
-import { colors } from '@mui/material';
+import DialogView from './Dialog';
 
 const mock = [
   {
     title: 'Zdravotní',
     description:
-      'Monetize your website and manage all guest interactions with your own brand, logo and domains.',
-    illustration:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration4.svg',
-    illustrationDark:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration4--dark.svg',
-    color: colors.blue[200],
+      'Vědomá práce s myslí a vědomím na úrovni duše. Existuje způsob, jak aktivovat imunitní systém pomocí vaší mentální a emocionální práce s propojením vědy kvantové fyziky.',
+
+    img: (
+      <StaticImage
+        src="../../../images/health.png"
+        alt="zdravi"
+        placeholder="blurred"
+        height={300}
+      />
+    ),
   },
   {
     title: 'Vztahové',
     description:
-      'Monetize your website and manage all guest interactions with your own brand, logo and domains.',
-    illustration:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration3.svg',
-    illustrationDark:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration3--dark.svg',
-    color: colors.purple[200],
+      'Problémy ve vztazích jsou odrazem našich nezpracovaných bolestí z minulosti. Vše, co jsme zažili, máme uložené v naší podvědomé mysli. ',
+    img: (
+      <StaticImage
+        src="../../../images/couple.png"
+        alt="vztahy"
+        placeholder="blurred"
+        height={300}
+      />
+    ),
   },
 ];
 
@@ -38,7 +45,7 @@ const Solutions = () => {
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
-
+  const [openId, setOpenId] = useState(null);
   return (
     <Box>
       <Box marginBottom={4}>
@@ -82,16 +89,7 @@ const Solutions = () => {
                     },
                   }}
                 >
-                  <Box
-                    component={LazyLoadImage}
-                    effect="blur"
-                    src={
-                      theme.palette.mode === 'light'
-                        ? item.illustration
-                        : item.illustrationDark
-                    }
-                    width={1}
-                  />
+                  {item.img}
                 </Box>
                 <Box>
                   <Typography
@@ -107,6 +105,7 @@ const Solutions = () => {
                   <Button
                     size={'large'}
                     sx={{ marginTop: 2 }}
+                    onClick={() => setOpenId(i)}
                     endIcon={
                       <Box
                         component={'svg'}
@@ -126,11 +125,17 @@ const Solutions = () => {
                       </Box>
                     }
                   >
-                    Learn more
+                    Dozvědět se více
                   </Button>
                 </Box>
               </CardContent>
             </Box>
+            <DialogView
+              open={openId === i}
+              title={item.title}
+              text={item.text}
+              onClose={() => setOpenId(null)}
+            />
           </Grid>
         ))}
       </Grid>
