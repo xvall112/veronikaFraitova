@@ -11,8 +11,6 @@ import Container from 'components/Container';
 
 import { Topbar, Sidebar, Footer } from './components';
 
-import pages from '../navigation';
-
 const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
@@ -49,17 +47,11 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
         <Container paddingY={1}>
           <Topbar
             onSidebarOpen={handleSidebarOpen}
-            pages={pages}
             colorInvert={trigger ? false : colorInvert}
           />
         </Container>
       </AppBar>
-      <Sidebar
-        onClose={handleSidebarClose}
-        open={open}
-        variant="temporary"
-        pages={pages}
-      />
+      <Sidebar onClose={handleSidebarClose} open={open} variant="temporary" />
       <main>
         {children}
         <Divider />

@@ -62,11 +62,11 @@ const Reviews = () => {
       <Grid container spacing={4}>
         <Grid item xs={12}>
           <Typography variant={'h5'} fontWeight={700}>
-            Customer reviews
+            Recenze
           </Typography>
           <Box display={'flex'} alignItems={'center'} marginY={2}>
             <Typography variant={'h2'} fontWeight={700} marginRight={1}>
-              4.0
+              5.0
             </Typography>
             <Box>
               <Box display={'flex'} alignItems={'center'}>
@@ -75,7 +75,7 @@ const Reviews = () => {
                     key={r}
                     component={'svg'}
                     color={
-                      r <= 4
+                      r <= 5
                         ? theme.palette.primary.main
                         : theme.palette.divider
                     }
@@ -90,23 +90,20 @@ const Reviews = () => {
                 ))}
               </Box>
               <Typography color={'text.secondary'}>
-                Based on 519 reviews
+                Na základě 519 hodnocení
               </Typography>
             </Box>
           </Box>
           <Stack direction={'row'} spacing={2}>
-            <Button size={'large'} variant={'outlined'}>
-              See all
-            </Button>
             <Button
               size={'large'}
-              variant={'contained'}
+              variant={'outlined'}
               sx={{
                 marginTop: { xs: 2, md: 0 },
               }}
               onClick={() => setOpen(true)}
             >
-              Write a review
+              Napište hodnocení
             </Button>
           </Stack>
         </Grid>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -10,37 +11,26 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 import DialogView from './Dialog';
 
-const mock = [
+export const query = graphql`
   {
-    title: 'Zdravotní',
-    description:
-      'Vědomá práce s myslí a vědomím na úrovni duše. Existuje způsob, jak aktivovat imunitní systém pomocí vaší mentální a emocionální práce s propojením vědy kvantové fyziky.',
-
-    img: (
-      <StaticImage
-        src="../../../images/health.png"
-        alt="zdravi"
-        placeholder="blurred"
-        height={300}
-      />
-    ),
-  },
-  {
-    title: 'Vztahové',
-    description:
-      'Problémy ve vztazích jsou odrazem našich nezpracovaných bolestí z minulosti. Vše, co jsme zažili, máme uložené v naší podvědomé mysli. ',
-    img: (
-      <StaticImage
-        src="../../../images/couple.png"
-        alt="vztahy"
-        placeholder="blurred"
-        height={300}
-      />
-    ),
-  },
-];
+    allContentfulKonzultace {
+      nodes {
+        title
+        description
+        body {
+          raw
+        }
+        image {
+          gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+          title
+        }
+      }
+    }
+  }
+`;
 
 const Solutions = () => {
+  const data = useStaticQuery(query);
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -61,7 +51,7 @@ const Solutions = () => {
         </Typography>
       </Box>
       <Grid container spacing={isMd ? 8 : 4}>
-        {mock.map((item, i) => (
+        {data.allContentfulKonzultace.nodes.map((item, i) => (
           <Grid
             key={i}
             item
@@ -89,7 +79,11 @@ const Solutions = () => {
                     },
                   }}
                 >
-                  {item.img}
+                  <GatsbyImage
+                    image={item.image.gatsbyImageData}
+                    alt={item.image.title}
+                    style={{ width: '80%' }}
+                  />
                 </Box>
                 <Box>
                   <Typography
@@ -133,7 +127,8 @@ const Solutions = () => {
             <DialogView
               open={openId === i}
               title={item.title}
-              text={item.text}
+              text={item.body}
+              image={item.image.gatsbyImageData}
               onClose={() => setOpenId(null)}
             />
           </Grid>

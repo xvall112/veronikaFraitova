@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import MeditationTemplate from '../../views/MeditationTemplate/MeditationTemplate';
+import Seo from '../../components/Seo';
 export const query = graphql`
   query($slug: String!) {
     contentfulEshop(slug: { eq: $slug }) {
@@ -22,7 +23,12 @@ export const query = graphql`
 `;
 
 const MeditationOverview = (props) => {
-  return <MeditationTemplate data={props} />;
+  return (
+    <>
+      <Seo title={props.data.contentfulEshop.title} />
+      <MeditationTemplate data={props} />
+    </>
+  );
 };
 
 export default MeditationOverview;

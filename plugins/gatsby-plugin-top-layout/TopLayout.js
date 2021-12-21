@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 
 import Page from '../../src/components/Page';
 
@@ -13,7 +12,7 @@ import 'aos/dist/aos.css';
 export default function TopLayout(props) {
   return (
     <React.Fragment>
-      <Helmet>
+      {/*   <Helmet>
         <meta charSet="utf-8" />
         <link
           rel="shortcut icon"
@@ -23,7 +22,7 @@ export default function TopLayout(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <title>theFront | UI Kit by Maccarian Agency.</title>
+        <title>OpenYourEyes | Veronika Fraitová</title>
         <meta name="theme-color" content="#ffffff" />
         <meta
           name="description"
@@ -53,10 +52,8 @@ export default function TopLayout(props) {
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-      </Helmet>
-      <Page>
-        {props.children}
-      </Page>
+      </Helmet> */}
+      <Page>{props.children}</Page>
     </React.Fragment>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { alpha, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -59,11 +60,15 @@ const Hero = () => {
               color="primary"
               size="large"
               fullWidth={isMd ? false : true}
+              onClick={() => {
+                navigate('/konzultace');
+              }}
             >
               Konzultace
             </Button>
             <Box
               component={Button}
+              variant={'outlined'}
               color="primary"
               size="large"
               marginTop={{ xs: 2, sm: 0 }}

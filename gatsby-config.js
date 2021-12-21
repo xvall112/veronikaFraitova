@@ -4,6 +4,25 @@ require('dotenv').config({
 
 /* eslint-disable no-undef */
 module.exports = {
+  siteMetadata: {
+    title: 'Veronika Fraitová',
+    description:
+      'Poradenství a konzultace osobní rozvoj, léčení a uzdravení na úrovni vědomí. Celostní poradenství, vztahy. Napojení na vnitřní sílu a moudrost těla. Vedené meditace ke stažení',
+    author: '@veronikaFraitova',
+    siteUrl: 'https://openyoureyes.cz/',
+    keywords: [
+      'léčení',
+      'etikoterapie',
+      'meditace',
+      'životní enrgie',
+      'zdraví',
+      'vztahy',
+      'uzdravení',
+      'poradenství',
+      'workshop',
+      'konzultace',
+    ],
+  },
   plugins: [
     'gatsby-plugin-top-layout',
     // If you want to use styled components you should add the plugin here.
@@ -48,7 +67,4 @@ module.exports = {
       },
     },
   ],
-  siteMetadata: {
-    title: 'theFront - MUI Multipurpose Theme and UI Kit',
-  },
 };

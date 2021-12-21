@@ -11,7 +11,7 @@ import Grid from '@mui/material/Grid';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ContentfulRitchText from '../../../../utils/ContentfulRitchText';
+import { contact } from '../../../../data/data';
 
 const mock = [
   {
@@ -105,7 +105,7 @@ const Details = ({ title, description, price, reviewCount, reviewScore }) => {
         </Link>
       </Box>
       <Box marginTop={4}>
-        <Typography>Description</Typography>
+        <Typography>Popis</Typography>
         <Typography
           variant={'subtitle2'}
           color={'text.secondary'}
@@ -168,6 +168,8 @@ const Details = ({ title, description, price, reviewCount, reviewScore }) => {
         <Typography>Potřebujete poradit?</Typography>
         <Stack direction={'row'} spacing={2} marginTop={0.5}>
           <Button
+            component={'a'}
+            href={`tel:${contact.mobil}`}
             sx={{
               color: 'text.secondary',
             }}
@@ -186,6 +188,8 @@ const Details = ({ title, description, price, reviewCount, reviewScore }) => {
             Volejte
           </Button>
           <Button
+            component={'a'}
+            href={`mailto:${contact.email}`}
             sx={{
               color: 'text.secondary',
             }}

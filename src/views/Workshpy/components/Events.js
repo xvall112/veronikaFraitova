@@ -9,8 +9,6 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 
 export const query = graphql`
   {
@@ -23,36 +21,14 @@ export const query = graphql`
           gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           title
         }
-        do
+        delka
       }
     }
   }
 `;
 
-const mock = [
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img19.jpg',
-    title: 'Sales philosophy and future',
-    time: '2:00 PM - 5:00 PM',
-    location: 'Via E. Gola 4, 20147 Milan, Italy',
-  },
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img5.jpg',
-    title: 'Introduction to design thinking',
-    time: '11:30 AM - 1:00 AM',
-    location: 'Via Venini 33, 20150 Milan Italy',
-  },
-  {
-    media: 'https://assets.maccarianagency.com/backgrounds/img20.jpg',
-    title: 'Instagram grow experiments',
-    time: '6:15 PM - 8:00 PM',
-    location: 'Via Lagrange 5, 20175 Milan, Italy',
-  },
-];
-
 const Events = () => {
   const data = useStaticQuery(query);
-  const theme = useTheme();
 
   return (
     <Box>
@@ -164,7 +140,7 @@ const Events = () => {
                       />
                     </Box>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                      {item.do}
+                      {item.delka}
                     </Typography>
                   </Box>
                   <CardActions sx={{ justifyContent: 'flex-end' }}>

@@ -34,42 +34,8 @@ const mock = {
     subtitle: 'Naše novinka',
     items: [
       {
-        title: 'Redeem rewards points',
-        updated: '1 week ago',
-      },
-      {
-        title: 'Growing a business',
-        updated: 'a day ago',
-      },
-      {
-        title: 'Accessible banking',
-        updated: '2 month ago',
-      },
-      {
-        title: 'Mobile banking',
-        updated: '4 days ago',
-      },
-    ],
-  },
-  customizing: {
-    title: 'Workshopy',
-    subtitle: 'Přijď změnit svůj život',
-    items: [
-      {
-        title: 'Planning for college',
-        updated: '1 week ago',
-      },
-      {
-        title: 'Learn about credit',
-        updated: 'a day ago',
-      },
-      {
-        title: 'Budgeting & saving',
-        updated: '2 month ago',
-      },
-      {
-        title: 'Transferring funds',
-        updated: '4 days ago',
+        title: 'Probuzení ženství',
+        updated: 'online kurz',
       },
     ],
   },
@@ -82,7 +48,6 @@ const Faq = () => {
     <Box component={Link} to={slug} sx={{ textDecoration: 'none !important' }}>
       <Box
         component={Card}
-        variant={'outlined'}
         bgcolor={'transparent'}
         borderRadius={theme.borderRadius}
         sx={{
@@ -162,6 +127,9 @@ const Faq = () => {
                 )}
               </Grid>
             ))}
+            <Grid item xs={12}>
+              {renderFaqBox('Vše', '>', '/meditace')}
+            </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12} md={4} sx={{ marginTop: 2 }}>
@@ -202,9 +170,12 @@ const Faq = () => {
           <Grid container spacing={2}>
             {mock.organizations.items.map((item, index) => (
               <Grid item xs={12} key={index}>
-                {renderFaqBox(item.title, `Last updated ${item.updated}`)}
+                {renderFaqBox(item.title, `${item.updated}`)}
               </Grid>
             ))}
+            <Grid item xs={12}>
+              {renderFaqBox('Vše', '>', '/')}
+            </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12} md={4} sx={{ marginTop: 2 }}>
@@ -252,6 +223,9 @@ const Faq = () => {
                 )}
               </Grid>
             ))}
+            <Grid item xs={12}>
+              {renderFaqBox('Vše', '>', '/workshopy')}
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

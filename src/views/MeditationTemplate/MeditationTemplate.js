@@ -36,7 +36,7 @@ const MeditationTemplate = ({ data }) => {
               <GatsbyImage
                 image={obrazek.gatsbyImageData}
                 alt={obrazek.title}
-                style={{ height: '500px', borderRadius: theme.spacing(2) }}
+                style={{ height: '60vh', borderRadius: theme.spacing(2) }}
               />
             </Grid>
             <Grid item xs={12} md={6}>

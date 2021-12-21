@@ -59,7 +59,7 @@ const Result = () => {
                 component={Card}
                 width={1}
                 height={1}
-                boxShadow={4}
+                boxShadow={2}
                 display={'flex'}
                 flexDirection={'column'}
                 sx={{ backgroundImage: 'none' }}

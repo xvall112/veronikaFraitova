@@ -8,15 +8,9 @@ import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import ThemeModeToggler from 'components/ThemeModeToggler';
+import { navigation } from '../../../../data/data';
+import KontaktDialog from '../KontaktDialog';
 
-const mock = [
-  { title: 'Home', link: '/' },
-  { title: 'Konzultace', link: '/konzultace' },
-  { title: 'Workshopy', link: '/workshopy' },
-  { title: 'Meditace', link: '/meditace' },
-  { title: 'Kurzy', link: '/kurzy' },
-  { title: 'Blog', link: '/blog' },
-];
 const Topbar = ({ onSidebarOpen }) => {
   const theme = useTheme();
 
@@ -31,9 +25,9 @@ const Topbar = ({ onSidebarOpen }) => {
         display={'flex'}
         alignItems={'center'}
         component={Link}
-        href="/"
-        title="theFront"
-        width={{ xs: 100, md: 320 }}
+        to="/"
+        title="Veronika Fraitova"
+        width={{ xs: 300, md: 320 }}
         sx={{
           textDecoration: 'none !important',
           color: theme.palette.text.primary,
@@ -55,7 +49,7 @@ const Topbar = ({ onSidebarOpen }) => {
         alignItems={'center'}
         justifyContent={'space-between'}
       >
-        {mock.map((item, index) => {
+        {navigation.map((item, index) => {
           return (
             <Box
               key={index}
@@ -84,16 +78,7 @@ const Topbar = ({ onSidebarOpen }) => {
         })}
 
         <Box marginLeft={4}>
-          <Button
-            variant="contained"
-            color="primary"
-            component="a"
-            target="blank"
-            href="https://mui.com/store/items/the-front-landing-page/"
-            size="large"
-          >
-            Kontakt
-          </Button>
+          <KontaktDialog />
         </Box>
         <Box>
           <ThemeModeToggler />

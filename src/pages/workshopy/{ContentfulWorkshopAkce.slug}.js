@@ -1,11 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import BlogArticleTemplate from '../../views/BlogArticle/BlogArticle';
+import WorkshopTemplateAkce from '../../views/WorkshopAkceTemplate/WorkshopTemplateAkce';
 import Seo from '../../components/Seo';
+
 export const query = graphql`
   query($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
+    contentfulWorkshopAkce(slug: { eq: $slug }) {
+      slug
       title
+      misto
+      popis {
+        raw
+      }
+      cena
       body {
         raw
         references {
@@ -18,17 +25,19 @@ export const query = graphql`
           }
         }
       }
+      delka
+      pocetMist
     }
   }
 `;
 
-const MeditationOverview = (props) => {
+const WorkshopAkceOverview = (props) => {
   return (
     <>
-      <Seo title={props.data.contentfulBlogPost.title} />
-      <BlogArticleTemplate data={props} />{' '}
+      <Seo title={props.data.contentfulWorkshopAkce.title} />
+      <WorkshopTemplateAkce data={props} />;
     </>
   );
 };
 
-export default MeditationOverview;
+export default WorkshopAkceOverview;

@@ -1,96 +1,62 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
-
-import NavItem from './components/NavItem';
-
-const SidebarNav = ({ pages }) => {
+import { navigation } from '../../../../../../data/data';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import KontaktDialog from '../../../KontaktDialog';
+const SidebarNav = () => {
   const theme = useTheme();
-  const { mode } = theme.palette;
-
-  const {
-    landings: landingPages,
-    secondary: secondaryPages,
-    company: companyPages,
-    account: accountPages,
-    portfolio: portfolioPages,
-    blog: blogPages,
-  } = pages;
 
   return (
     <Box>
       <Box width={1} paddingX={2} paddingY={1}>
         <Box
           display={'flex'}
-          component="a"
-          href="/"
+          component={Link}
+          to="/"
           title="theFront"
           width={{ xs: 100, md: 120 }}
         >
-          <Box
-            component={'img'}
-            src={
-              mode === 'light'
-                ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-            }
-            height={1}
-            width={1}
+          <StaticImage
+            src="../../../../../../images/logo.png"
+            alt="logo"
+            height={50}
           />
         </Box>
       </Box>
       <Box paddingX={2} paddingY={2}>
-        <Box>
-          <NavItem title={'Landings'} items={landingPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Company'} items={companyPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Pages'} items={secondaryPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Account'} items={accountPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Blog'} items={blogPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Portfolio'} items={portfolioPages} />
-        </Box>
-        <Box marginTop={2}>
-          <Button
-            size={'large'}
-            variant="outlined"
-            fullWidth
-            component="a"
-            href="/docs/introduction"
-          >
-            Documentation
-          </Button>
-        </Box>
+        {navigation.map((item, i) => {
+          return (
+            <div key={i}>
+              <Box marginY={2}>
+                <Box
+                  component={Link}
+                  color={'text.primary'}
+                  partiallyActive={item.link === '/' ? false : true}
+                  activeStyle={{
+                    color: theme.palette.primary.main,
+                    fontWeight: '700',
+                  }}
+                  to={item.link}
+                  sx={{ textDecoration: 'none !important' }}
+                >
+                  <Typography variant="h5">{item.title}</Typography>
+                </Box>
+              </Box>
+              <Divider />
+            </div>
+          );
+        })}
+
         <Box marginTop={1}>
-          <Button
-            size={'large'}
-            variant="contained"
-            color="primary"
-            fullWidth
-            component="a"
-            target="blank"
-            href="https://mui.com/store/items/the-front-landing-page/"
-          >
-            Purchase now
-          </Button>
+          <KontaktDialog />
         </Box>
       </Box>
     </Box>
   );
-};
-
-SidebarNav.propTypes = {
-  pages: PropTypes.object.isRequired,
 };
 
 export default SidebarNav;

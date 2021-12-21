@@ -2,12 +2,12 @@ import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import CardActions from '@mui/material/CardActions';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Dialog from '../../../components/Dialog';
 
 import Container from 'components/Container';
 
@@ -17,11 +17,7 @@ const mock = [
     price: '850',
     features: [
       {
-        title: '1 Klient',
-        isIncluded: true,
-      },
-      {
-        title: '90 min',
+        title: '1 x 90 min',
         isIncluded: true,
       },
       {
@@ -37,25 +33,18 @@ const mock = [
     btnText: 'Objednat se',
   },
   {
-    title: '4x konzultace',
+    title: '4 x konzultace',
     price: '3000',
     features: [
       {
-        title: '1 Klient',
+        title: '4 x 90 min',
         isIncluded: true,
       },
       {
-        title: '4x 90 min',
+        title: 'Osobně nebo Online',
         isIncluded: true,
       },
-      {
-        title: 'Osobně',
-        isIncluded: true,
-      },
-      {
-        title: 'Online',
-        isIncluded: true,
-      },
+
       {
         title: 'Platnost 3 měsíce',
         isIncluded: true,
@@ -83,6 +72,7 @@ const Price = () => {
               flexDirection={'column'}
               border={0}
               paddingY={item.isHighlighted && isMd ? 8 : 2}
+              width={'100%'}
             >
               <CardContent>
                 <Box
@@ -113,7 +103,7 @@ const Price = () => {
                     </Typography>
                   </Box>
                   <Typography variant={'subtitle2'} color={'text.secondary'}>
-                    Per user, per month
+                    1 klient
                   </Typography>
                 </Box>
                 <Grid container spacing={1}>
@@ -134,13 +124,7 @@ const Price = () => {
                   ))}
                 </Grid>
                 <CardActions sx={{ justifyContent: 'center', marginTop: 4 }}>
-                  <Button
-                    fullWidth
-                    size={'large'}
-                    variant={item.isHighlighted ? 'contained' : 'outlined'}
-                  >
-                    {item.btnText}
-                  </Button>
+                  <Dialog />
                 </CardActions>
               </CardContent>
             </Box>

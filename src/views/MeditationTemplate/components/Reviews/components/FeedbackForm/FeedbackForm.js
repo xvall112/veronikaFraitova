@@ -26,7 +26,7 @@ const FeedbackForm = ({ onClose, open }) => {
       <Box paddingY={2} paddingX={4}>
         <Box paddingY={2} display={'flex'} justifyContent={'space-between'}>
           <Typography variant={'h5'} fontWeight={700}>
-            Write a review
+            Napište hodnocení
           </Typography>
           <Box
             component={'svg'}
@@ -52,10 +52,10 @@ const FeedbackForm = ({ onClose, open }) => {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-                  Enter your name
+                  Jméno
                 </Typography>
                 <TextField
-                  label="Name *"
+                  label="Jméno *"
                   variant="outlined"
                   name={'name'}
                   fullWidth
@@ -63,7 +63,7 @@ const FeedbackForm = ({ onClose, open }) => {
               </Grid>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-                  Enter your email
+                  Email
                 </Typography>
                 <TextField
                   label="Email *"
@@ -74,7 +74,7 @@ const FeedbackForm = ({ onClose, open }) => {
               </Grid>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-                  Rating
+                  Hodnocení
                 </Typography>
                 <Box display={'flex'} alignItems={'center'}>
                   {[1, 2, 3, 4, 5].map((r) => (
@@ -101,10 +101,10 @@ const FeedbackForm = ({ onClose, open }) => {
               </Grid>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-                  Write your feedback
+                  Text
                 </Typography>
                 <TextField
-                  label="Feedback *"
+                  label="Text *"
                   variant="outlined"
                   name={'feedback'}
                   fullWidth
@@ -114,7 +114,7 @@ const FeedbackForm = ({ onClose, open }) => {
               </Grid>
               <Grid item container xs={12}>
                 <Button size={'large'} variant={'contained'} type={'submit'}>
-                  Submit
+                  Odeslat
                 </Button>
               </Grid>
             </Grid>
