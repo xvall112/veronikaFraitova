@@ -128,6 +128,8 @@ const SimilarProducts = () => {
               </Box>
               <Box marginTop={2}>
                 <Button
+                  component={Link}
+                  to={`/meditace/${item.slug}`}
                   variant={'contained'}
                   color={'primary'}
                   size={'large'}
