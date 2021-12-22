@@ -11,6 +11,7 @@ exports.handler = async (event) => {
           currency: 'czk',
           product_data: {
             name: name,
+            images: img,
           },
           unit_amount: price * 100,
         },
@@ -21,7 +22,7 @@ exports.handler = async (event) => {
 
     mode: 'payment',
     success_url: 'https://suspicious-jackson-87cd41.netlify.app/thanks',
-    cancel_url: 'https://suspicious-jackson-87cd41.netlify.app/eshop',
+    cancel_url: 'https://suspicious-jackson-87cd41.netlify.app/meditace',
   });
   return {
     statusCode: 200,

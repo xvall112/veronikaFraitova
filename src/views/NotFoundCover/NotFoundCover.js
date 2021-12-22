@@ -2,7 +2,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
+import { Link } from 'gatsby';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -53,12 +53,8 @@ const NotFoundCover = () => {
                     color="text.secondary"
                     align={isMd ? 'left' : 'center'}
                   >
-                    Oops! Looks like you followed a bad link.
+                    Oops! Tady nic nenajdete.
                     <br />
-                    If you think this is a problem with us, please{' '}
-                    <Link href={''} underline="none">
-                      tell us
-                    </Link>
                   </Typography>
                   <Box
                     marginTop={4}
@@ -70,9 +66,9 @@ const NotFoundCover = () => {
                       variant="contained"
                       color="primary"
                       size="large"
-                      href={'/'}
+                      to={'/'}
                     >
-                      Back home
+                      Zpět
                     </Button>
                   </Box>
                 </Box>

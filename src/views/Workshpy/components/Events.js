@@ -78,11 +78,13 @@ const Events = () => {
                     position: 'relative',
                     height: { xs: 240, sm: 340, md: 280 },
                     overflow: 'hidden',
+                    '& img': { WebkitBorderRadius: '10px 10px 0px 0px' },
                   }}
                 >
                   <GatsbyImage
                     image={item.image.gatsbyImageData}
                     alt={item.image.title}
+                    formats={['auto', 'webp', 'avif']}
                   />
                 </CardMedia>
                 <CardContent>

@@ -103,6 +103,7 @@ const Hero = () => {
         justifyContent={'center'}
         xs={12}
         md={6}
+        sx={{ '& img': { WebkitBorderRadius: '50px' } }}
       >
         <StaticImage
           src="../../../images/me.jpeg"

@@ -35,7 +35,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-netlify',
-    /* {
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/logo.png',
@@ -44,14 +44,14 @@ module.exports = {
           // please see the section "Additional Resources" below.
           purpose: 'any maskable',
         },
-        name: 'GatsbyJS',
-        short_name: 'GatsbyJS',
-        start_url: '/',
+        name: 'Veronika Fraitová',
+        short_name: 'VF',
+        start_url: 'www.',
         background_color: '#f7f0eb',
         theme_color: '#a2466c',
-        display: 'standalone',
+        display: 'fullscreen',
       },
-    }, */
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

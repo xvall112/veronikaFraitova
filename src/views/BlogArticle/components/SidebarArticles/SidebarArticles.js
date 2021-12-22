@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-const SidebarArticles = ({ title, data }) => {
+const SidebarArticles = ({ title, data, link }) => {
   const theme = useTheme();
   return (
     <Box
@@ -48,31 +48,36 @@ const SidebarArticles = ({ title, data }) => {
             >
               <Box
                 component={Link}
-                to={`/meditace/${item.slug}`}
+                to={`/${link}/${item.slug}`}
                 sx={{
                   textDecoration: 'none',
+                  color: theme.palette.text.primary,
                 }}
               >
                 <Grid container direction="row" alignItems="center">
                   <Grid item xs={6} md={6}>
-                    <GatsbyImage
-                      image={
-                        title === 'Workshopy'
-                          ? item.image.gatsbyImageData
-                          : item.obrazek.gatsbyImageData
-                      }
-                      alt={
-                        title === 'Workshopy'
-                          ? item.image.title
-                          : item.obrazek.title
-                      }
-                      formats={['auto', 'webp', 'avif']}
-                      style={{
-                        borderRadius: theme.borderRadius,
+                    <Box
+                      sx={{ '& img': { WebkitBorderRadius: theme.spacing(1) } }}
+                    >
+                      <GatsbyImage
+                        image={
+                          title === 'Workshopy'
+                            ? item.image.gatsbyImageData
+                            : item.obrazek.gatsbyImageData
+                        }
+                        alt={
+                          title === 'Workshopy'
+                            ? item.image.title
+                            : item.obrazek.title
+                        }
+                        formats={['auto', 'webp', 'avif']}
+                        style={{
+                          borderRadius: theme.borderRadius,
 
-                        height: '100px',
-                      }}
-                    />
+                          height: '100px',
+                        }}
+                      />
+                    </Box>
                   </Grid>
                   <Grid item xs={6} md={6}>
                     <CardContent
@@ -93,5 +98,6 @@ const SidebarArticles = ({ title, data }) => {
 SidebarArticles.propTypes = {
   title: PropTypes.string,
   data: PropTypes.any,
+  link: PropTypes.string,
 };
 export default SidebarArticles;

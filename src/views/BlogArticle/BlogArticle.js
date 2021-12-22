@@ -53,6 +53,7 @@ const BlogArticle = ({ data }) => {
             <Grid item xs={12} md={4}>
               <Box marginBottom={4}>
                 <SidebarArticles
+                  link={'meditace'}
                   title={'Meditace'}
                   data={dataa.meditace.nodes}
                 />
@@ -62,6 +63,7 @@ const BlogArticle = ({ data }) => {
               </Box> */}
               <Box marginBottom={4}>
                 <SidebarArticles
+                  link={'workshopy'}
                   title={'Workshopy'}
                   data={dataa.workshopy.nodes}
                 />

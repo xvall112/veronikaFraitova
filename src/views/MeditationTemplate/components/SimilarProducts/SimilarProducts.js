@@ -66,6 +66,7 @@ const SimilarProducts = () => {
                     height: 320,
                     overflow: 'hidden',
                     borderRadius: 2,
+                    '& img': { WebkitBorderRadius: theme.spacing(2) },
                   }}
                 >
                   <GatsbyImage

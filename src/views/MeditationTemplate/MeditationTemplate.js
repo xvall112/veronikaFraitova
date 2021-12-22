@@ -48,7 +48,7 @@ const MeditationTemplate = ({ data }) => {
       data: {
         price: cena,
         name: title,
-        img: obrazek.file.url,
+        img: `https:${obrazek.file.url}`,
         url: tlacitkoZSimpleshop,
       },
     })
@@ -76,11 +76,13 @@ const MeditationTemplate = ({ data }) => {
         <Box>
           <Grid container spacing={{ xs: 2, md: 4 }}>
             <Grid item xs={12} md={6}>
-              <GatsbyImage
-                image={obrazek.gatsbyImageData}
-                alt={obrazek.title}
-                style={{ height: '60vh', borderRadius: theme.spacing(2) }}
-              />
+              <Box sx={{ '& img': { WebkitBorderRadius: theme.spacing(2) } }}>
+                <GatsbyImage
+                  image={obrazek.gatsbyImageData}
+                  alt={obrazek.title}
+                  style={{ height: '60vh', borderRadius: theme.spacing(2) }}
+                />
+              </Box>
             </Grid>
             <Grid item xs={12} md={6}>
               <Details

@@ -69,6 +69,7 @@ const Products = () => {
                     overflow: 'hidden',
                     paddingBottom: 0,
                     background: theme.palette.alternate.main,
+                    '& img': { WebkitBorderRadius: '10px 10px 0px 0px' },
                   }}
                 >
                   <Box

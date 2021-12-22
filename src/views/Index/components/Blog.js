@@ -1,4 +1,5 @@
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql, navigate } from 'gatsby';
 import { Link } from 'gatsby';
 import { useTheme } from '@mui/material/styles';
@@ -17,7 +18,7 @@ export const query = graphql`
       nodes {
         image {
           title
-          gatsbyImageData
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           file {
             url
           }
@@ -64,13 +65,22 @@ const Result = () => {
                 sx={{ backgroundImage: 'none' }}
               >
                 <CardMedia
-                  image={item.image.file.url}
                   title={item.image.title}
                   sx={{
                     height: { xs: 300, md: 360 },
                     position: 'relative',
+                    '& img': { WebkitBorderRadius: theme.spacing(2) },
                   }}
                 >
+                  <GatsbyImage
+                    image={item.image.gatsbyImageData}
+                    alt={item.image.title}
+                    style={{
+                      height: '100%',
+                      zIndex: 1,
+                    }}
+                    formats={['auto', 'webp', 'avif']}
+                  />
                   <Box
                     component={'svg'}
                     viewBox="0 0 2880 480"
@@ -79,10 +89,12 @@ const Result = () => {
                     sx={{
                       position: 'absolute',
                       bottom: 0,
+                      left: 0,
                       color: theme.palette.background.paper,
                       transform: 'scale(2)',
                       height: 'auto',
                       width: 1,
+                      zIndex: 2,
                       transformOrigin: 'top center',
                     }}
                   >
@@ -94,7 +106,11 @@ const Result = () => {
                     />
                   </Box>
                 </CardMedia>
-                <Box component={CardContent} position={'relative'}>
+                <Box
+                  component={CardContent}
+                  position={'relative'}
+                  sx={{ zIndex: 3 }}
+                >
                   <Typography variant={'h6'} gutterBottom>
                     {item.title}
                   </Typography>

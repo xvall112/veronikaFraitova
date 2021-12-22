@@ -87,6 +87,7 @@ const SimilarStories = () => {
                   sx={{
                     height: { xs: 300, md: 360 },
                     position: 'relative',
+                    '& img': { WebkitBorderRadius: '10px 10px 0px 0px' },
                   }}
                 >
                   <GatsbyImage

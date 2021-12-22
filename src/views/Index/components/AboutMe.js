@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { colors } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import { alpha } from '@mui/material/styles';
 import { LazyLoadImage } from 'react-lazy-load-image-component';

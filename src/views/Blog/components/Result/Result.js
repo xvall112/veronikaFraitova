@@ -67,6 +67,7 @@ const Result = () => {
                 <CardMedia
                   title={item.title}
                   sx={{
+                    '& img': { WebkitBorderRadius: theme.spacing(2) },
                     height: { xs: 300, md: 360 },
                     position: 'relative',
                   }}
