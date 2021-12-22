@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
+import Tab from './components/Tab';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { useTheme } from '@mui/material/styles';
-import { Headline, Details, Reviews, SimilarProducts } from './components';
+import { Headline, Details, SimilarProducts } from './components';
 import Main from '../../layouts/Main';
 import Container from 'components/Container';
 import axios from 'axios';
@@ -13,15 +14,6 @@ import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe('pk_live_CJYX4qqfi2dnL2pfOsugSU5s002fE7HyUV');
 
-const mock = {
-  images: ['https://assets.maccarianagency.com/backgrounds/img57.jpg'],
-  title: 'Sport shoes',
-  description:
-    'The finishes of this product are very realistic with a double stitching on the neck, sleeves and bottom, and with a banded neck cleaning that allows optimal support in all situations.',
-  price: '$59.99',
-  reviewScore: 4,
-  reviewCount: 519,
-};
 const MeditationTemplate = ({ data }) => {
   const theme = useTheme();
   const {
@@ -30,7 +22,7 @@ const MeditationTemplate = ({ data }) => {
     title,
     tlacitkoZSimpleshop,
     kratkyPopis,
-    popisDlouhyText,
+    popisDlouhytext,
     recenzeHodnoceni,
   } = data.data.contentfulEshop;
   const [loading, setLoading] = useState(false);
@@ -102,11 +94,8 @@ const MeditationTemplate = ({ data }) => {
           </Grid>
         </Box>
       </Container>
-      <Container paddingY={4} id="reviews">
-        <Divider />
-      </Container>
       <Container>
-        <Reviews reviews={recenzeHodnoceni} />
+        <Tab reviews={recenzeHodnoceni} describe={popisDlouhytext} />
       </Container>
       <Container paddingY={4}>
         <Divider />

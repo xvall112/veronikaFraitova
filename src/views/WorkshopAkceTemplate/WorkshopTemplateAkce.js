@@ -7,7 +7,6 @@ import Hero from './components/Hero';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -17,7 +16,6 @@ import Dialog from '../../components/Dialog';
 const WorkshopTemplateAkce = ({ data }) => {
   const theme = useTheme();
   const {
-    body,
     misto,
     title,
     popis,
@@ -32,8 +30,6 @@ const WorkshopTemplateAkce = ({ data }) => {
         <Grid container direction="row" spacing={4}>
           <Grid item xs={12} md={8}>
             <ContentfulRitchText body={popis} />
-            <Divider />
-            <ContentfulRitchText body={body} />
           </Grid>
           <Grid item xs={12} md={4}>
             <Box

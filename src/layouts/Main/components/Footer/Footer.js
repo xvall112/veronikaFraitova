@@ -3,14 +3,12 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import Newsletter from './Newsletter';
 
 const Footer = () => {
   const theme = useTheme();
-  const { mode } = theme.palette;
 
   return (
     <Grid container spacing={2}>
@@ -29,16 +27,29 @@ const Footer = () => {
             display={'flex'}
             component={Link}
             to="/"
-            title="theFront"
-            width={40}
+            title="Veronika Fraitová | OpenYourEyes"
+            alignItems={'center'}
+            color={theme.palette.text.primary}
           >
             <StaticImage
               src="../../../../images/logo.png"
               alt="logo"
-              style={{ height: '100%' }}
+              height={50}
+              width={50}
+              placeholder="blurred"
+              layout="constrained"
             />
+            <Typography pl={1}>Veronika Fraitová | OpenYourEyes</Typography>
           </Box>
-          <Box display="flex" flexWrap={'wrap'} alignItems={'center'}></Box>
+          <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
+            <Box
+              component={Link}
+              to="/obchodniPodminky"
+              color={theme.palette.text.secondary}
+            >
+              Obchodní podmínky
+            </Box>
+          </Box>
         </Box>
       </Grid>
       <Grid item xs={12}>

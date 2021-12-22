@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Slider from 'react-slick';
 import { alpha, useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -142,8 +141,8 @@ const Reviews = () => {
                     alt="logo"
                     style={{
                       height: '100%',
-                      width: '100%',
-                      maxWidth: 400,
+
+                      maxWidth: 200,
                       borderRadius: 2,
                       margin: { xs: '0 auto', md: 'none' },
                     }}

@@ -11,10 +11,6 @@ export const query = graphql`
       misto
       popis {
         raw
-      }
-      cena
-      body {
-        raw
         references {
           ... on ContentfulAsset {
             contentful_id
@@ -25,6 +21,7 @@ export const query = graphql`
           }
         }
       }
+      cena
       delka
       pocetMist
     }

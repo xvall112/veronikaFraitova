@@ -8,51 +8,6 @@ import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import { FeedbackForm } from './components';
 
-const mock = [
-  {
-    score: 4,
-    title: 'Love this product!',
-    feedback:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    subtitle: 'by Christopher, July 15h 2020',
-  },
-  {
-    score: 5,
-    title: 'Great price & quality',
-    feedback:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    subtitle: 'by Sarah, July 14h 2020',
-  },
-  {
-    score: 5,
-    title: 'Highly recommended',
-    feedback:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    subtitle: 'by Toby, July 13h 2020',
-  },
-  {
-    score: 5,
-    title: 'Best watch I have ever bought',
-    feedback:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    subtitle: 'by Dakota, July 12h 2020',
-  },
-  {
-    score: 5,
-    title: 'First class customer service',
-    feedback:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    subtitle: 'by Pheobe, July 11th 2020',
-  },
-  {
-    score: 4,
-    title: 'Love my new watch',
-    feedback:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    subtitle: 'by George, July 10th 2020',
-  },
-];
-
 const Reviews = ({ reviews }) => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -61,11 +16,11 @@ const Reviews = ({ reviews }) => {
     <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
       <Grid container spacing={4}>
         <Grid item xs={12}>
+          <Typography variant={'h5'} fontWeight={700}>
+            Recenze
+          </Typography>
           {reviews ? (
             <>
-              <Typography variant={'h5'} fontWeight={700}>
-                Recenze
-              </Typography>
               <Box display={'flex'} alignItems={'center'} marginY={2}>
                 <Typography variant={'h2'} fontWeight={700} marginRight={1}>
                   5.0

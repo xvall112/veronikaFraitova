@@ -50,6 +50,7 @@ const Faq = () => {
         component={Card}
         bgcolor={'transparent'}
         borderRadius={theme.borderRadius}
+        variant="outlined"
         sx={{
           cursor: 'pointer',
           '&:hover': {

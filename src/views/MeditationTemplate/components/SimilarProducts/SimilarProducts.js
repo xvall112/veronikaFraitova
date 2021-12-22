@@ -20,6 +20,9 @@ export const query = graphql`
         }
         slug
         title
+        recenzeHodnoceni {
+          jmeno
+        }
       }
     }
   }
@@ -122,7 +125,9 @@ const SimilarProducts = () => {
                       color={'text.secondary'}
                       marginLeft={0.5}
                     >
-                      (20)
+                      (
+                      {item.recenzeHodnoceni ? item.recenzeHodnoceni.length : 0}
+                      )
                     </Typography>
                   </Box>
                 </Box>

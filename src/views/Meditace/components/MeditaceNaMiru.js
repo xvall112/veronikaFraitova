@@ -41,7 +41,7 @@ const MeditaceNaMiru = () => {
           </Box>
           <Box marginBottom={3}>
             <Typography variant="h6" component="p" color="text.secondary">
-              Nahraji Vám meditaci přímo na Váš problém
+              Nahraji Vám meditaci přímo na Váše přání
             </Typography>
             <Typography
               variant="h3"
