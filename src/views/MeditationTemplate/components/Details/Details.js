@@ -12,6 +12,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import { contact } from '../../../../data/data';
+import DialogDownload from '../DialogDownload';
 
 const mock = [
   {
@@ -59,7 +60,16 @@ const mock = [
   },
 ];
 
-const Details = ({ title, description, price, reviewCount, reviewScore }) => {
+const Details = ({
+  title,
+  description,
+  price,
+  reviewCount,
+  handleClick,
+  loading,
+  reviewScore,
+  link,
+}) => {
   const theme = useTheme();
   return (
     <Box>
@@ -115,16 +125,19 @@ const Details = ({ title, description, price, reviewCount, reviewScore }) => {
         </Typography>
       </Box>
       <Box marginTop={4}>
-        <Button
-          component={Link}
-          href={'/demos/ecommerce/cart'}
-          variant={'contained'}
-          color={'primary'}
-          size={'large'}
-          fullWidth
-        >
-          {price === 0 ? 'Stáhnout' : 'Koupit'}
-        </Button>
+        {price === 0 ? (
+          <DialogDownload link={link} />
+        ) : (
+          <Button
+            variant={'contained'}
+            color={'primary'}
+            size={'large'}
+            fullWidth
+            onClick={handleClick}
+          >
+            Koupit
+          </Button>
+        )}
       </Box>
 
       <Divider sx={{ marginTop: 4 }} />
@@ -220,6 +233,9 @@ Details.propTypes = {
   price: PropTypes.any,
   reviewCount: PropTypes.number.isRequired,
   reviewScore: PropTypes.number.isRequired,
+  handleClick: PropTypes.any,
+  loading: PropTypes.any,
+  link: PropTypes.string,
 };
 
 export default Details;

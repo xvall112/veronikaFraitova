@@ -38,7 +38,9 @@
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.1",
     "@mui/material": "^5.0.2",
+    "@stripe/stripe-js": "^1.22.0",
     "aos": "^2.3.4",
+    "axios": "^0.24.0",
     "card-validator": "^8.1.1",
     "formik": "^2.2.6",
     "gatsby": "^3.13.0",
@@ -53,6 +55,7 @@
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "jarallax": "^1.12.7",
+    "netlify-lambda": "^2.0.15",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-countup": "^4.3.3",
@@ -65,7 +68,8 @@
     "react-typed": "^1.2.0",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
-    "yup": "^0.32.9"
+    "stripe": "^8.194.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.14.0",

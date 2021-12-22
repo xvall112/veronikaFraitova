@@ -5,8 +5,12 @@ import Seo from '../../components/Seo';
 export const query = graphql`
   query($slug: String!) {
     contentfulEshop(slug: { eq: $slug }) {
+      tlacitkoZSimpleshop
       cena
       obrazek {
+        file {
+          url
+        }
         gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, quality: 30)
         title
       }

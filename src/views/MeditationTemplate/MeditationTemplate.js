@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
@@ -6,9 +6,12 @@ import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { useTheme } from '@mui/material/styles';
 import { Headline, Details, Reviews, SimilarProducts } from './components';
-
 import Main from '../../layouts/Main';
 import Container from 'components/Container';
+import axios from 'axios';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe('pk_live_CJYX4qqfi2dnL2pfOsugSU5s002fE7HyUV');
 
 const mock = {
   images: ['https://assets.maccarianagency.com/backgrounds/img57.jpg'],
@@ -21,7 +24,46 @@ const mock = {
 };
 const MeditationTemplate = ({ data }) => {
   const theme = useTheme();
-  const { cena, obrazek, title } = data.data.contentfulEshop;
+  const {
+    cena,
+    obrazek,
+    title,
+    tlacitkoZSimpleshop,
+  } = data.data.contentfulEshop;
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = async () => {
+    setLoading(true);
+    // Get Stripe.js instance
+    const stripe = await stripePromise;
+
+    // Call your backend to create the Checkout Session
+    const response = await axios({
+      method: 'post',
+      url: 'https://localhost:8888/.netlify/functions/stripe',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        price: cena,
+        name: title,
+        img: obrazek.file.url,
+        url: tlacitkoZSimpleshop,
+      },
+    })
+      .then((res) => res.data)
+      .catch((error) => console.log(error));
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: response.id,
+    });
+
+    if (error) {
+      console.warn('Error:', error);
+      setLoading(false);
+    }
+  };
   return (
     <Main>
       <Box bgcolor={'alternate.main'}>
@@ -46,6 +88,9 @@ const MeditationTemplate = ({ data }) => {
                 price={cena}
                 reviewCount={mock.reviewCount}
                 reviewScore={5}
+                handleClick={handleClick}
+                loading={loading}
+                link={tlacitkoZSimpleshop}
               />
             </Grid>
           </Grid>
