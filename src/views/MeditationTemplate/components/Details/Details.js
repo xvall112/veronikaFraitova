@@ -13,6 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import { contact } from '../../../../data/data';
 import DialogDownload from '../DialogDownload';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const mock = [
   {
@@ -134,8 +135,9 @@ const Details = ({
             size={'large'}
             fullWidth
             onClick={handleClick}
+            disabled={loading}
           >
-            Koupit
+            {loading ? <CircularProgress /> : 'Koupit'}
           </Button>
         )}
       </Box>
