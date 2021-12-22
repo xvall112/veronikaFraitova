@@ -29,6 +29,9 @@ const MeditationTemplate = ({ data }) => {
     obrazek,
     title,
     tlacitkoZSimpleshop,
+    kratkyPopis,
+    popisDlouhyText,
+    recenzeHodnoceni,
   } = data.data.contentfulEshop;
   const [loading, setLoading] = useState(false);
 
@@ -87,9 +90,9 @@ const MeditationTemplate = ({ data }) => {
             <Grid item xs={12} md={6}>
               <Details
                 title={title}
-                description={mock.description}
+                description={kratkyPopis}
                 price={cena}
-                reviewCount={mock.reviewCount}
+                reviewCount={recenzeHodnoceni ? recenzeHodnoceni.length : 0}
                 reviewScore={5}
                 handleClick={handleClick}
                 loading={loading}
@@ -103,7 +106,7 @@ const MeditationTemplate = ({ data }) => {
         <Divider />
       </Container>
       <Container>
-        <Reviews />
+        <Reviews reviews={recenzeHodnoceni} />
       </Container>
       <Container paddingY={4}>
         <Divider />

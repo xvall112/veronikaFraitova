@@ -238,6 +238,7 @@ Details.propTypes = {
   handleClick: PropTypes.any,
   loading: PropTypes.any,
   link: PropTypes.string,
+  reviews: PropTypes.any,
 };
 
 export default Details;

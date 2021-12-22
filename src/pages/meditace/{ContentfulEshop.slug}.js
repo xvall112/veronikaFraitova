@@ -5,19 +5,22 @@ import Seo from '../../components/Seo';
 export const query = graphql`
   query($slug: String!) {
     contentfulEshop(slug: { eq: $slug }) {
-      tlacitkoZSimpleshop
       cena
       obrazek {
         file {
           url
         }
-        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, quality: 30)
+        gatsbyImageData(layout: CONSTRAINED, quality: 30, placeholder: BLURRED)
         title
       }
+      kratkyPopis
       slug
       title
-      popisUvod {
-        raw
+      tlacitkoZSimpleshop
+      recenzeHodnoceni {
+        recenze
+        jmeno
+        hodnoceni
       }
       popisDlouhytext {
         raw

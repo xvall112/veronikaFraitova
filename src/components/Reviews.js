@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Slider from 'react-slick';
 import { alpha, useTheme } from '@mui/material/styles';
@@ -136,10 +137,11 @@ const Reviews = () => {
                     background: 'transparent',
                   }}
                 >
-                  <CardMedia
-                    image="https://assets.maccarianagency.com/avatars/img1.jpg"
-                    sx={{
-                      height: 300,
+                  <StaticImage
+                    src="../images/logo.png"
+                    alt="logo"
+                    style={{
+                      height: '100%',
                       width: '100%',
                       maxWidth: 400,
                       borderRadius: 2,
@@ -179,6 +181,7 @@ const Reviews = () => {
                           }}
                           secondaryTypographyProps={{
                             variant: 'subtitle1',
+                            color: theme.palette.primary.main,
                             sx: { textAlign: { xs: 'center', md: 'left' } },
                           }}
                         />

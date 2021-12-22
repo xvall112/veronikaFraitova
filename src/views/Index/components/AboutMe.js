@@ -330,10 +330,10 @@ const AboutMe = () => {
                 <Box
                   display={'block'}
                   width={1}
-                  sx={{
+                  /* sx={{
                     transform:
                       index % 2 === 1 ? { md: 'translateY(80px)' } : 'none',
-                  }}
+                  }} */
                 >
                   <Box
                     component={Card}
