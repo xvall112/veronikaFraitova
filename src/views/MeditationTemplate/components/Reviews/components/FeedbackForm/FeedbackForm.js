@@ -97,9 +97,11 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         <Box paddingY={2}>
           <form
             onSubmit={formik.handleSubmit}
-            data-netlify={true}
+            method="POST"
+            data-netlify="true"
             name="recenze"
           >
+            <input type="hidden" name="form-name" value="recenze" />
             <div>
               <Grid container spacing={2}>
                 <Grid item xs={12}>

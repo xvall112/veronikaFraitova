@@ -10,12 +10,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import cogoToast from 'cogo-toast';
 
-const encode = (data) => {
+function encode(data) {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
-};
-
+}
 const validationSchema = yup.object({
   name: yup.string('Jmeno').required('Vyplňte jméno'),
   email: yup
@@ -112,7 +111,9 @@ const KontaktForm = ({ buttonText, predmet }) => {
               onSubmit={formik.handleSubmit}
               data-netlify="true"
               name="KontaktForm"
+              method="POST"
             >
+              <input type="hidden" name="form-name" value="KontaktForm" />
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
