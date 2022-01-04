@@ -110,11 +110,9 @@ const KontaktForm = ({ buttonText, predmet }) => {
           <Box paddingY={2}>
             <form
               onSubmit={formik.handleSubmit}
-              data-netlify={true}
+              data-netlify="true"
               name="KontaktForm"
-              method="post"
             >
-              <input type="hidden" name="form-name" value="KontaktForm" />
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
