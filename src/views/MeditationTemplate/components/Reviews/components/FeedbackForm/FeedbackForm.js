@@ -100,7 +100,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
             name="Recenze"
             method="post"
           >
-            <input type="hidden" name="Recenze" value="recenze" />
+            <input type="hidden" name="Recenze" value="Recenze" />
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
