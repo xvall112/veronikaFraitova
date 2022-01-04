@@ -41,7 +41,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
       email: '',
       phone: '',
       zprava: '',
-      predmet: 'predmet',
+      /*  predmet: predmet, */
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -114,11 +114,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
               name="KontaktniFormular"
               method="post"
             >
-              <input
-                type="hidden"
-                name="KontaktniFormular"
-                value="KontaktniFormular"
-              />
+              <input type="hidden" name="form-name" value="KontaktniFormular" />
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>

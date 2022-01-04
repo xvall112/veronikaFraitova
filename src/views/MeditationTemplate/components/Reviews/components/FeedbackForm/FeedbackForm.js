@@ -24,6 +24,7 @@ const validationSchema = yup.object({
     .email('Napište email ve správném tvaru')
     .required('Vyplňte email'),
   zprava: yup.string('Napiště recenzi').required('Napiš recenzi'),
+  currentScore: yup.number(),
 });
 
 const FeedbackForm = ({ onClose, open, meditaceName }) => {
@@ -36,7 +37,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
       email: '',
       currentScore: currentScore,
       zprava: '',
-      meditace: 'meditaceName',
+      /* meditace: meditaceName, */
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -100,7 +101,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
             name="Recenze"
             method="post"
           >
-            <input type="hidden" name="Recenze" value="Recenze" />
+            <input type="hidden" name="form-name" value="Recenze" />
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
