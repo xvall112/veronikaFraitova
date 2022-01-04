@@ -110,10 +110,9 @@ const KontaktForm = ({ buttonText, predmet }) => {
           <Box paddingY={2}>
             <form
               onSubmit={formik.handleSubmit}
+              data-netlify="true"
               name="KontaktniFormular"
               method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
             >
               <input type="hidden" name="KontaktniFormular" value="contact" />
               <Grid container spacing={2}>
