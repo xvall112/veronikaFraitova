@@ -41,7 +41,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
       email: '',
       phone: '',
       zprava: '',
-      /*  predmet: predmet, */
+      predmet: predmet,
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -49,7 +49,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
-          'form-name': 'KontaktniFormular',
+          'form-name': 'KontaktForm',
           ...values,
         }),
       })
@@ -111,10 +111,10 @@ const KontaktForm = ({ buttonText, predmet }) => {
             <form
               onSubmit={formik.handleSubmit}
               data-netlify="true"
-              name="KontaktniFormular"
+              name="KontaktForm"
               method="post"
             >
-              <input type="hidden" name="form-name" value="KontaktniFormular" />
+              <input type="hidden" name="form-name" value="KontaktForm" />
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
