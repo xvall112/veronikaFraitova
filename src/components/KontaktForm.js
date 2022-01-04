@@ -158,6 +158,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
                     label="Mobil *"
                     variant="outlined"
                     fullWidth
+                    type="tel"
                     id="phone"
                     name="phone"
                     value={formik.values.phone}
@@ -174,6 +175,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
                     label="Text *"
                     variant="outlined"
                     fullWidth
+                    type="text"
                     id="zprava"
                     name="zprava"
                     value={formik.values.zprava}

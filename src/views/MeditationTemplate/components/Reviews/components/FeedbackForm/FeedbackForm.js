@@ -171,6 +171,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
                 <TextField
                   label="Text *"
                   variant="outlined"
+                  type="text"
                   fullWidth
                   multiline
                   rows={5}
