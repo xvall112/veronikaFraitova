@@ -110,7 +110,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
           <Box paddingY={2}>
             <form
               onSubmit={formik.handleSubmit}
-              name="kontakt"
+              name="KontaktniFormular"
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"

@@ -65,7 +65,7 @@ export default function BasicTabs({ reviews, describe, meditaceName }) {
         <Describe describe={describe} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Reviews reviews={reviews} />
+        <Reviews reviews={reviews} meditaceName={meditaceName} />
       </TabPanel>
     </Box>
   );
