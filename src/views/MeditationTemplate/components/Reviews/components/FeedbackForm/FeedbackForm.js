@@ -23,7 +23,7 @@ const validationSchema = yup.object({
     .string('Email')
     .email('Napište email ve správném tvaru')
     .required('Vyplňte email'),
-  zprava: yup.string('Napiště zprávu').required('Napiš zprávu'),
+  zprava: yup.string('Napiště recenzi').required('Napiš recenzi'),
 });
 
 const FeedbackForm = ({ onClose, open, meditaceName }) => {
@@ -95,6 +95,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         </Box>
         <Box paddingY={2}>
           <form
+            netlify
             name="recenze"
             method="POST"
             data-netlify="true"

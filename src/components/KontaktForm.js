@@ -109,6 +109,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
           </Box>
           <Box paddingY={2}>
             <form
+              netlify
               name="contact"
               method="POST"
               data-netlify="true"
