@@ -18,7 +18,7 @@ const MeditaceView = () => {
         </Container>
         <Container>
           <MeditaceNaMiru />
-          <Box paddingTop={4}>
+          <Box paddingTop={10}>
             <Products />
           </Box>
         </Container>

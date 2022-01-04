@@ -95,7 +95,11 @@ const MeditationTemplate = ({ data }) => {
         </Box>
       </Container>
       <Container>
-        <Tab reviews={recenzeHodnoceni} describe={popisDlouhytext} />
+        <Tab
+          reviews={recenzeHodnoceni}
+          describe={popisDlouhytext}
+          meditaceName={title}
+        />
       </Container>
       <Container paddingY={4}>
         <Divider />

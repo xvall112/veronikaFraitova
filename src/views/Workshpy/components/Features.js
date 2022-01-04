@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -78,9 +79,6 @@ const Features = () => {
         <Grid item xs={12} md={6}>
           <Box height={1} width={1} display={'flex'} flexDirection={'column'}>
             <Box
-              component={'img'}
-              src={'https://assets.maccarianagency.com/backgrounds/img1.jpg'}
-              alt="..."
               width={160}
               height={160}
               marginLeft={'calc(60% - 160px)'}
@@ -93,13 +91,17 @@ const Features = () => {
                 filter:
                   theme.palette.mode === 'dark' ? 'brightness(0.5)' : 'none',
               }}
-            />
+            >
+              <StaticImage
+                src="../../../images/workshopy2.jpg"
+                alt="workshop"
+                style={{ borderRadius: '100%', webkitBorderRadius: '100%' }}
+              />
+            </Box>
+
             <Box
-              component={'img'}
               width={200}
               height={200}
-              src={'https://assets.maccarianagency.com/backgrounds/img2.jpg'}
-              alt="..."
               marginTop={'-8%'}
               zIndex={2}
               borderRadius={'100%'}
@@ -110,13 +112,16 @@ const Features = () => {
                 filter:
                   theme.palette.mode === 'dark' ? 'brightness(0.5)' : 'none',
               }}
-            />
+            >
+              <StaticImage
+                src="../../../images/workshopy.jpg"
+                alt="workshop"
+                style={{ borderRadius: '100%', webkitBorderRadius: '100%' }}
+              />
+            </Box>
             <Box
-              component={'img'}
               width={300}
               height={300}
-              src={'https://assets.maccarianagency.com/backgrounds/img4.jpg'}
-              alt="..."
               marginTop={'-20%'}
               marginLeft={'calc(100% - 300px)'}
               zIndex={1}
@@ -128,7 +133,13 @@ const Features = () => {
                 filter:
                   theme.palette.mode === 'dark' ? 'brightness(0.5)' : 'none',
               }}
-            />
+            >
+              <StaticImage
+                src="../../../images/workshopy3.jpg"
+                alt="workshop"
+                style={{ borderRadius: '100%', webkitBorderRadius: '100%' }}
+              />
+            </Box>
           </Box>
         </Grid>
       </Grid>

@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import { FeedbackForm } from './components';
 
-const Reviews = ({ reviews }) => {
+const Reviews = ({ reviews, meditaceName }) => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
@@ -102,12 +102,17 @@ const Reviews = ({ reviews }) => {
             </Grid>
           ))}
       </Grid>
-      <FeedbackForm open={open} onClose={() => setOpen(false)} />
+      <FeedbackForm
+        open={open}
+        onClose={() => setOpen(false)}
+        meditaceName={meditaceName}
+      />
     </Box>
   );
 };
 
 Reviews.propTypes = {
   reviews: PropTypes.any,
+  meditaceName: PropTypes.string,
 };
 export default Reviews;

@@ -37,6 +37,14 @@ const mock = {
         title: 'Probuzení ženství',
         updated: 'online kurz',
       },
+      {
+        title: 'Sebeláska',
+        updated: 'online kurz',
+      },
+      {
+        title: 'Atraktivní a zářivá žena',
+        updated: 'online kurz',
+      },
     ],
   },
 };

@@ -59,10 +59,19 @@ const Result = () => {
                 component={Card}
                 width={1}
                 height={1}
-                boxShadow={2}
+                boxShadow={4}
                 display={'flex'}
                 flexDirection={'column'}
-                sx={{ backgroundImage: 'none' }}
+                sx={{
+                  transition:
+                    'box-shadow .25s ease,transform .25s ease,-webkit-transform .25s ease',
+                  '&:hover': {
+                    boxShadow: `0 1.5rem 2.5rem ${theme.palette.primary.light},0 .3rem 0.5rem -.50rem rgba(250, 229, 150,.1) !important`,
+                    transform: 'translate3d(0,-5px,0)',
+                  },
+                  backgroundImage: 'none',
+                  boxShadow: `0 2px 10px 0 ${theme.palette.primary.light}`,
+                }}
               >
                 <CardMedia
                   title={item.title}

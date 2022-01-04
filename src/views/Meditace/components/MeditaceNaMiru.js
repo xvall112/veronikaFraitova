@@ -1,5 +1,6 @@
 import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { navigate } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
@@ -48,7 +49,7 @@ const MeditaceNaMiru = () => {
               color="text.primary"
               sx={{ fontWeight: 700, color: colors.red[400] }}
             >
-              800 Kč
+              1500 Kč
             </Typography>
             <Box
               component={Button}
@@ -57,6 +58,7 @@ const MeditaceNaMiru = () => {
               size="large"
               height={54}
               marginTop={2}
+              onClick={() => navigate('/meditace/meditace-na-miru')}
             >
               Chci se dozvědět více
             </Box>
@@ -81,14 +83,10 @@ const MeditaceNaMiru = () => {
         xs={12}
         md={6}
       >
-        <Box
-          component={LazyLoadImage}
-          height={1}
-          width={1}
-          src={'https://assets.maccarianagency.com/backgrounds/img34.png'}
-          alt="..."
-          effect="blur"
-          maxWidth={600}
+        <StaticImage
+          src="../../../images/meditace.png"
+          alt="workshop"
+          style={{ height: '100%' }}
         />
       </Grid>
     </Grid>

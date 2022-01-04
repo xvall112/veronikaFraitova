@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -26,9 +27,10 @@ const FeaturedProducts = () => {
               color="text.primary"
               sx={{ color: '#222B45' }}
             >
-              Připravila jsem pro tebe užasný nový kurz Probuzení ženství.
-              Uvnitř kurzu tě čeká spoustu zajímavých informací, meditací,
-              aktivních meditací, cvičení, tanec...
+              Připravila jsem pro tebe užasné nové online kurzy Probuzení
+              ženství, Sebeláska a Atraktivní zářivá žena. Uvnitř kurzu tě čeká
+              spoustu zajímavých informací, meditací, aktivních meditací,
+              cvičení, tanec...
             </Typography>
           </Box>
           <Box
@@ -42,18 +44,25 @@ const FeaturedProducts = () => {
           </Box>
         </Grid>
       </Grid>
+
       <Box
-        component={'img'}
-        src={'https://assets.maccarianagency.com/backgrounds/img33.png'}
         sx={{
-          maxWidth: 390,
+          maxWidth: 500,
           height: 'auto',
           position: 'absolute',
-          bottom: '-164px',
+          bottom: '-160px',
           right: 0,
           display: { xs: 'none', sm: 'block' },
         }}
-      />
+      >
+        <StaticImage
+          src="../../../images/probuzeniZenstvi2.png"
+          alt="kurz probuzeni zenstvi"
+          style={{
+            height: '100%',
+          }}
+        />
+      </Box>
     </Box>
   );
 };

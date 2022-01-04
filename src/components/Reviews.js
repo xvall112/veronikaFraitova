@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import { alpha, useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import ListItem from '@mui/material/ListItem';
@@ -96,102 +97,108 @@ const Reviews = () => {
             Co o mně říkají:
           </Typography>
         </Box>
-        <Box
-          sx={{
-            height: { xs: 'auto', md: 1 },
-            '& .slick-slide img': {
-              objectFit: 'cover',
-            },
-            '& .slick-list, & .slick-slider, & .slick-track, & .slick-slide > div': {
-              height: { xs: 'auto', md: 1 },
-            },
-            '& .slick-prev, & .slick-next': {
-              zIndex: 2,
-              bottom: 0,
-              top: '100%',
-              left: '100%',
-              right: 0,
-              transform: `translate(-100%, calc(-100% - ${theme.spacing(2)}))`,
-              marginLeft: theme.spacing(-2),
-              width: 32,
-              height: 32,
-              '&:before': {
-                fontSize: 32,
-                color: 'primary.main',
-              },
-            },
-            '& .slick-prev': {
-              marginLeft: theme.spacing(-7),
-            },
-          }}
-        >
-          <Slider {...sliderOpts}>
-            {data.allContentfulRecenze.nodes.map((item, i) => (
-              <Box key={i}>
-                <Card
-                  sx={{
-                    display: 'flex',
-                    flexDirection: { xs: 'column', md: 'row' },
-                    boxShadow: 0,
-                    background: 'transparent',
-                  }}
-                >
-                  <StaticImage
-                    src="../images/logo.png"
-                    alt="logo"
-                    style={{
-                      height: '100%',
-
-                      maxWidth: 200,
-                      borderRadius: 2,
-                      margin: { xs: '0 auto', md: 'none' },
-                    }}
-                  />
-                  <CardContent
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      marginLeft: { sx: 0, md: 2 },
-                    }}
-                  >
-                    <Box>
-                      <Typography
-                        color="text.primary"
-                        variant={'h6'}
+        <Grid container direction="row">
+          <Grid item xs={12} md={2}>
+            <StaticImage
+              src="../images/logo.png"
+              alt="logo"
+              style={{
+                width: '100%',
+                borderRadius: 2,
+                margin: { xs: '0 auto', md: 'none' },
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <Box
+              sx={{
+                height: { xs: 'auto', md: 1 },
+                '& .slick-slide img': {
+                  objectFit: 'cover',
+                },
+                '& .slick-list, & .slick-slider, & .slick-track, & .slick-slide > div': {
+                  height: { xs: 'auto', md: 1 },
+                },
+                '& .slick-prev, & .slick-next': {
+                  zIndex: 2,
+                  bottom: 0,
+                  top: '100%',
+                  left: '100%',
+                  right: 0,
+                  transform: `translate(-100%, calc(-100% - ${theme.spacing(
+                    2,
+                  )}))`,
+                  marginLeft: theme.spacing(-2),
+                  width: 32,
+                  height: 32,
+                  '&:before': {
+                    fontSize: 32,
+                    color: 'primary.main',
+                  },
+                },
+                '& .slick-prev': {
+                  marginLeft: theme.spacing(-7),
+                },
+              }}
+            >
+              <Slider {...sliderOpts}>
+                {data.allContentfulRecenze.nodes.map((item, i) => (
+                  <Box key={i}>
+                    <Card
+                      sx={{
+                        display: 'flex',
+                        flexDirection: { xs: 'column', md: 'row' },
+                        boxShadow: 0,
+                        background: 'transparent',
+                      }}
+                    >
+                      <CardContent
                         sx={{
-                          textAlign: { xs: 'center', md: 'left' },
+                          display: 'flex',
+                          alignItems: 'center',
+                          marginLeft: { sx: 0, md: 2 },
                         }}
                       >
-                        {item.text.text}
-                      </Typography>
-                      <ListItem
-                        component="div"
-                        disableGutters
-                        sx={{ padding: 0, marginTop: 2 }}
-                      >
-                        <ListItemText
-                          sx={{ margin: 0 }}
-                          primary={item.jmeno}
-                          secondary={item.oblast}
-                          primaryTypographyProps={{
-                            variant: 'h6',
-                            fontWeight: 'bold',
-                            sx: { textAlign: { xs: 'center', md: 'left' } },
-                          }}
-                          secondaryTypographyProps={{
-                            variant: 'subtitle1',
-                            color: theme.palette.primary.main,
-                            sx: { textAlign: { xs: 'center', md: 'left' } },
-                          }}
-                        />
-                      </ListItem>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Box>
-            ))}
-          </Slider>
-        </Box>
+                        <Box>
+                          <Typography
+                            color="text.primary"
+                            variant={'h6'}
+                            sx={{
+                              textAlign: { xs: 'center', md: 'left' },
+                            }}
+                          >
+                            {item.text.text}
+                          </Typography>
+                          <ListItem
+                            component="div"
+                            disableGutters
+                            sx={{ padding: 0, marginTop: 2 }}
+                          >
+                            <ListItemText
+                              sx={{ margin: 0 }}
+                              primary={item.jmeno}
+                              secondary={item.oblast}
+                              primaryTypographyProps={{
+                                variant: 'h6',
+                                fontWeight: 'bold',
+                                sx: { textAlign: { xs: 'center', md: 'left' } },
+                              }}
+                              secondaryTypographyProps={{
+                                variant: 'subtitle1',
+                                color: theme.palette.primary.main,
+                                sx: { textAlign: { xs: 'center', md: 'left' } },
+                              }}
+                            />
+                          </ListItem>
+                        </Box>
+                      </CardContent>
+                    </Card>
+                  </Box>
+                ))}
+              </Slider>
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );

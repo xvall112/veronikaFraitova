@@ -102,7 +102,7 @@ export default function CustomizedDialogs() {
             >
               Email: {contact.email}
             </Button>
-            <KontaktForm buttonText={'Formulář'} />
+            <KontaktForm buttonText={'Formulář'} predmet="kontakt" />
           </Stack>
         </DialogContent>
       </BootstrapDialog>

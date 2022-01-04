@@ -38,7 +38,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs({ reviews, describe }) {
+export default function BasicTabs({ reviews, describe, meditaceName }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -73,4 +73,5 @@ export default function BasicTabs({ reviews, describe }) {
 BasicTabs.propTypes = {
   reviews: PropTypes.any,
   describe: PropTypes.any,
+  meditaceName: PropTypes.string,
 };
