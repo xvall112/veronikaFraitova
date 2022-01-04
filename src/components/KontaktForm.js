@@ -191,7 +191,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
                   />
                 </Grid>
                 <Grid item container xs={12}>
-                  <Button size={'large'} variant={'contained'} type={'submit'}>
+                  <Button size={'large'} variant={'contained'} type="submit">
                     Odeslat
                   </Button>
                 </Grid>
