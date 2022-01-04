@@ -95,7 +95,7 @@ const Features = () => {
               <StaticImage
                 src="../../../images/workshopy2.jpg"
                 alt="workshop"
-                style={{ borderRadius: '100%', webkitBorderRadius: '100%' }}
+                style={{ borderRadius: '100%', WebkitBorderRadius: '100%' }}
               />
             </Box>
 
@@ -116,7 +116,7 @@ const Features = () => {
               <StaticImage
                 src="../../../images/workshopy.jpg"
                 alt="workshop"
-                style={{ borderRadius: '100%', webkitBorderRadius: '100%' }}
+                style={{ borderRadius: '100%', WebkitBorderRadius: '100%' }}
               />
             </Box>
             <Box
@@ -137,7 +137,7 @@ const Features = () => {
               <StaticImage
                 src="../../../images/workshopy3.jpg"
                 alt="workshop"
-                style={{ borderRadius: '100%', webkitBorderRadius: '100%' }}
+                style={{ borderRadius: '100%', WebkitBorderRadius: '100%' }}
               />
             </Box>
           </Box>
