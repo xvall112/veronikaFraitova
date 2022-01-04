@@ -95,10 +95,10 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         </Box>
         <Box paddingY={2}>
           <form
+            onSubmit={formik.handleSubmit}
             name="recenze"
             method="post"
             netlify
-            onSubmit={formik.handleSubmit}
           >
             <input type="hidden" name="Recenze" value="recenze" />
             <Grid container spacing={2}>
