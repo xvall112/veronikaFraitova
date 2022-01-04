@@ -95,12 +95,12 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         </Box>
         <Box paddingY={2}>
           <form
-            netlify
-            name="recenze"
+            name="Recenze"
             method="POST"
             data-netlify="true"
             onSubmit={formik.handleSubmit}
           >
+            <input type="hidden" name="Recenze" value="recenze" />
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
