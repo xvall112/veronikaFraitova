@@ -49,7 +49,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
-          'form-name': 'KontaktniFormular',
+          'form-name': 'kontakt',
           ...values,
         }),
       })
@@ -109,12 +109,13 @@ const KontaktForm = ({ buttonText, predmet }) => {
           </Box>
           <Box paddingY={2}>
             <form
-              name="KontaktniFormular"
-              method="POST"
+              name="kontakt"
+              method="post"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
               onSubmit={formik.handleSubmit}
             >
-              <input type="hidden" name="KontaktniFormular" value="kontakt" />
+              <input type="hidden" name="form-name" value="kontakt" />
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>

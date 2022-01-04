@@ -44,7 +44,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
-          'form-name': 'Recenze',
+          'form-name': 'recenze',
           ...values,
         }),
       })
@@ -95,12 +95,12 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         </Box>
         <Box paddingY={2}>
           <form
-            name="Recenze"
-            method="POST"
-            data-netlify="true"
+            name="recenze"
+            method="post"
+            netlify
             onSubmit={formik.handleSubmit}
           >
-            <input type="hidden" name="Recenze" value="feedback" />
+            <input type="hidden" name="Recenze" value="recenze" />
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
