@@ -114,11 +114,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
               data-netlify="true"
               onSubmit={formik.handleSubmit}
             >
-              <input
-                type="hidden"
-                name="KontaktniFormular"
-                value="KontaktniFormular"
-              />
+              <input type="hidden" name="KontaktniFormular" value="kontakt" />
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
