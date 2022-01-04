@@ -97,7 +97,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         <Box paddingY={2}>
           <form
             onSubmit={formik.handleSubmit}
-            netlify
+            data-netlify={true}
             name="recenze"
             method="post"
           >
