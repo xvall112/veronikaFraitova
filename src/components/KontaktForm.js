@@ -41,7 +41,7 @@ const KontaktForm = ({ buttonText, predmet }) => {
       email: '',
       phone: '',
       zprava: '',
-      predmet: predmet,
+      predmet: 'predmet',
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {

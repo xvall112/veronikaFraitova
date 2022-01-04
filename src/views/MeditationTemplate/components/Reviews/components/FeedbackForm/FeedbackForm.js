@@ -36,7 +36,7 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
       email: '',
       currentScore: currentScore,
       zprava: '',
-      meditace: meditaceName,
+      meditace: 'meditaceName',
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {

@@ -4,3 +4,8 @@ functions="lambda"
 [functions]
  
   directory = "functions/"
+
+[[headers]]
+   for = "/*"
+   [headers.values]
+      Access-Control-Allow-Origin = "*"
