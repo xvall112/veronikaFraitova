@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
@@ -8,6 +8,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { alpha } from '@mui/material/styles';
 import { useTheme } from '@mui/material/styles';
+import Link from '@mui/material/Link';
 
 export const newQuery = graphql`
   {
@@ -36,14 +37,18 @@ const mock = {
       {
         title: 'Probuzení ženství',
         updated: 'online kurz',
+        slug: 'https://veronikafraitova.teachable.com/p/probuzeni-zenstvi',
       },
       {
         title: 'Sebeláska',
         updated: 'online kurz',
+        slug: 'https://veronikafraitova.teachable.com/p/sebelaska',
       },
       {
         title: 'Atraktivní a zářivá žena',
         updated: 'online kurz',
+        slug:
+          'https://veronikafraitova.teachable.com/p/atraktivni-a-zariva-zena',
       },
     ],
   },
@@ -53,7 +58,52 @@ const Faq = () => {
   const data = useStaticQuery(newQuery);
   const theme = useTheme();
   const renderFaqBox = (title = '', subtitle = '', slug = '/') => (
-    <Box component={Link} to={slug} sx={{ textDecoration: 'none !important' }}>
+    <Box
+      component={GatsbyLink}
+      to={slug}
+      sx={{ textDecoration: 'none !important' }}
+    >
+      <Box
+        component={Card}
+        bgcolor={'transparent'}
+        borderRadius={theme.borderRadius}
+        variant="outlined"
+        sx={{
+          cursor: 'pointer',
+          '&:hover': {
+            boxShadow: 2,
+          },
+        }}
+      >
+        <CardContent>
+          <Box
+            display={'flex'}
+            flexDirection={{ xs: 'column', sm: 'row' }}
+            flex={'1 1 100%'}
+            justifyContent={{ sm: 'space-between' }}
+            alignItems={{ sm: 'center' }}
+          >
+            <Typography
+              fontWeight={700}
+              sx={{ marginBottom: { xs: 1, sm: 0 } }}
+            >
+              {title}
+            </Typography>
+            <Typography variant={'caption'} color={'text.secondary'}>
+              {subtitle}
+            </Typography>
+          </Box>
+        </CardContent>
+      </Box>
+    </Box>
+  );
+
+  const renderFaqBoxExternal = (title = '', subtitle = '', slug = '/') => (
+    <Box
+      component={Link}
+      href={slug}
+      sx={{ textDecoration: 'none !important' }}
+    >
       <Box
         component={Card}
         bgcolor={'transparent'}
@@ -122,9 +172,7 @@ const Faq = () => {
             <Typography variant={'h6'} fontWeight={700} gutterBottom>
               Meditace
             </Typography>
-            <Typography color={'text.secondary'}>
-              Zdarma, placené, na míru
-            </Typography>
+            <Typography color={'text.secondary'}>Ke stažení</Typography>
           </Box>
           <Grid container spacing={2}>
             {data.meditace.nodes.map((item, index) => (
@@ -179,11 +227,15 @@ const Faq = () => {
           <Grid container spacing={2}>
             {mock.organizations.items.map((item, index) => (
               <Grid item xs={12} key={index}>
-                {renderFaqBox(item.title, `${item.updated}`)}
+                {renderFaqBoxExternal(item.title, `${item.updated}`, item.slug)}
               </Grid>
             ))}
             <Grid item xs={12}>
-              {renderFaqBox('Vše', '>', '/')}
+              {renderFaqBoxExternal(
+                'Vše',
+                '>',
+                'https://veronikafraitova.teachable.com',
+              )}
             </Grid>
           </Grid>
         </Grid>

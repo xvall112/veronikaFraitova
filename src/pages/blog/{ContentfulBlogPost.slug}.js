@@ -26,7 +26,7 @@ const MeditationOverview = (props) => {
   return (
     <>
       <Seo title={props.data.contentfulBlogPost.title} />
-      <BlogArticleTemplate data={props} />{' '}
+      <BlogArticleTemplate data={props} />
     </>
   );
 };

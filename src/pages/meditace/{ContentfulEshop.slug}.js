@@ -32,7 +32,10 @@ export const query = graphql`
 const MeditationOverview = (props) => {
   return (
     <>
-      <Seo title={props.data.contentfulEshop.title} />
+      <Seo
+        title={props.data.contentfulEshop.title}
+        description={props.data.contentfulEshop.kratkyPopis}
+      />
       <MeditationTemplate data={props} />
     </>
   );

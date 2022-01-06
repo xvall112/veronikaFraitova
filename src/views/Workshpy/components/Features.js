@@ -87,6 +87,7 @@ const Features = () => {
               boxShadow={4}
               data-aos={'fade-up'}
               sx={{
+                '& img': { WebkitBorderRadius: '100%' },
                 objectFit: 'cover',
                 filter:
                   theme.palette.mode === 'dark' ? 'brightness(0.5)' : 'none',
@@ -108,6 +109,7 @@ const Features = () => {
               boxShadow={4}
               data-aos={'fade-up'}
               sx={{
+                '& img': { WebkitBorderRadius: '100%' },
                 objectFit: 'cover',
                 filter:
                   theme.palette.mode === 'dark' ? 'brightness(0.5)' : 'none',
@@ -116,7 +118,7 @@ const Features = () => {
               <StaticImage
                 src="../../../images/workshopy.jpg"
                 alt="workshop"
-                style={{ borderRadius: '100%', WebkitBorderRadius: '100%' }}
+                style={{ borderRadius: '100%' }}
               />
             </Box>
             <Box
@@ -129,6 +131,7 @@ const Features = () => {
               boxShadow={4}
               data-aos={'fade-up'}
               sx={{
+                '& img': { WebkitBorderRadius: '100%' },
                 objectFit: 'cover',
                 filter:
                   theme.palette.mode === 'dark' ? 'brightness(0.5)' : 'none',

@@ -39,6 +39,9 @@ const FeaturedProducts = () => {
             color="primary"
             size="large"
             height={54}
+            onClick={() => {
+              location.href = 'https://veronikafraitova.teachable.com/';
+            }}
           >
             Chci vědět více
           </Box>

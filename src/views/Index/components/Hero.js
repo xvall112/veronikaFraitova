@@ -74,6 +74,9 @@ const Hero = () => {
               marginTop={{ xs: 2, sm: 0 }}
               marginLeft={{ sm: 2 }}
               fullWidth={isMd ? false : true}
+              onClick={() => {
+                location.href = 'https://veronikafraitova.teachable.com/';
+              }}
               endIcon={
                 <Box
                   component={'svg'}

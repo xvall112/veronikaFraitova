@@ -8,6 +8,5 @@ export const navigation = [
   { title: 'Konzultace', link: '/konzultace' },
   { title: 'Workshopy', link: '/workshopy' },
   { title: 'Meditace', link: '/meditace' },
-  { title: 'Kurzy', link: '/kurzy' },
   { title: 'Blog', link: '/blog' },
 ];

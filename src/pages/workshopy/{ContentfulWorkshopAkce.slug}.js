@@ -7,6 +7,7 @@ export const query = graphql`
   query($slug: String!) {
     contentfulWorkshopAkce(slug: { eq: $slug }) {
       slug
+      metaDescription
       title
       misto
       popis {
@@ -31,7 +32,10 @@ export const query = graphql`
 const WorkshopAkceOverview = (props) => {
   return (
     <>
-      <Seo title={props.data.contentfulWorkshopAkce.title} />
+      <Seo
+        title={props.data.contentfulWorkshopAkce.title}
+        description={props.data.contentfulWorkshopAkce.metaDescription}
+      />
       <WorkshopTemplateAkce data={props} />;
     </>
   );

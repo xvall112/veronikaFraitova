@@ -52,93 +52,91 @@ const Form = () => {
     },
   });
   return (
-    <div>
-      <form
-        onSubmit={formik.handleSubmit}
-        data-netlify="true"
-        name="KontaktniFormular"
-        method="post"
-      >
-        <input type="hidden" name="KontaktniFormular" value="contact" />
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-              Jméno
-            </Typography>
-            <TextField
-              label="Jméno *"
-              variant="outlined"
-              fullWidth
-              type="text"
-              id="name"
-              name="name"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              error={formik.touched.name && Boolean(formik.errors.name)}
-              helperText={formik.touched.name && formik.errors.name}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-              Email
-            </Typography>
-            <TextField
-              label="Email *"
-              variant="outlined"
-              name="email"
-              fullWidth
-              type="email"
-              id="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={formik.touched.email && formik.errors.email}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-              Mobil
-            </Typography>
-            <TextField
-              label="Mobil *"
-              variant="outlined"
-              fullWidth
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formik.values.phone}
-              onChange={formik.handleChange}
-              error={formik.touched.phone && Boolean(formik.errors.phone)}
-              helperText={formik.touched.phone && formik.errors.phone}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
-              Text
-            </Typography>
-            <TextField
-              label="Text *"
-              variant="outlined"
-              fullWidth
-              type="text"
-              id="zprava"
-              name="zprava"
-              value={formik.values.zprava}
-              onChange={formik.handleChange}
-              error={formik.touched.zprava && Boolean(formik.errors.zprava)}
-              helperText={formik.touched.zprava && formik.errors.zprava}
-              multiline
-              rows={5}
-            />
-          </Grid>
-          <Grid item container xs={12}>
-            <Button size={'large'} variant={'contained'} type="submit">
-              Odeslat
-            </Button>
-          </Grid>
+    <form
+      onSubmit={formik.handleSubmit}
+      data-netlify="true"
+      name="KontaktniFormular"
+      method="post"
+    >
+      <input type="hidden" name="KontaktniFormular" value="KontaktniFormular" />
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
+            Jméno
+          </Typography>
+          <TextField
+            label="Jméno *"
+            variant="outlined"
+            fullWidth
+            type="text"
+            id="name"
+            name="name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
+          />
         </Grid>
-      </form>
-    </div>
+        <Grid item xs={12}>
+          <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
+            Email
+          </Typography>
+          <TextField
+            label="Email *"
+            variant="outlined"
+            name="email"
+            fullWidth
+            type="email"
+            id="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
+            Mobil
+          </Typography>
+          <TextField
+            label="Mobil *"
+            variant="outlined"
+            fullWidth
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formik.values.phone}
+            onChange={formik.handleChange}
+            error={formik.touched.phone && Boolean(formik.errors.phone)}
+            helperText={formik.touched.phone && formik.errors.phone}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
+            Text
+          </Typography>
+          <TextField
+            label="Text *"
+            variant="outlined"
+            fullWidth
+            type="text"
+            id="zprava"
+            name="zprava"
+            value={formik.values.zprava}
+            onChange={formik.handleChange}
+            error={formik.touched.zprava && Boolean(formik.errors.zprava)}
+            helperText={formik.touched.zprava && formik.errors.zprava}
+            multiline
+            rows={5}
+          />
+        </Grid>
+        <Grid item container xs={12}>
+          <Button size={'large'} variant={'contained'} type="submit">
+            Odeslat
+          </Button>
+        </Grid>
+      </Grid>
+    </form>
   );
 };
 

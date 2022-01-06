@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ThemeModeToggler from 'components/ThemeModeToggler';
 import { navigation } from '../../../../data/data';
 import KontaktDialog from '../KontaktDialog';
+import Link from '@mui/material/Link';
 
 const Topbar = ({ onSidebarOpen }) => {
   const theme = useTheme();
@@ -41,7 +42,7 @@ const Topbar = ({ onSidebarOpen }) => {
           height={40}
         />
         <Typography variant={'body1'} marginLeft={1}>
-          OpenYourEyes
+          Veronika Fraitová
         </Typography>
       </Box>
       <Box
@@ -59,7 +60,7 @@ const Topbar = ({ onSidebarOpen }) => {
               transition={'1s'}
             >
               <Box
-                component={Link}
+                component={GatsbyLink}
                 color={'text.primary'}
                 partiallyActive={item.link === '/' ? false : true}
                 activeStyle={{
@@ -76,7 +77,22 @@ const Topbar = ({ onSidebarOpen }) => {
             </Box>
           );
         })}
-
+        <Box
+          paddingX={2}
+          display={'flex'}
+          alignItems={'center'}
+          transition={'1s'}
+        >
+          <Box
+            component={Link}
+            color={'text.primary'}
+            href="https://veronikafraitova.teachable.com/"
+            fontWeight={400}
+            sx={{ textDecoration: 'none !important' }}
+          >
+            <Typography>Kurzy</Typography>
+          </Box>
+        </Box>
         <Box marginLeft={4}>
           <KontaktDialog />
         </Box>

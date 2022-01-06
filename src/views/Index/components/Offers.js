@@ -36,19 +36,7 @@ const mock = [
     ),
     slug: '/workshopy',
   },
-  {
-    title: 'Kurzy',
-    img: (
-      <StaticImage
-        src="../../../images/osobniWorkshop.png"
-        alt="kurzy"
-        placeholder="blurred"
-        layout="fixed"
-        height={200}
-      />
-    ),
-    slug: '/kurzy',
-  },
+
   {
     title: 'Meditace',
     img: (
@@ -114,6 +102,52 @@ const Blog = () => {
             </Box>
           </Grid>
         ))}
+        <Grid item xs={12} sm={6} md={6}>
+          <Box
+            component={Card}
+            padding={4}
+            borderRadius={theme.borderRadius}
+            boxShadow={1}
+            width={1}
+            height={1}
+            data-aos={'fade-up'}
+            data-aos-delay={3 * 100}
+            data-aos-offset={100}
+            data-aos-duration={600}
+            variant={'outlined'}
+          >
+            <Box
+              display={'flex'}
+              flexDirection={'column'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              spacing={2}
+            >
+              <Box marginBottom={1}>
+                <StaticImage
+                  src="../../../images/osobniWorkshop.png"
+                  alt="kurzy"
+                  placeholder="blurred"
+                  layout="fixed"
+                  height={200}
+                />
+              </Box>
+              <Typography variant={'h4'} gutterBottom sx={{ fontWeight: 700 }}>
+                Kurzy
+              </Typography>
+              <Button
+                variant="outlined"
+                color="primary"
+                fullWidth={true}
+                onClick={() => {
+                  location.href = 'https://veronikafraitova.teachable.com/';
+                }}
+              >
+                VÍCE
+              </Button>
+            </Box>
+          </Box>
+        </Grid>
       </Grid>
     </Box>
   );
