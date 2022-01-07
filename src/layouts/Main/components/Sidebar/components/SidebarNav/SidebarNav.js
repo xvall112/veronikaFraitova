@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -7,6 +7,7 @@ import { navigation } from '../../../../../../data/data';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import KontaktDialog from '../../../KontaktDialog';
+import Link from '@mui/material/Link';
 const SidebarNav = () => {
   const theme = useTheme();
 
@@ -33,7 +34,7 @@ const SidebarNav = () => {
             <div key={i}>
               <Box marginY={2}>
                 <Box
-                  component={Link}
+                  component={GatsbyLink}
                   color={'text.primary'}
                   partiallyActive={item.link === '/' ? false : true}
                   activeStyle={{
@@ -50,7 +51,17 @@ const SidebarNav = () => {
             </div>
           );
         })}
-
+        <Box marginY={2}>
+          <Box
+            component={Link}
+            color={'text.primary'}
+            href="https://veronikafraitova.teachable.com/"
+            sx={{ textDecoration: 'none !important' }}
+          >
+            <Typography variant="h5">Kurzy</Typography>
+          </Box>
+        </Box>
+        <Divider />
         <Box marginTop={1}>
           <KontaktDialog />
         </Box>
