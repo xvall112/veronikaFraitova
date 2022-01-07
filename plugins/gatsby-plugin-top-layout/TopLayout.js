@@ -53,6 +53,13 @@ export default function TopLayout(props) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
       </Helmet> */}
+      <form method="POST" data-netlify="true" name="recenze" hidden>
+        <input type="text" name="meditaceName" value="recenze" />
+        <input type="text" name="name" value="recenze" />
+        <input type="text" name="email" value="recenze" />
+        <input type="radio" name="currentScore" value="recenze" />
+        <textarea name="zprava" value="recenze"></textarea>
+      </form>
       <Page>{props.children}</Page>
     </React.Fragment>
   );
