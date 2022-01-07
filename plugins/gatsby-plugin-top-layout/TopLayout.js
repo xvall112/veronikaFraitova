@@ -60,6 +60,12 @@ export default function TopLayout(props) {
         <input type="radio" name="currentScore" value="recenze" />
         <textarea name="zprava" value="recenze"></textarea>
       </form>
+      <form method="POST" data-netlify="true" name="KontaktniFormular" hidden>
+        <input type="text" name="name" value="recenze" />
+        <input type="text" name="email" value="recenze" />
+        <input type="tel" name="phone" value="recenze" />
+        <textarea name="zprava" value="recenze"></textarea>
+      </form>
       <Page>{props.children}</Page>
     </React.Fragment>
   );
