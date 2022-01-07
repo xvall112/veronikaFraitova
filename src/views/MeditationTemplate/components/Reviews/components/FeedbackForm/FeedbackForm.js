@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Dialog from '@mui/material/Dialog';
@@ -10,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import cogoToast from 'cogo-toast';
+import Rating from '@mui/material/Rating';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -28,16 +28,13 @@ const validationSchema = yup.object({
 });
 
 const FeedbackForm = ({ onClose, open, meditaceName }) => {
-  const theme = useTheme();
-  const [currentScore, setCurrentScore] = useState(5);
-
   const formik = useFormik({
     initialValues: {
       name: '',
       email: '',
-      currentScore: currentScore,
+      currentScore: 5,
       zprava: '',
-      meditace: meditaceName,
+      meditaceName: meditaceName,
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -105,6 +102,25 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
             <div>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
+                  <TextField
+                    variant="standard"
+                    fullWidth
+                    type="text"
+                    id="meditaceName"
+                    name="meditaceName"
+                    disabled
+                    value={formik.values.meditaceName}
+                    onChange={formik.handleChange}
+                    error={
+                      formik.touched.meditaceName &&
+                      Boolean(formik.errors.meditaceName)
+                    }
+                    helperText={
+                      formik.touched.meditaceName && formik.errors.meditaceName
+                    }
+                  />
+                </Grid>
+                <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
                     Jméno
                   </Typography>
@@ -142,28 +158,11 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
                     Hodnocení
                   </Typography>
-                  <Box display={'flex'} alignItems={'center'}>
-                    {[1, 2, 3, 4, 5].map((r) => (
-                      <Box
-                        key={r}
-                        component={'svg'}
-                        color={
-                          r <= currentScore
-                            ? theme.palette.primary.main
-                            : theme.palette.divider
-                        }
-                        width={28}
-                        height={28}
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        sx={{ cursor: 'pointer' }}
-                        onClick={() => setCurrentScore(r)}
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </Box>
-                    ))}
-                  </Box>
+                  <Rating
+                    name="currentScore"
+                    value={formik.values.currentScore}
+                    onChange={formik.handleChange}
+                  />
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant={'subtitle2'} sx={{ marginBottom: 1 }}>
