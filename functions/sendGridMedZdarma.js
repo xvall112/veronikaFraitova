@@ -1,11 +1,11 @@
+// eslint-disable-next-line no-undef
 const sgMail = require('@sendgrid/mail');
 
 exports.handler = async (event) => {
   const body = JSON.parse(event.body);
 
-  sgMail.setApiKey(
-    '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',
-  );
+  // eslint-disable-next-line no-undef
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const downloadEmailVariables = {
     to: body.email,

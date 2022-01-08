@@ -94,7 +94,7 @@ export default function FormDialog({ link }) {
             <Button
               variant="contained"
               type="submit"
-              disbaled={formik.isSubmitting}
+              disabled={formik.isSubmitting}
             >
               Stáhnout
             </Button>
