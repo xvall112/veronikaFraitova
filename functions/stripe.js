@@ -21,8 +21,8 @@ exports.handler = async (event) => {
     payment_intent_data: { metadata: { name: name, url: url } },
 
     mode: 'payment',
-    success_url: 'https://suspicious-jackson-87cd41.netlify.app/thanks',
-    cancel_url: 'https://suspicious-jackson-87cd41.netlify.app/meditace',
+    success_url: 'https://veronikafraitova.cz/thanks',
+    cancel_url: 'https://veronikafraitova.cz/meditace',
   });
   return {
     statusCode: 200,

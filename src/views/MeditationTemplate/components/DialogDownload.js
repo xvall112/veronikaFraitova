@@ -38,8 +38,7 @@ export default function FormDialog({ link }) {
     onSubmit: (values, actions) => {
       axios({
         method: 'post',
-        url:
-          'https://suspicious-jackson-87cd41.netlify.app/.netlify/functions/sendGridMedZdarma',
+        url: 'https://veronikafraitova.cz/.netlify/functions/sendGridMedZdarma',
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
