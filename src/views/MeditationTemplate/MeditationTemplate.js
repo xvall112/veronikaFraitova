@@ -35,7 +35,7 @@ const MeditationTemplate = ({ data }) => {
     // Call your backend to create the Checkout Session
     const response = await axios({
       method: 'post',
-      url: 'https://veronikafraitova.cz/.netlify/functions/stripe',
+      url: 'https://www.veronikafraitova.cz/.netlify/functions/stripe',
       headers: {
         'Content-Type': 'application/json',
       },
