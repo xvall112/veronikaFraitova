@@ -24,6 +24,15 @@ module.exports = {
     ],
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'G-2MVGM2JES2',
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
+      },
+    },
     'gatsby-plugin-top-layout',
     // If you want to use styled components you should add the plugin here.
     // 'gatsby-plugin-styled-components',
@@ -34,6 +43,8 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -46,7 +57,7 @@ module.exports = {
         },
         name: 'Veronika Fraitová',
         short_name: 'VF',
-        start_url: 'www.',
+        start_url: 'www.veronikafraitova.cz',
         background_color: '#f7f0eb',
         theme_color: '#a2466c',
         display: 'fullscreen',

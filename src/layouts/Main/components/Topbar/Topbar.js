@@ -25,7 +25,7 @@ const Topbar = ({ onSidebarOpen }) => {
       <Box
         display={'flex'}
         alignItems={'center'}
-        component={Link}
+        component={GatsbyLink}
         to="/"
         title="Veronika Fraitova"
         width={{ xs: 300, md: 320 }}
