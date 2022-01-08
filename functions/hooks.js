@@ -8,7 +8,7 @@ exports.handler = async (event) => {
 
   const downloadEmailVariables = {
     to: data.receipt_email,
-    from: { email: 'veronika.fraitova@seznam.cz', name: 'OpenYourEyes' },
+    from: { email: 'veronika.fraitova@seznam.cz', name: 'Veronika Fraitova' },
     subject: data.metadata.name,
     templateId: 'd-406746c54d2442be8fdff604cc955b03',
     dynamic_template_data: {
