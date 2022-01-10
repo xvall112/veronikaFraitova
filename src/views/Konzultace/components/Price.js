@@ -21,7 +21,7 @@ const mock = [
         isIncluded: true,
       },
       {
-        title: 'Osobně nebo Online',
+        title: 'Osobně',
         isIncluded: true,
       },
       {
@@ -41,10 +41,13 @@ const mock = [
         isIncluded: true,
       },
       {
-        title: 'Osobně nebo Online',
+        title: 'Osobně',
         isIncluded: true,
       },
-
+      {
+        title: 'Online',
+        isIncluded: true,
+      },
       {
         title: 'Platnost 3 měsíce',
         isIncluded: true,
