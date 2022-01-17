@@ -39,7 +39,7 @@ exports.handler = async (event) => {
     body: data,
   };
   //pridani kontaktu
-  await sgMail
+  /*  await sgMail
     .request(request)
     .then(([response, body]) => {
       console.log(response.statusCode);
@@ -51,7 +51,7 @@ exports.handler = async (event) => {
 
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not Allowed' };
-  }
+  } */
   //odeslani emailu
   await sgMail
     .send(downloadEmailVariables)
