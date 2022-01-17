@@ -2,6 +2,7 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
 import { navigation } from '../../../../../../data/data';
 import Typography from '@mui/material/Typography';
@@ -58,7 +59,20 @@ const SidebarNav = () => {
             href="https://veronikafraitova.teachable.com/"
             sx={{ textDecoration: 'none !important' }}
           >
-            <Typography variant="h5">Kurzy</Typography>
+            <Stack direction="row" spacing={1}>
+              <Typography variant="h5">On-line kurzy</Typography>
+              <Box
+                padding={0.5}
+                display={'inline-flex'}
+                borderRadius={1}
+                bgcolor={'primary.main'}
+                marginLeft={2}
+              >
+                <Typography sx={{ color: 'common.white', lineHeight: 1 }}>
+                  novinka
+                </Typography>
+              </Box>
+            </Stack>
           </Box>
         </Box>
         <Divider />

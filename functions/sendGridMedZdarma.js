@@ -6,7 +6,7 @@ exports.handler = async (event) => {
 
   // eslint-disable-next-line no-undef
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
+  //odeslani emailu
   const downloadEmailVariables = {
     to: body.email,
     from: {
@@ -20,9 +20,39 @@ exports.handler = async (event) => {
     },
   };
 
+  // pridani kontaktu
+  const data = {
+    contacts: [
+      {
+        email: body.email,
+        custom_fields: {
+          w1: Date.now(),
+          e2: 'Meditace zdarma',
+        },
+      },
+    ],
+  };
+
+  const request = {
+    url: '/v3/marketing/contacts',
+    method: 'PUT',
+    body: data,
+  };
+  //pridani kontaktu
+  await sgMail
+    .request(request)
+    .then(([response, body]) => {
+      console.log(response.statusCode);
+      console.log(response.body);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not Allowed' };
   }
+  //odeslani emailu
   await sgMail
     .send(downloadEmailVariables)
     .then(() => {

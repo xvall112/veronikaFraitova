@@ -4,6 +4,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -90,7 +91,20 @@ const Topbar = ({ onSidebarOpen }) => {
             fontWeight={400}
             sx={{ textDecoration: 'none !important' }}
           >
-            <Typography>Kurzy</Typography>
+            <Stack direction="row" spacing={1}>
+              <Typography>On-line kurzy</Typography>
+              <Box
+                padding={0.5}
+                display={'inline-flex'}
+                borderRadius={1}
+                bgcolor={'primary.main'}
+                marginLeft={2}
+              >
+                <Typography sx={{ color: 'common.white', lineHeight: 1 }}>
+                  novinka
+                </Typography>
+              </Box>
+            </Stack>
           </Box>
         </Box>
         <Box marginLeft={4}>
