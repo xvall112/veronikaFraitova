@@ -294,7 +294,7 @@ const AboutMe = () => {
               celého srdce se snažím, abych viděla jejich rozzářené oči a
               šťastný smích co nejčastěji. Jsou mým každodenním sluncem. Díky
               svým životním zkouškám jsem se na své cestě dostala k úžasným
-              oborům, technikám, metodám a poznání. V meditacích mi přicházeli
+              oborům, technikám, metodám a poznání. V meditacích mi přicházely
               neuvěřitelné informace, které mi tito úžasní lidé vysvětlili na
               vědecké bázi. Vědecká poznání Kvantové fyziky, Neurovědy,
               Epigenetiky, propojení těla a mysli tyto možnosti dokazují.
