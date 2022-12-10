@@ -50,7 +50,8 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs({ title }) {
+  const titleH = title || 'Objednat se';
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -68,7 +69,7 @@ export default function CustomizedDialogs() {
         fullWidth
         onClick={handleClickOpen}
       >
-        Objednat se
+        {titleH}
       </Button>
       <BootstrapDialog
         fullWidth

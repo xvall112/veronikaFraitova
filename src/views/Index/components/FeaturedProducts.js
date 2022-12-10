@@ -17,7 +17,7 @@ const FeaturedProducts = () => {
               color="text.primary"
               sx={{ fontWeight: 700, color: '#222B45' }}
             >
-              Novinka
+              Další
             </Typography>
           </Box>
           <Box marginBottom={3}>

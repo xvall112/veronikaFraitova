@@ -12,6 +12,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import FeaturedProducts from './components/FeaturedProducts';
 import Title from '../../components/Title';
 import Reviews from '../../components/Reviews';
+import Newsletter from './components/Newsletter';
 
 const Index = () => {
   const theme = useTheme();
@@ -20,15 +21,18 @@ const Index = () => {
       <Container>
         <Hero />
       </Container>
-
-      {/*  <Box paddingTop={{ md: 8 }}>
+      <Box bgcolor={alpha(theme.palette.primary.main, 0.1)}>
+        <Container>
+          <Newsletter />
+        </Container>
+        {/*  <Box paddingTop={{ md: 8 }}>
         <Box bgcolor={'alternate.main'}>
           <Container>
             <NewsletterWithCard />
           </Container>
         </Box>
       </Box> */}
-      <Box bgcolor={alpha(theme.palette.primary.main, 0.1)}>
+
         <Container>
           <FeaturedProducts />
         </Container>

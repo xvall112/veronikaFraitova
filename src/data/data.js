@@ -5,7 +5,8 @@ export const contact = {
 
 export const navigation = [
   { title: 'Home', link: '/' },
-  { title: 'Konzultace', link: '/konzultace' },
+  { title: 'Access Bars', link: '/access-bars' },
+  { title: 'Kvantové proměny', link: '/konzultace' },
   { title: 'Workshopy', link: '/workshopy' },
   { title: 'Meditace', link: '/meditace' },
   { title: 'Blog', link: '/blog' },

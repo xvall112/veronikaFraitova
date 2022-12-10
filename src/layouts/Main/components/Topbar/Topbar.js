@@ -29,7 +29,6 @@ const Topbar = ({ onSidebarOpen }) => {
         component={GatsbyLink}
         to="/"
         title="Veronika Fraitova"
-        width={{ xs: 300, md: 320 }}
         sx={{
           textDecoration: 'none !important',
           color: theme.palette.text.primary,
@@ -110,7 +109,7 @@ const Topbar = ({ onSidebarOpen }) => {
         <Box marginLeft={4}>
           <KontaktDialog />
         </Box>
-        <Box>
+        <Box pl={1}>
           <ThemeModeToggler />
         </Box>
       </Box>
