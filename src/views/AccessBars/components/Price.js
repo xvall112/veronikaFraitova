@@ -149,7 +149,14 @@ const Price = () => {
               Kupte mu dárkový poukaz.
             </Typography>
           </Box>
-          <Box boxShadow={3} radius={2} pb={1}>
+          <Box
+            boxShadow={3}
+            radius={2}
+            pb={1}
+            sx={{
+              '& img': { WebkitBorderRadius: theme.shape.borderRadius },
+            }}
+          >
             <StaticImage
               src="../../../images/darkovyPoukazAccessBars.png"
               alt="darkovy Poukaz Access Bars"

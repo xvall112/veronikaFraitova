@@ -80,11 +80,19 @@ const Features = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box height={1} width={1} display={'flex'} flexDirection={'column'}>
+          <Box
+            height={1}
+            width={1}
+            display={'flex'}
+            flexDirection={'column'}
+            sx={{
+              '& img': { WebkitBorderRadius: '100%' },
+            }}
+          >
             <StaticImage
               src="../../../images/accessBars.png"
               alt="accesimagebars"
-              style={{ borderRadius: '100%', WebkitBorderRadius: '100%' }}
+              style={{ borderRadius: '100%', webkitBorderRadius: '100%' }}
             />
           </Box>
         </Grid>
