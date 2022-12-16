@@ -14,10 +14,10 @@ import Container from 'components/Container';
 const mock = [
   {
     title: '1x konzultace',
-    price: '850',
+    price: '1000',
     features: [
       {
-        title: '1 x 90 min',
+        title: '1 x 70 min',
         isIncluded: true,
       },
       {
@@ -34,10 +34,10 @@ const mock = [
   },
   {
     title: '4 x konzultace',
-    price: '3000',
+    price: '3500',
     features: [
       {
-        title: '4 x 90 min',
+        title: '4 x 70 min',
         isIncluded: true,
       },
       {
