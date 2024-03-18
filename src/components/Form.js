@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import cogoToast from 'cogo-toast';
+import { toast } from 'react-toastify';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -42,12 +42,12 @@ const Form = () => {
         }),
       })
         .then(() => {
-          cogoToast.success('Zpráva byla odeslána', {
+          toast.success('Zpráva byla odeslána', {
             position: 'top-right',
           });
           formik.resetForm();
         })
-        .catch((error) => cogoToast.alert(error, { position: 'top-right' }));
+        .catch((error) => toast.error(error, { position: 'top-right' }));
     },
   });
   return (

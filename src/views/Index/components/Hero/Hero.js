@@ -123,7 +123,7 @@ const Hero = () => {
           sx={{ '& img': { WebkitBorderRadius: '50px' } }}
         >
           <StaticImage
-            src="../../../images/me.jpeg"
+            src="../../../../images/me.jpeg"
             alt="me"
             style={{
               boxShadow: '19px 20px 0px 0 rgb(140 152 164 / 13%)',

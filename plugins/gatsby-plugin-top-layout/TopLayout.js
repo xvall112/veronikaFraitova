@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Page from '../../src/components/Page';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import 'react-image-lightbox/style.css';
 import 'aos/dist/aos.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 export default function TopLayout(props) {
   return (
@@ -66,7 +66,10 @@ export default function TopLayout(props) {
         <input type="tel" name="phone" value="recenze" />
         <textarea name="zprava" value="recenze"></textarea>
       </form>
-      <Page>{props.children}</Page>
+      <Page>
+        <ToastContainer />
+        {props.children}
+      </Page>
     </React.Fragment>
   );
 }

@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import cogoToast from 'cogo-toast';
+import { toast } from 'react-toastify';
 import Rating from '@mui/material/Rating';
 
 const encode = (data) => {
@@ -47,12 +47,12 @@ const FeedbackForm = ({ onClose, open, meditaceName }) => {
         }),
       })
         .then(() => {
-          cogoToast.success('Recenze byla odeslána', {
+          toast.success('Recenze byla odeslána', {
             position: 'top-right',
           });
           formik.resetForm();
         })
-        .catch((error) => cogoToast.alert(error, { position: 'top-right' }));
+        .catch((error) => toast.error(error, { position: 'top-right' }));
     },
   });
 
