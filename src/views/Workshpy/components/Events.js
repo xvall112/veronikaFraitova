@@ -42,7 +42,7 @@ const Events = () => {
             fontWeight: 700,
           }}
         >
-          Workshopy
+          Akce
         </Typography>
       </Box>
       <Grid container spacing={4}>
@@ -59,7 +59,7 @@ const Events = () => {
           >
             <Box
               component={Link}
-              to={`/workshopy/${item.slug}`}
+              to={`/events/${item.slug}`}
               display={'block'}
               width={1}
               height={1}
@@ -145,31 +145,33 @@ const Events = () => {
                       {item.delka}
                     </Typography>
                   </Box>
-                  <CardActions sx={{ justifyContent: 'flex-end' }}>
-                    <Button
-                      endIcon={
-                        <Box
-                          component={'svg'}
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          width={24}
-                          height={24}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </Box>
-                      }
-                    >
-                      Chci vědět více
-                    </Button>
-                  </CardActions>
                 </CardContent>
+                <Box flexGrow={1} />
+                <CardActions sx={{ justifyContent: 'center' }}>
+                  <Button
+                    variant="outlined"
+                    endIcon={
+                      <Box
+                        component={'svg'}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        width={24}
+                        height={24}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </Box>
+                    }
+                  >
+                    Chci vědět více
+                  </Button>
+                </CardActions>
               </Box>
             </Box>
           </Grid>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -29,7 +30,7 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
     setActiveLink(window && window.location ? window.location.pathname : '');
   }, []);
 
-  const hasActiveLink = () => items.find((i) => i.href === activeLink);
+  const hasActiveLink = () => items.find((i) => i.link === activeLink);
   const linkColor = colorInvert ? 'common.white' : 'text.primary';
 
   return (
@@ -39,11 +40,11 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
         alignItems={'center'}
         aria-describedby={id}
         sx={{ cursor: 'pointer' }}
-        onMouseEnter={(e) => handleClick(e, id)}
+        onClick={(e) => handleClick(e, id)}
       >
         <Typography
           fontWeight={openedPopoverId === id || hasActiveLink() ? 700 : 400}
-          color={linkColor}
+          color={openedPopoverId === id || hasActiveLink() ? 'primary' : 'text.primary'}
         >
           {title}
         </Typography>
@@ -88,20 +89,21 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
           {items.map((p, i) => (
             <Grid item key={i} xs={items.length > 12 ? 6 : 12}>
               <Button
-                component={'a'}
-                href={p.href}
+                component={Link}
+                to={p.link}
+                
                 fullWidth
                 sx={{
                   justifyContent: 'flex-start',
                   color:
-                    activeLink === p.href
+                    activeLink === p.link
                       ? theme.palette.primary.main
                       : theme.palette.text.primary,
                   backgroundColor:
-                    activeLink === p.href
+                    activeLink === p.link
                       ? alpha(theme.palette.primary.main, 0.1)
                       : 'transparent',
-                  fontWeight: activeLink === p.href ? 600 : 400,
+                  fontWeight: activeLink === p.link ? 600 : 400,
                 }}
               >
                 {p.title}

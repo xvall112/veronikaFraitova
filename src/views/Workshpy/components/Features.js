@@ -20,7 +20,7 @@ const Features = () => {
           <Box>
             <Box marginBottom={2}>
               <Typography variant={'h4'} sx={{ fontWeight: 700 }} gutterBottom>
-                Workshopy probíhají velmi prakticky, vše se na sobě ihned
+                Akce probíhají velmi prakticky, vše se na sobě ihned
                 naučíte.
               </Typography>
               <Typography color="text.secondary">

@@ -1,67 +1,67 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
 
+export const query = graphql`
+  {
+    allContentfulMonthEvents {
+      nodes {
+        image {
+          gatsbyImageData(placeholder: BLURRED, height: 400)
+          title
+        }
+      }
+    }
+  }
+`;
+
 const Newsletter = () => {
   const theme = useTheme();
 
+  const data = useStaticQuery(query);
+
   return (
-    <Box bgcolor={'primary.main'} borderRadius={theme.borderRadius}>
-      <Container>
-        <Box
-          display={'flex'}
-          flexDirection={'column'}
-          justifyContent={'center'}
-          alignItems={'center'}
-        >
-          <Box marginBottom={4}>
-            <Typography
-              variant="h6"
-              align={'center'}
-              sx={{
-                color: theme.palette.common.white,
-              }}
-              data-aos={'fade-up'}
-            >
-              Novinka
-            </Typography>
-            <Typography
-              variant="h4"
-              align={'center'}
-              data-aos={'fade-up'}
-              gutterBottom
-              sx={{
-                fontWeight: 700,
-                color: theme.palette.common.white,
-              }}
-            >
-              Technika{' '}
-              <span style={{ textDecoration: 'underline' }}>Access Bars</span>{' '}
-              která ti změní život!
-            </Typography>
-          </Box>
-          <Box
+    <Box
+      display={'flex'}
+      flexDirection={'column'}
+      justifyContent={'center'}
+      alignItems={'center'}
+    >
+      {data.allContentfulMonthEvents.nodes.map((item) => {
+        return (
+          <Card
             component={Link}
-            borderRadius={theme.borderRadius}
-            to="/access-bars"
-            fontSize={24}
-            p={3}
+            to="/events"
+            key={item.image.title}
+            raised
             sx={{
-              color: 'white',
-              textDecoration: 'none',
-              border: '2px solid white',
+              '&:hover': {
+                transform: 'translateY(-5px)',
+                boxShadow: theme.shadows[4],
+                transition:
+                  'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+              },
             }}
           >
-            Klinkni pro více info
-          </Box>
-        </Box>
-      </Container>
+            <GatsbyImage
+              image={item.image.gatsbyImageData}
+              alt={item.image.title}
+              formats={['auto', 'webp', 'avif']}
+              style={{
+                height: '400px',
+              }}
+            />
+          </Card>
+        );
+      })}
     </Box>
   );
 };

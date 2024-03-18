@@ -283,27 +283,14 @@ const AboutMe = () => {
               textAlign={'justify'}
               /* sx={{ maxHeight: '50vh', overflow: 'hidden' }} */
             >
-              Z celého srdce Vás tu vítám. Jmenuji se Veronika a pomáhám všem,
-              kteří našli odvahu k vnitřní práci na sobě, k vyléčení traumat,
-              strachů, nemocí a bolestí z jejich minulosti. Mám dvě úžasné děti,
-              které nadevše miluji. Naučily mě svou nádhernou duší, plnou
-              bezpodmínečné lásky, žít tady a teď. Vidět krásy všedního dne a
-              naplno si užívat každý okamžik. Dovedly mě k uvědomění si mnoha
-              věcí, a především k poznání, jak moc jsme na sebe napojeni a kolik
-              si toho můžeme vzájemně předávat. Jsou mi velkou inspirací. Z
-              celého srdce se snažím, abych viděla jejich rozzářené oči a
-              šťastný smích co nejčastěji. Jsou mým každodenním sluncem. Díky
-              svým životním zkouškám jsem se na své cestě dostala k úžasným
-              oborům, technikám, metodám a poznání. V meditacích mi přicházely
-              neuvěřitelné informace, které mi tito úžasní lidé vysvětlili na
-              vědecké bázi. Vědecká poznání Kvantové fyziky, Neurovědy,
-              Epigenetiky, propojení těla a mysli tyto možnosti dokazují.
-              Všechny mé znalosti obohacené několikaletou praxí nyní předávám
-              svým klientkám a klientům a pomáhám jim na jejich cestě. Z celého
-              srdce ráda pomohu i Vám. Vezměte zodpovědnost za svůj život do
-              svých rukou a vydejte se na vědomou cestu sebepoznání. Každý z nás
-              je tvůrce svého života. Nikdy není pozdě začít žit nový, lepší
-              život v lásce a vděčnosti ❤️.
+              Z celého srdce Vás tu vítám. Jmenuji se Veronika a pomáhám všem, kteří našli odvahu k vnitřní práci na sobě. K vyléčení traumat, strachů, bolestí a zranění z jejich minulosti. Všem, kteří se chtějí vyléčit ze svých nemocí a hledají novou možnou cestu.
+Bude to již 20 let, co se věnuji svému osobnímu rozvoji a medituji. Díky mým životním zkouškám jsem se na své cestě dostala k jedinečným oborům, technikám, metodám a poznání. V meditacích ke mně přicházely úžasné informace a poznání, kterým jsem ze začátku neuměla plně porozumět a ani uvěřit. Začala jsem hledat v našem „hmotném“ světě něco, co by mi to vysvětlilo. Něco, co by mě v tu dobu ubezpečilo, že to nejsou jen nějaké mé představy. A tak jsem se pustila do svého vnitřního rozvoje. Absolvovala jsem spoustu kurzů, workshopů, seminářů a přečetla nespočet knih. Nejdůležitější odpovědi a nejlepší vysvětlení se mi dostalo díky skvělým lidem, jako jsou Dr. Joe Dispenza, Bruce Lipton, Ph. D., Gregg Braden, Alberto Villoldo, Ph. D. a další, kteří mi vše potvrdili dokonce na vědecké bázi. Vědecká poznání Kvantové fyzicky, Neurovědy, Epigenetiky, Energetické medicíny, propojení těla a mysli… Najednou všechna má poznání skrze meditace dávala smysl a pro můj klid byla potvrzena 😊. Dalším mým velkým obohacením byl mezinárodní certifikovaný kurz výcviku NLP, díky kterému jsem se stala terapeutkou a koučkou NLP (Neuro-Lingvistického programování). Dozvěděla jsem se, jak dělat zázraky v naší mysli a využívat plný potenciál našeho mozku, abychom dosáhli žádoucích změn a výsledků. NLP je oblíbeno u těch nejlepších koučů na světě jako např. Anthony Robbins, který mi je také velkou inspirací. 
+Dalšími velkými učiteli jsou pro mě mé úžasné děti Sebíček a Valinka, které nadevše miluji.   Naučily mě svou nádhernou duší, plnou bezpodmínečné lásky, žít tady a teď. Vidět krásy všedního dne a naplno si užívat každý okamžik. Dovedly mě k uvědomění si mnoha věcí, a především k poznání, jak moc jsme na sebe napojeni a kolik si toho můžeme vzájemně předávat. Jsou mi velkou inspirací. Z celého srdce se snažím, abych viděla jejich rozzářené oči a šťastný smích co nejčastěji. Jsou mým každodenním sluncem. 
+Všechny mé znalosti jsem obohatila několikaletou praxí a nyní pomáhám svým klientkám a klientům na jejich cestě. Ulevuji jim od jejich trápení, bolestí, strachů, vyčerpání… Pomáhám jim k tomu, aby v sobě opět našli svou vnitřní sílu, lásku a radost. Aby se nebáli vzít svůj život do svých rukou a začali ho žít v souladu se sebou, v lásce a vděčnosti. 
+Každý z nás je hlavní hrdina svého příběhu a nikdy není pozdě začít psát nový scénář. 
+Zázraky se dějí každý den, začínají v našich srdcích. 
+
+Miluju lidi, hudbu a ráda tančím. S přítelem hrajeme na svatbách, oslavách, narozeninách…a děláme animační programy pro děti. Můžete se podívat na Instagram @alesaveronika nebo @animacni_program_pro_deti 😊.
             </Typography>
           </Box>
         </Grid>

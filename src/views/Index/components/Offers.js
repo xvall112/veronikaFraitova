@@ -11,10 +11,36 @@ import { useTheme } from '@mui/material/styles';
 
 const mock = [
   {
-    title: 'Konzultace',
+    title: 'Terapie',
     img: (
       <StaticImage
-        src="../../../images/konzultace.png"
+        src="../../../images/undraw_super_thank_you_re_f8bo.svg"
+        alt="terapie"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/terapie',
+  },
+  {
+    title: 'Koučink',
+    img: (
+      <StaticImage
+        src="../../../images/undraw_through_the_park_lxnl.svg"
+        alt="koucink"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/koucink',
+  },
+  {
+    title: 'Kvantové proměny',
+    img: (
+      <StaticImage
+        src="../../../images/undraw_my_universe_803e.svg"
         alt="konzultace"
         placeholder="blurred"
         layout="fixed"
@@ -59,7 +85,7 @@ const Blog = () => {
     <Box>
       <Grid container spacing={4}>
         {mock.map((item, i) => (
-          <Grid item xs={12} sm={6} md={6} key={i}>
+          <Grid item xs={12} sm={6} md={4} key={i}>
             <Box
               component={Card}
               padding={4}
@@ -102,7 +128,7 @@ const Blog = () => {
             </Box>
           </Grid>
         ))}
-        <Grid item xs={12} sm={6} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <Box
             component={Card}
             padding={4}

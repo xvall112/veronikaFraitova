@@ -11,7 +11,7 @@ const WorshopyView = () => {
       <MainLayout>
         <Container>
           <Headline
-            title="Workshopy"
+            title="Akce"
             subtitle="Hledáte cestu vnitřního rozvoje? Dějí se vám v životě věci, které nejsou podle vašich představ? Nechcete už být oběti svého života, ale chcete začít žít svůj život podle sebe? Chcete se naučit techniku, jak si pomoci k uzdravení? Jste tady správně!"
           />
         </Container>

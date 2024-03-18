@@ -9,9 +9,10 @@ import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import ThemeModeToggler from 'components/ThemeModeToggler';
-import { navigation } from '../../../../data/data';
+import { navigation, offers } from '../../../../data/data';
 import KontaktDialog from '../KontaktDialog';
 import Link from '@mui/material/Link';
+import NavItem from './components/NavItem/NavItem';
 
 const Topbar = ({ onSidebarOpen }) => {
   const theme = useTheme();
@@ -50,31 +51,37 @@ const Topbar = ({ onSidebarOpen }) => {
         alignItems={'center'}
         justifyContent={'space-between'}
       >
-        {navigation.map((item, index) => {
+        {navigation.map((item) => {
           return (
-            <Box
-              key={index}
-              paddingX={2}
-              display={'flex'}
-              alignItems={'center'}
-              transition={'1s'}
-            >
-              <Box
-                component={GatsbyLink}
-                color={'text.primary'}
-                partiallyActive={item.link === '/' ? false : true}
-                activeStyle={{
-                  color: theme.palette.primary.main,
-                  fontWeight: '700',
-                  transform: 'translate(0px,-2px)',
-                }}
-                to={item.link}
-                fontWeight={400}
-                sx={{ textDecoration: 'none !important' }}
-              >
-                <Typography>{item.title}</Typography>
-              </Box>
-            </Box>
+            <>
+              {item.link ? (
+                <Box
+                  marginLeft={4}
+                  key={item.link}
+                  component={GatsbyLink}
+                  color={'text.primary'}
+                  partiallyActive={item.link === '/' ? false : true}
+                  activeStyle={{
+                    color: theme.palette.primary.main,
+                    fontWeight: '700',
+                    transform: 'translate(0px,-2px)',
+                  }}
+                  to={item.link}
+                  fontWeight={400}
+                  sx={{ textDecoration: 'none !important' }}
+                >
+                  <Typography>{item.title}</Typography>
+                </Box>
+              ) : (
+                <Box marginLeft={4} key={item.title}>
+                  <NavItem
+                    title={item.title}
+                    id={'offers-pages'}
+                    items={item.items}
+                  />
+                </Box>
+              )}
+            </>
           );
         })}
         <Box
@@ -92,7 +99,7 @@ const Topbar = ({ onSidebarOpen }) => {
           >
             <Stack direction="row" spacing={1}>
               <Typography>On-line kurzy</Typography>
-              <Box
+              {/* <Box
                 padding={0.5}
                 display={'inline-flex'}
                 borderRadius={1}
@@ -102,16 +109,17 @@ const Topbar = ({ onSidebarOpen }) => {
                 <Typography sx={{ color: 'common.white', lineHeight: 1 }}>
                   novinka
                 </Typography>
-              </Box>
+              </Box> */}
             </Stack>
           </Box>
         </Box>
-        <Box marginLeft={4}>
-          <KontaktDialog />
-        </Box>
-        <Box pl={1}>
+
+        {/* <Box pl={1}>
           <ThemeModeToggler />
-        </Box>
+        </Box> */}
+      </Box>
+      <Box marginLeft={4}>
+        <KontaktDialog />
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>
         <Button
