@@ -9,7 +9,7 @@ export const contact = {
 export const offers = [
   { title: 'Koučink', link: '/koucink' },
   { title: 'Terapie', link: '/terapie' },
-  { title: 'Kvantové proměny', link: '/konzultace' },
+  { title: 'Konzultace', link: '/konzultace' },
   { title: 'Access Bars', link: '/access-bars' },
 ];
 

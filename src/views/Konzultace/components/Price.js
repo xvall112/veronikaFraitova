@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import CardActions from '@mui/material/CardActions';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Dialog from '../../../components/Dialog';
+import SignInEventsForm from '../../../components/SignInEventsForm';
 
 import Container from 'components/Container';
 
@@ -127,7 +127,7 @@ const Price = () => {
                   ))}
                 </Grid>
                 <CardActions sx={{ justifyContent: 'center', marginTop: 4 }}>
-                  <Dialog />
+                  <SignInEventsForm buttonText='Objednat se' title={item.title} predmet={item.title} />
                 </CardActions>
               </CardContent>
             </Box>

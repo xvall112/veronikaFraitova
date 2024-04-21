@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import ContentfulRitchText from '../../../utils/ContentfulRitchText';
 import Typography from '@mui/material/Typography';
 import Dialog from '@mui/material/Dialog';
-import DialogObjednat from '../../../components/Dialog';
+import SignInEventsForm from '../../../components/SignInEventsForm';
 import Stack from '@mui/material/Stack';
 
 const DialogView = ({ onClose, open, title, text, image }) => {
@@ -46,7 +46,7 @@ const DialogView = ({ onClose, open, title, text, image }) => {
           >
             <GatsbyImage image={image} alt={title} style={{ width: '50%' }} />
             <ContentfulRitchText body={text} />
-            <DialogObjednat />
+            {/* <SignInEventsForm title={title} /> */}
           </Stack>
         </Box>
       </Box>

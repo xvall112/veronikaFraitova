@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import CardActions from '@mui/material/CardActions';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Dialog from '../../../components/Dialog';
+import SignInEventsForm from '../../../components/SignInEventsForm';
 
 import Container from 'components/Container';
 
@@ -18,7 +18,7 @@ const mock = [
     price: '1000',
     features: [
       {
-        title: '1 x 70 min',
+        title: '1 x 60 min',
         isIncluded: true,
       },
       {
@@ -128,7 +128,11 @@ const Price = () => {
                   ))}
                 </Grid>
                 <CardActions sx={{ justifyContent: 'center', marginTop: 4 }}>
-                  <Dialog />
+                  <SignInEventsForm
+                    title={`${item.title} - ${item.features[0].title}`}
+                    buttonText="Objednat se"
+                    predmet={`${item.title} - ${item.features[0].title}`}
+                  />
                 </CardActions>
               </CardContent>
             </Box>
@@ -163,7 +167,11 @@ const Price = () => {
               style={{ borderRadius: '10px', webkitBorderRadius: '10px' }}
             />
           </Box>
-          <Dialog title={'Koupit'} />
+          <SignInEventsForm
+            title="Koupit dárkový poukaz na Access Bars"
+            buttonText="Koupit"
+            predmet="Access bars poukaz"
+          />
         </Grid>
       </Grid>
     </Container>

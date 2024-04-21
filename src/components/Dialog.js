@@ -103,7 +103,7 @@ export default function CustomizedDialogs({ title, eventName }) {
             >
               Email: {contact.email}
             </Button>
-            <KontaktForm buttonText={'Registrační formulář'} />
+            <KontaktForm title={title} buttonText={'Registrační formulář'} />
           </Stack>
         </DialogContent>
       </BootstrapDialog>

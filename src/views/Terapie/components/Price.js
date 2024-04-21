@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import CardActions from '@mui/material/CardActions';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Dialog from '../../../components/Dialog';
+import SignInEventsForm from '../../../components/SignInEventsForm';
 
 import Container from 'components/Container';
 
@@ -39,7 +39,12 @@ const Price = () => {
 
   return (
     <Container maxWidth={800}>
-      <Grid container alignItems='center' justifyContent='center' spacing={isMd ? 0 : 2}>
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        spacing={isMd ? 0 : 2}
+      >
         {mock.map((item, i) => (
           <Grid item container alignItems={'center'} xs={12} md={6} key={i}>
             <Box
@@ -100,7 +105,11 @@ const Price = () => {
                   ))}
                 </Grid>
                 <CardActions sx={{ justifyContent: 'center', marginTop: 4 }}>
-                  <Dialog />
+                  <SignInEventsForm
+                    buttonText="Objednat se"
+                    predmet={item.title}
+                    title={`${item.title} - ${item.features[0].title} `}
+                  />
                 </CardActions>
               </CardContent>
             </Box>

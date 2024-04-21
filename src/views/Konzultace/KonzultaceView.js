@@ -14,7 +14,7 @@ const KonzultaceView = () => {
       <MainLayout>
         <Container>
           <Headline
-            title="Kvantové proměny"
+            title="Konzultace"
             subtitle="Práce s vědomím a podvědomou myslí. Můžeme sami regulovalovat a uzdravovat své tělo. Máme v sobě mimořádné schopnosti, které to dokáží."
           />
         </Container>

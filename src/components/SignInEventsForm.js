@@ -7,10 +7,12 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Form from './Form';
 import { contact } from '../data/data';
+import { DialogTitle, DialogContent } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const SigInEvents = ({ buttonText = 'Přihlásit se', predmet, title }) => {
   const [open, setOpen] = React.useState(false);
-
+  const matches = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -32,14 +34,15 @@ const SigInEvents = ({ buttonText = 'Přihlásit se', predmet, title }) => {
         onClose={onClose}
         open={open}
         maxWidth={'sm'}
+        fullScreen={matches}
         sx={{
           '& .MuiPaper-root': {
             borderRadius: 2,
           },
         }}
       >
-        <Box paddingY={2} paddingX={{ xs: 2, md: 4 }}>
-          <Box paddingY={2} display={'flex'} justifyContent={'space-between'}>
+        <DialogTitle paddingY={{ xs: 2, md: 4 }}>
+          <Box display={'flex'} justifyContent={'space-between'}>
             <Typography variant={'h5'} fontWeight={700}>
               {title}
             </Typography>
@@ -62,7 +65,8 @@ const SigInEvents = ({ buttonText = 'Přihlásit se', predmet, title }) => {
               />
             </Box>
           </Box>
-
+        </DialogTitle>
+        <DialogContent>
           <Stack spacing={2}>
             <Form predmet={predmet} actionAfterSubmit={onClose} />
             <Box display="flex" alignItems="center" py={2}>
@@ -101,7 +105,7 @@ const SigInEvents = ({ buttonText = 'Přihlásit se', predmet, title }) => {
               Email: {contact.email}
             </Button>
           </Stack>
-        </Box>
+        </DialogContent>
       </Dialog>
     </>
   );

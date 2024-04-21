@@ -9,7 +9,7 @@ import Form from './Form';
 import { Divider } from '@mui/material';
 import { contact } from '../data/data';
 
-const KontaktForm = ({ buttonText }) => {
+const KontaktForm = ({ buttonText, title, predmet }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -42,7 +42,7 @@ const KontaktForm = ({ buttonText }) => {
         <Box paddingY={2} paddingX={{ xs: 2, md: 4 }}>
           <Box paddingY={2} display={'flex'} justifyContent={'space-between'}>
             <Typography variant={'h5'} fontWeight={700}>
-              Kontakt
+              {title}
             </Typography>
             <Box
               component={'svg'}
@@ -63,32 +63,46 @@ const KontaktForm = ({ buttonText }) => {
               />
             </Box>
           </Box>
-          <Box paddingY={2}>
-            <Form />
-          </Box>
+
+          <Stack spacing={2}>
+            <Form predmet={predmet} actionAfterSubmit={onClose} />
+            <Box display="flex" alignItems="center" py={2}>
+              <Box
+                sx={{
+                  borderBottom: '1px solid #D9D9D9',
+                  flexGrow: 1,
+                  margin: '0 1rem',
+                }}
+              />
+              <Typography variant="body1">nebo</Typography>
+              <Box
+                sx={{
+                  borderBottom: '1px solid #D9D9D9',
+                  flexGrow: 1,
+                  margin: '0 1rem',
+                }}
+              />
+            </Box>
+            <Button
+              size={'large'}
+              variant="outlined"
+              fullWidth
+              component={'a'}
+              href={`tel:${contact.mobil}`}
+            >
+              Telefon: {contact.mobil}
+            </Button>
+            <Button
+              size={'large'}
+              variant="outlined"
+              fullWidth
+              component={'a'}
+              href={`mailto:${contact.mobil}`}
+            >
+              Email: {contact.email}
+            </Button>
+          </Stack>
         </Box>
-        <Divider />
-        <Stack spacing={2}>
-          <Button
-            size={'large'}
-            variant="contained"
-            fullWidth
-            component={'a'}
-            href={`tel:${contact.mobil}`}
-          >
-            Telefon: {contact.mobil}
-          </Button>
-          <Button
-            size={'large'}
-            variant="contained"
-            fullWidth
-            component={'a'}
-            href={`mailto:${contact.mobil}`}
-          >
-            Email: {contact.email}
-          </Button>
-          <KontaktForm buttonText={'Registrační formulář'} />
-        </Stack>
       </Dialog>
     </>
   );

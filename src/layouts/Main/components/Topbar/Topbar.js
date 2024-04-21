@@ -10,7 +10,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import ThemeModeToggler from 'components/ThemeModeToggler';
 import { navigation, offers } from '../../../../data/data';
-import KontaktDialog from '../KontaktDialog';
+import SignInEventsForm from '../../../../components/SignInEventsForm';
 import Link from '@mui/material/Link';
 import NavItem from './components/NavItem/NavItem';
 
@@ -119,7 +119,7 @@ const Topbar = ({ onSidebarOpen }) => {
         </Box> */}
       </Box>
       <Box marginLeft={4}>
-        <KontaktDialog />
+        <SignInEventsForm buttonText='Kontakt' title='Kontakt' predmet={'Kontaktni formular'} />
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>
         <Button
