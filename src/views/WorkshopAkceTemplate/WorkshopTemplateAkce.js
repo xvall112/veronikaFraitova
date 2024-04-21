@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
-import Dialog from '../../components/Dialog';
+import SignInEventsForm from '../../components/SignInEventsForm';
 
 const WorkshopTemplateAkce = ({ data }) => {
   const theme = useTheme();
@@ -107,7 +107,7 @@ const WorkshopTemplateAkce = ({ data }) => {
                   </Typography>
                 </Stack>
                 <Divider />
-                <Dialog eventName={title} />
+                <SignInEventsForm predmet={title} title={title} />
               </Stack>
             </Box>
           </Grid>

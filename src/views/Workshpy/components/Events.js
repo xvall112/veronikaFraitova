@@ -9,7 +9,7 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Dialog from '../../../components/Dialog';
+import SignInEventsForm from '../../../components/SignInEventsForm';
 
 export const query = graphql`
   {
@@ -208,7 +208,7 @@ const Events = () => {
                 >
                   Chci vědět více
                 </Button>
-                <Dialog eventName={item.title} />
+                <SignInEventsForm title={item.title} />
                 {/* <Button variant="contained" fullWidth>
                     Přihlásit se
                   </Button> */}

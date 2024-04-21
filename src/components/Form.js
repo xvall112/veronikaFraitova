@@ -19,11 +19,11 @@ const validationSchema = yup.object({
     .string('Email')
     .email('Napište email ve správném tvaru')
     .required('Vyplňte email'),
-  zprava: yup.string('Napiště zprávu').required('Napiš zprávu'),
+  zprava: yup.string('Napiště zprávu') /* .required('Napiš zprávu') */,
   phone: yup.number('mobilní číslo').required('Vyplňte mobilní číslo'),
 });
 
-const Form = () => {
+const Form = ({ predmet }) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -38,11 +38,13 @@ const Form = () => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
           'form-name': 'KontaktniFormular',
+          prihlaseniNaAkci: predmet || '',
           ...values,
+          
         }),
       })
         .then(() => {
-          toast.success('Zpráva byla odeslána', {
+          toast.success('Odesláno, budeme Vás kontaktovat', {
             position: 'top-right',
           });
           formik.resetForm();
@@ -64,7 +66,7 @@ const Form = () => {
             Jméno
           </Typography>
           <TextField
-            label="Jméno *"
+            // label="Jméno *"
             variant="outlined"
             fullWidth
             type="text"
@@ -81,7 +83,7 @@ const Form = () => {
             Email
           </Typography>
           <TextField
-            label="Email *"
+            // label="Email *"
             variant="outlined"
             name="email"
             fullWidth
@@ -98,7 +100,7 @@ const Form = () => {
             Mobil
           </Typography>
           <TextField
-            label="Mobil *"
+            // label="Mobil *"
             variant="outlined"
             fullWidth
             type="tel"
@@ -115,7 +117,7 @@ const Form = () => {
             Text
           </Typography>
           <TextField
-            label="Text *"
+            // label="Text *"
             variant="outlined"
             fullWidth
             type="text"
@@ -130,7 +132,7 @@ const Form = () => {
           />
         </Grid>
         <Grid item container xs={12}>
-          <Button size={'large'} variant={'contained'} type="submit">
+          <Button fullWidth size={'large'} variant={'contained'} type="submit">
             Odeslat
           </Button>
         </Grid>
