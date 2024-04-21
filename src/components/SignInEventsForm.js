@@ -64,7 +64,7 @@ const SigInEvents = ({ buttonText = 'Přihlásit se', predmet, title }) => {
           </Box>
 
           <Stack spacing={2}>
-            <Form predmet={predmet} />
+            <Form predmet={predmet} actionAfterSubmit={onClose} />
             <Box display="flex" alignItems="center" py={2}>
               <Box
                 sx={{

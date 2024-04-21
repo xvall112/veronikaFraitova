@@ -64,6 +64,7 @@ export default function TopLayout(props) {
         <input type="text" name="name" value="recenze" />
         <input type="text" name="email" value="recenze" />
         <input type="tel" name="phone" value="recenze" />
+        <input type="text" name="predmet" value="recenze" />
         <textarea name="zprava" value="recenze"></textarea>
       </form>
       <Page>

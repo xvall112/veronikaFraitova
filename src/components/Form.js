@@ -23,7 +23,7 @@ const validationSchema = yup.object({
   phone: yup.number('mobilní číslo').required('Vyplňte mobilní číslo'),
 });
 
-const Form = ({ predmet }) => {
+const Form = ({ predmet, actionAfterSubmit }) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -47,6 +47,7 @@ const Form = ({ predmet }) => {
           toast.success('Odesláno, budeme Vás kontaktovat', {
             position: 'top-right',
           });
+          actionAfterSubmit?.();
           formik.resetForm();
         })
         .catch((error) => toast.error(error, { position: 'top-right' }));
