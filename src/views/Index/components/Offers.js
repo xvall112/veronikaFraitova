@@ -50,7 +50,7 @@ const mock = [
     slug: '/konzultace',
   },
   {
-    title: 'Workshopy',
+    title: 'Akce',
     img: (
       <StaticImage
         src="../../../images/osobniWorkshop.png"
@@ -60,7 +60,7 @@ const mock = [
         height={200}
       />
     ),
-    slug: '/workshopy',
+    slug: '/events',
   },
 
   {

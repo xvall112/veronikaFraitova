@@ -10,6 +10,7 @@ export const query = graphql`
       metaDescription
       title
       misto
+      dateOfEvent(formatString: "DD.MM.YYYY")
       popis {
         raw
         references {

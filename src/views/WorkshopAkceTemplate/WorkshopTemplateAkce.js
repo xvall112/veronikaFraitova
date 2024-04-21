@@ -22,6 +22,7 @@ const WorkshopTemplateAkce = ({ data }) => {
     cena,
     delka,
     pocetMist,
+    dateOfEvent,
   } = data.data.contentfulWorkshopAkce;
   return (
     <Main>
@@ -43,11 +44,23 @@ const WorkshopTemplateAkce = ({ data }) => {
               }}
             >
               <Stack direction="column" spacing={2}>
-                <Typography variant="h4" fontWeight={700}>
+                {/* <Typography variant="h4" fontWeight={700}>
                   {cena} Kč
-                </Typography>
-                <Dialog />
-                <Divider />
+                </Typography> */}
+                {dateOfEvent && (
+                  <Stack
+                    direction="row"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    spacing={2}
+                  >
+                    <Typography variant="body1">datum</Typography>
+                    <Typography variant="body1" fontWeight={700}>
+                      {dateOfEvent}
+                    </Typography>
+                  </Stack>
+                )}
+
                 <Stack
                   direction="row"
                   justifyContent="space-between"
@@ -70,6 +83,7 @@ const WorkshopTemplateAkce = ({ data }) => {
                     {delka}
                   </Typography>
                 </Stack>
+
                 <Stack
                   direction="row"
                   justifyContent="space-between"
@@ -81,6 +95,19 @@ const WorkshopTemplateAkce = ({ data }) => {
                     {pocetMist}
                   </Typography>
                 </Stack>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  spacing={2}
+                >
+                  <Typography variant="body1">cena</Typography>
+                  <Typography variant="body1" fontWeight={700}>
+                    {cena} Kč
+                  </Typography>
+                </Stack>
+                <Divider />
+                <Dialog eventName={title} />
               </Stack>
             </Box>
           </Grid>

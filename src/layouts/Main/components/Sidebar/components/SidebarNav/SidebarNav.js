@@ -131,7 +131,7 @@ const SidebarNav = () => {
           </a>
         </Grid>
         <Grid item>
-          <a href={`tel:${contact.phone}`}>
+          <a href={`tel:${contact.mobil}`}>
             <IconButton aria-label="phone" color="primary">
               <PhoneOutlinedIcon fontSize="large" />
             </IconButton>

@@ -50,8 +50,8 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({ title }) {
-  const titleH = title || 'Objednat se';
+export default function CustomizedDialogs({ title, eventName }) {
+  const titleH = title || 'Přihlásit se';
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -62,7 +62,7 @@ export default function CustomizedDialogs({ title }) {
   };
 
   return (
-    <div>
+    <>
       <Button
         variant="contained"
         size={'large'}
@@ -81,7 +81,7 @@ export default function CustomizedDialogs({ title }) {
           id="customized-dialog-title"
           onClose={handleClose}
         >
-          Objednat se pomocí
+          Přihlásit se na {eventName}
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <Stack spacing={2}>
@@ -107,6 +107,6 @@ export default function CustomizedDialogs({ title }) {
           </Stack>
         </DialogContent>
       </BootstrapDialog>
-    </div>
+    </>
   );
 }
