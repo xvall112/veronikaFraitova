@@ -38,7 +38,7 @@ const Form = ({ predmet, actionAfterSubmit }) => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
           'form-name': 'KontaktniFormular',
-          prihlaseniNaAkci: predmet || '',
+          predmet: predmet || '',
           ...values,
           
         }),
