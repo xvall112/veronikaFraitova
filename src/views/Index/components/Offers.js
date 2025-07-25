@@ -11,20 +11,98 @@ import { useTheme } from '@mui/material/styles';
 
 const mock = [
   {
-    title: 'Terapie',
+    title: 'Diagnostika těla',
     img: (
       <StaticImage
-        src="../../../images/undraw_super_thank_you_re_f8bo.svg"
+        src="../../../images/oberon.png"
         alt="terapie"
         placeholder="blurred"
         layout="fixed"
         height={200}
       />
     ),
-    slug: '/terapie',
+    slug: '/diagnostika-tela',
   },
   {
-    title: 'Koučink',
+    title: 'Celostní terapie',
+    img: (
+      <StaticImage
+        src="../../../images/celostni-terapie.png"
+        alt="terapie"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/celostni-terapie',
+  },
+  {
+    title: 'Regresní terapie',
+    img: (
+      <StaticImage
+        src="../../../images/regresni-terapie.png"
+        alt="terapie"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/regresni-terapie',
+  },
+  {
+    title: 'Kvantová terapie',
+    img: (
+      <StaticImage
+        src="../../../images/kvantova-terapie.png"
+        alt="konzultace"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/kvantova-terapie',
+  },
+  {
+    title: 'Energetická terapie',
+    img: (
+      <StaticImage
+        src="../../../images/undraw_my_universe_803e.svg"
+        alt="konzultace"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/energeticka-terapie',
+  },
+  {
+    title: 'Etikoterapie',
+    img: (
+      <StaticImage
+        src="../../../images/etikoterapie.png"
+        alt="konzultace"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/etikoterapie',
+  },
+  {
+    title: 'Access Bars',
+    img: (
+      <StaticImage
+        src="../../../images/undraw_my_universe_803e.svg"
+        alt="konzultace"
+        placeholder="blurred"
+        layout="fixed"
+        height={200}
+      />
+    ),
+    slug: '/access-bars',
+  },
+  {
+    title: 'Koučink NLP',
     img: (
       <StaticImage
         src="../../../images/undraw_through_the_park_lxnl.svg"
@@ -37,17 +115,17 @@ const mock = [
     slug: '/koucink',
   },
   {
-    title: 'Kvantové proměny',
+    title: 'Pobyt v pyramidě',
     img: (
       <StaticImage
-        src="../../../images/undraw_my_universe_803e.svg"
-        alt="konzultace"
+        src="../../../images/pyramida.png"
+        alt="koucink"
         placeholder="blurred"
         layout="fixed"
         height={200}
       />
     ),
-    slug: '/konzultace',
+    slug: '/pyramida',
   },
   {
     title: 'Akce',

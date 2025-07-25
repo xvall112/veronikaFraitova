@@ -5,7 +5,7 @@ import MainLayout from '../../layouts/Main/Main';
 import Container from '../../components/Container';
 import Work from './components/Work';
 import Solutions from './components/Solutions';
-import Price from './components/Price';
+import Price from '../../components/Price';
 import Reviews from '../../components/Reviews';
 
 const KonzultaceView = () => {

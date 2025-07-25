@@ -35,33 +35,39 @@ const Hero = () => {
           <Box data-aos={isMd ? 'fade-right' : 'fade-up'}>
             <Box marginBottom={2}>
               <Typography
-                variant="h2"
+                variant="h3"
                 color="text.primary"
                 sx={{ fontWeight: 700 }}
               >
-                Terapeutka a koučka
+                Bc. Veronika Fraitová
                 <br />
-                <Typography
-                  color={'primary'}
-                  component={'span'}
-                  variant={'inherit'}
-                  sx={{
-                    background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                      theme.palette.secondary.main,
-                      0.3,
-                    )} 0%)`,
-                  }}
-                >
-                  Bc. Veronika Fraitová
-                </Typography>
+              </Typography>
+              <Typography
+                variant="h1"
+                fontWeight={700}
+                color={'primary'}
+                component={'span'}
+                sx={{
+                  background: `linear-gradient(180deg, transparent 82%, ${alpha(
+                    theme.palette.secondary.main,
+                    0.3,
+                  )} 0%)`,
+                }}
+              >
+                Celostní terapie
               </Typography>
             </Box>
             <Box marginBottom={3}>
               <Typography variant="h6" component="p" color="text.secondary">
-                Máme v sobě mimořádné schopnosti, které dokážou zázraky.
-                Odpovědi na všechny otázky jsou ukryty v našem nitru.
+                Celostní hlubinné terapie.
                 <br />
-                Pusťte se do svého osobního rozvoje.
+                <br />
+                Měření diagnosticko-terapeutickým přístrojem a následná
+                harmonizace pomocí frekvencí a biorezonanční terapie.
+                <br />
+                <br />
+                Komplexní přístup, který podporuje vaši schopnost se léčit a
+                růst.
               </Typography>
             </Box>
             <Box
