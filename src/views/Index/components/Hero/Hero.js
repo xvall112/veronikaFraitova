@@ -35,11 +35,11 @@ const Hero = () => {
           <Box data-aos={isMd ? 'fade-right' : 'fade-up'}>
             <Box marginBottom={2}>
               <Typography
-                variant="h3"
+                variant="h4"
                 color="text.primary"
                 sx={{ fontWeight: 700 }}
               >
-                Bc. Veronika Fraitová
+                Bc. Veronika Chovanečková
                 <br />
               </Typography>
               <Typography
