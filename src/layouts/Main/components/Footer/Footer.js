@@ -39,7 +39,7 @@ const Footer = () => {
               placeholder="blurred"
               layout="constrained"
             />
-            <Typography pl={1}>Veronika Fraitová | OpenYourEyes</Typography>
+            <Typography pl={1}>Veronika Chovanečková | Celostní terapie</Typography>
           </Box>
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <Box
@@ -59,7 +59,7 @@ const Footer = () => {
           color="text.secondary"
           gutterBottom
         >
-          &copy; Veronika Fraitová. 2022, All rights reserved
+          &copy; Celostní terapie. 2025, All rights reserved
         </Typography>
         <Typography
           align={'center'}

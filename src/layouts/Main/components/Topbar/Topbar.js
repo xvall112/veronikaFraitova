@@ -29,7 +29,7 @@ const Topbar = ({ onSidebarOpen }) => {
         alignItems={'center'}
         component={GatsbyLink}
         to="/"
-        title="Veronika Fraitova"
+        title="Celostní terapie"
         sx={{
           textDecoration: 'none !important',
           color: theme.palette.text.primary,
@@ -43,7 +43,7 @@ const Topbar = ({ onSidebarOpen }) => {
           height={40}
         />
         <Typography variant={'body1'} marginLeft={1}>
-          Veronika Fraitová
+          Celostní terapie
         </Typography>
       </Box>
       <Box
