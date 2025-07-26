@@ -4,7 +4,7 @@ import Seo from '../components/Seo';
 const IndexPage = () => {
   return (
     <>
-      <Seo title="OpenYourEyes" />
+      <Seo title="Celostní terapie" />
       <Index />
     </>
   );

@@ -27,7 +27,7 @@ const Footer = () => {
             display={'flex'}
             component={Link}
             to="/"
-            title="Veronika Fraitová | OpenYourEyes"
+            title="Celostní terapie | Veronika Chovanečková"
             alignItems={'center'}
             color={theme.palette.text.primary}
           >
