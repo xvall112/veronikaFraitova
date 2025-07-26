@@ -13,7 +13,7 @@ const Pyramida = () => {
       <MainLayout>
         <Container>
           <Headline
-            title="Pobyt v pyramidě"
+            title="Pobyt v pyramidě "
             subtitle="Představte si místo, kde se čas zpomaluje, tělo se noří do hlubokého klidu a mysl se tiší…"
           />
         </Container>
