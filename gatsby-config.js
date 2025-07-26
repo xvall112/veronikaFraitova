@@ -5,7 +5,7 @@ require('dotenv').config({
 /* eslint-disable no-undef */
 module.exports = {
   siteMetadata: {
-    title: 'Veronika Fraitová',
+    title: 'Celostní terapie',
     description:
       'Poradenství a konzultace osobní rozvoj, léčení a uzdravení na úrovni vědomí. Celostní poradenství, vztahy. Napojení na vnitřní sílu a moudrost těla. Vedené meditace ke stažení',
     author: '@veronikaFraitova',
