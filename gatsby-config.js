@@ -9,7 +9,7 @@ module.exports = {
     description:
       'Poradenství a konzultace osobní rozvoj, léčení a uzdravení na úrovni vědomí. Celostní poradenství, vztahy. Napojení na vnitřní sílu a moudrost těla. Vedené meditace ke stažení',
     author: '@veronikaFraitova',
-    siteUrl: 'https://openyoureyes.cz/',
+    siteUrl: 'https://celostniterapie.cz/',
     keywords: [
       'léčení',
       'etikoterapie',
