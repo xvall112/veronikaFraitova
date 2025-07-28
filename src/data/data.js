@@ -1,7 +1,7 @@
 export const contact = {
   mobil: '+420773308300',
-  email: 'veronika.fraitova@seznam.cz',
-  instagram: 'https://www.instagram.com/veronikafraitova',
+  email: 'veronika.chovaneckova@seznam.cz',
+  instagram: 'https://www.instagram.com/celostni.terapie',
   facebook: 'https://www.facebook.com/Veronikafraitova.cz',
   youtube: 'https://www.youtube.com/@veronikafraitova6041',
 };

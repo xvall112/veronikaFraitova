@@ -3,6 +3,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import FormControl from '@mui/material/FormControl';
+import KontaktDialog from '../KontaktDialog';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useTheme } from '@mui/material/styles';
@@ -32,9 +33,10 @@ const Newsletter = () => {
                 color: theme.palette.common.white,
               }}
             >
-              Odebírej novinky
+              Pokud hledáte podporu na své cestě, ráda vám pomohu. S láskou,
+              vděčností a pokorou
             </Typography>
-            <Typography
+            {/* <Typography
               variant="h6"
               align={'center'}
               sx={{
@@ -44,7 +46,7 @@ const Newsletter = () => {
             >
               Nenech si ujít žádné novinky z kurzů, workshopů nebo nových
               meditací
-            </Typography>
+            </Typography> */}
           </Box>
           <Box width={1} display={'flex'} justifyContent={'center'}>
             <FormControl
@@ -73,7 +75,8 @@ const Newsletter = () => {
               }}
               data-aos="fade-up"
             >
-              <OutlinedInput
+              <KontaktDialog buttonVariant='outlined' buttonColor='alternate' />
+              {/* <OutlinedInput
                 endAdornment={
                   <InputAdornment position="end">
                     <svg
@@ -94,7 +97,7 @@ const Newsletter = () => {
                   </InputAdornment>
                 }
                 placeholder="Email"
-              />
+              /> */}
             </FormControl>
           </Box>
         </Box>

@@ -50,7 +50,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs({ buttonVariant = 'contained', buttonColor = 'primary' }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -63,7 +63,8 @@ export default function CustomizedDialogs() {
   return (
     <div>
       <Button
-        variant="contained"
+        variant={buttonVariant}
+        color={buttonColor}
         size={'large'}
         fullWidth
         onClick={handleClickOpen}

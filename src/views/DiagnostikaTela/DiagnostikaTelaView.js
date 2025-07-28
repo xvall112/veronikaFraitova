@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Headline from '../../components/Headline';
 import MainLayout from '../../layouts/Main/Main';
 import Container from '../../components/Container';
-import Price from './components/Price';
+import Price from '../../components/Price';
 import Reviews from '../../components/Reviews';
 
 import Features from './components/Features';

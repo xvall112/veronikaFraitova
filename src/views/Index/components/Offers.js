@@ -92,7 +92,7 @@ const mock = [
     title: 'Access Bars',
     img: (
       <StaticImage
-        src="../../../images/undraw_my_universe_803e.svg"
+        src="../../../images/accessBars3.png"
         alt="konzultace"
         placeholder="blurred"
         layout="fixed"

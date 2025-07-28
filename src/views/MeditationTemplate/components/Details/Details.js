@@ -13,6 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import { contact } from '../../../../data/data';
 import DialogDownload from '../DialogDownload';
+import KontaktForm from 'components/KontaktForm';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const mock = [
@@ -125,60 +126,50 @@ const Details = ({
           {description}
         </Typography>
       </Box>
-      <Box marginTop={4}>
-        {price === 0 ? (
-          <DialogDownload link={link} />
-        ) : (
-          <Button
-            variant={'contained'}
-            color={'primary'}
-            size={'large'}
-            fullWidth
-            onClick={handleClick}
-            disabled={loading}
-          >
-            {loading ? <CircularProgress /> : 'Koupit'}
-          </Button>
-        )}
-      </Box>
+      {price !== 0 && (
+        <>
+          <Box marginTop={4}>
+            <KontaktForm buttonText="Koupit" />
+          </Box>
 
-      <Divider sx={{ marginTop: 4 }} />
+          <Divider sx={{ marginTop: 4 }} />
 
-      <Box marginTop={4}>
-        <Grid container spacing={2}>
-          {mock.map((item, i) => (
-            <Grid key={i} item xs={6}>
-              <ListItem
-                component="div"
-                disableGutters
-                sx={{
-                  alignItems: 'flex-start',
-                  padding: 0,
-                }}
-              >
-                <ListItemAvatar sx={{ minWidth: 0, mr: 1 }}>
-                  <Box color={'text.secondary'}>{item.icon}</Box>
-                </ListItemAvatar>
-                <ListItemText
-                  primary={item.title}
-                  secondary={item.subtitle}
-                  primaryTypographyProps={{
-                    variant: 'body2',
-                    fontWeight: 700,
-                  }}
-                  secondaryTypographyProps={{
-                    variant: 'caption',
-                  }}
-                  sx={{
-                    margin: 0,
-                  }}
-                />
-              </ListItem>
+          <Box marginTop={4}>
+            <Grid container spacing={2}>
+              {mock.map((item, i) => (
+                <Grid key={i} item xs={6}>
+                  <ListItem
+                    component="div"
+                    disableGutters
+                    sx={{
+                      alignItems: 'flex-start',
+                      padding: 0,
+                    }}
+                  >
+                    <ListItemAvatar sx={{ minWidth: 0, mr: 1 }}>
+                      <Box color={'text.secondary'}>{item.icon}</Box>
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={item.title}
+                      secondary={item.subtitle}
+                      primaryTypographyProps={{
+                        variant: 'body2',
+                        fontWeight: 700,
+                      }}
+                      secondaryTypographyProps={{
+                        variant: 'caption',
+                      }}
+                      sx={{
+                        margin: 0,
+                      }}
+                    />
+                  </ListItem>
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      </Box>
-
+          </Box>
+        </>
+      )}
       <Box marginTop={4}>
         <Typography>Potřebujete poradit?</Typography>
         <Stack direction={'row'} spacing={2} marginTop={0.5}>

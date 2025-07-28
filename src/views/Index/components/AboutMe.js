@@ -14,9 +14,9 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const mock = [
   {
     color: colors.lightBlue[500],
-    title: 'Co dělám?',
+    title: 'Vzdělání',
     subtitle:
-      'Intuitivním celostním přístupem pomáhám těm, kteří na sobě chtějí vědomě pracovat. Všem, kteří se chtějí uzdravit ze svých nemocí, najít svou vnitřní sílu, rovnováhu a štěstí a žít vědomý plnohodnotný život podle svých představ.',
+      'Svůj odborný základ jsem vybudovala díky mnoha kurzům a certifikacím, mezi nimiž jsou mezinárodní certifikovaný výcvik NLP, kurzy Pránického léčení, Access Bars, Fyzické procesy Access Consciousness, Astrální chirurgie. Další úžasné kurzy a inspirace se mi také dostaly prací světových vědců a odborníků jako Dr. Joe Dispenza, Bruce Lipton, Gregg Braden, Alberto Villoldo, Bradley Nelson nebo Neale Donald Walsch. Nejvíce však čerpám z vlastního vnitřního vedení, které nacházím při meditacích a spojení s Vyšším Já při mém osobním rozvoji a při terapiích s klienty.',
     icon: (
       <svg
         height={24}
@@ -37,9 +37,9 @@ const mock = [
   },
   {
     color: colors.yellow[500],
-    title: 'Věnuji se',
+    title: 'Inspirace',
     subtitle:
-      'Přes 18 let se věnuji svému vnitřnímu rozvoji a meditaci. Studovala jsem práce celosvětově uznávaných odborníků, absolvovala jsem mnoho kurzů, přednášek, workshopů, přečetla nespočet knih.',
+      'Mou největší radostí i mými „učiteli“ jsou mé děti – Sebíček a Valinka. Jejich čistá duše, bezpodmínečná láska a radost ze života mě každý den vedou k tomu, abych si užívala krásy přítomného okamžiku, vnímala kouzlo obyčejných chvil a žila s otevřeným srdcem. Díky nim jsem si uvědomila, jak hluboce jsme všichni propojeni a jak se vzájemně ovlivňujeme, léčíme a učíme. Jsou mým každodenním sluncem a silou, která mě pohání kupředu. S láskou, vděčností a odhodláním být tou nejlepší mámou i člověkem, jakým mohu být.',
     icon: (
       <svg
         height={24}
@@ -62,9 +62,9 @@ const mock = [
   },
   {
     color: colors.indigo[500],
-    title: 'My všichni',
+    title: 'Postupy',
     subtitle:
-      'Jsme mocnější než si dovedeme představit. Máme v sobě mimořádné schopnosti, díky kterým si dokážeme pomoci ze svých starostí, bolestí a vyléčit se z jakékoli nemoci. Máme nástroje, kterými si můžeme vytvářet lepší život.',
+      'Moje práce tedy spojuje vědecké poznatky s hlubokým napojením a velkou empatií. Pomáhám klientům nalézt cestu k uzdravení, rovnováze a životní radosti.',
     icon: (
       <svg
         height={24}
@@ -85,9 +85,9 @@ const mock = [
   },
   {
     color: colors.deepPurple[500],
-    title: 'Mentoři',
+    title: 'Další aktivity',
     subtitle:
-      'Jedni z mých „nej“ učitelů od kterých jsem absolvovala certifikované kurzy a četla jejich knihy byli Dr. Joe Dispenza, Bruce Lipton, Ph. D., Gregg Braden, Alberto Villoldo, Ph. D. a další. Jsem jim nesmírně vděčná za poznání, které se mi od nich dostalo.',
+      'Ve volném čase s přítelem hrajeme na různých akcích, plesech, oslavách či svatbách a také tvoříme animační programy pro děti. Hudba je pro nás radostí, relaxací i způsobem, jak rozdávat úsměv a energii. Najdete nás na stránkách www.alesaveronika.cz i na Instagramu.',
     icon: (
       <svg
         height={24}
@@ -257,7 +257,6 @@ const AboutMe = () => {
           container
           alignItems={'center'}
           xs={12}
-          md={6}
           data-aos={isMd ? 'fade-right' : 'fade-up'}
         >
           <Box
@@ -273,7 +272,7 @@ const AboutMe = () => {
             <Typography variant={'h4'} gutterBottom sx={{ fontWeight: 700 }}>
               Bc.{' '}
               <Typography color="primary" variant="inherit" component="span">
-                Veronika Fraitová
+                Veronika Chovanečková
               </Typography>
             </Typography>
             <Typography
@@ -283,14 +282,11 @@ const AboutMe = () => {
               textAlign={'justify'}
               /* sx={{ maxHeight: '50vh', overflow: 'hidden' }} */
             >
-              Z celého srdce Vás tu vítám. Jmenuji se Veronika a pomáhám všem, kteří našli odvahu k vnitřní práci na sobě. K vyléčení traumat, strachů, bolestí a zranění z jejich minulosti. Všem, kteří se chtějí vyléčit ze svých nemocí a hledají novou možnou cestu.
-Bude to již 20 let, co se věnuji svému osobnímu rozvoji a medituji. Díky mým životním zkouškám jsem se na své cestě dostala k jedinečným oborům, technikám, metodám a poznání. V meditacích ke mně přicházely úžasné informace a poznání, kterým jsem ze začátku neuměla plně porozumět a ani uvěřit. Začala jsem hledat v našem „hmotném“ světě něco, co by mi to vysvětlilo. Něco, co by mě v tu dobu ubezpečilo, že to nejsou jen nějaké mé představy. A tak jsem se pustila do svého vnitřního rozvoje. Absolvovala jsem spoustu kurzů, workshopů, seminářů a přečetla nespočet knih. Nejdůležitější odpovědi a nejlepší vysvětlení se mi dostalo díky skvělým lidem, jako jsou Dr. Joe Dispenza, Bruce Lipton, Ph. D., Gregg Braden, Alberto Villoldo, Ph. D. a další, kteří mi vše potvrdili dokonce na vědecké bázi. Vědecká poznání Kvantové fyzicky, Neurovědy, Epigenetiky, Energetické medicíny, propojení těla a mysli… Najednou všechna má poznání skrze meditace dávala smysl a pro můj klid byla potvrzena 😊. Dalším mým velkým obohacením byl mezinárodní certifikovaný kurz výcviku NLP, díky kterému jsem se stala terapeutkou a koučkou NLP (Neuro-Lingvistického programování). Dozvěděla jsem se, jak dělat zázraky v naší mysli a využívat plný potenciál našeho mozku, abychom dosáhli žádoucích změn a výsledků. NLP je oblíbeno u těch nejlepších koučů na světě jako např. Anthony Robbins, který mi je také velkou inspirací. 
-Dalšími velkými učiteli jsou pro mě mé úžasné děti Sebíček a Valinka, které nadevše miluji.   Naučily mě svou nádhernou duší, plnou bezpodmínečné lásky, žít tady a teď. Vidět krásy všedního dne a naplno si užívat každý okamžik. Dovedly mě k uvědomění si mnoha věcí, a především k poznání, jak moc jsme na sebe napojeni a kolik si toho můžeme vzájemně předávat. Jsou mi velkou inspirací. Z celého srdce se snažím, abych viděla jejich rozzářené oči a šťastný smích co nejčastěji. Jsou mým každodenním sluncem. 
-Všechny mé znalosti jsem obohatila několikaletou praxí a nyní pomáhám svým klientkám a klientům na jejich cestě. Ulevuji jim od jejich trápení, bolestí, strachů, vyčerpání… Pomáhám jim k tomu, aby v sobě opět našli svou vnitřní sílu, lásku a radost. Aby se nebáli vzít svůj život do svých rukou a začali ho žít v souladu se sebou, v lásce a vděčnosti. 
-Každý z nás je hlavní hrdina svého příběhu a nikdy není pozdě začít psát nový scénář. 
-Zázraky se dějí každý den, začínají v našich srdcích. 
-
-Miluju lidi, hudbu a ráda tančím. S přítelem hrajeme na svatbách, oslavách, narozeninách…a děláme animační programy pro děti. Můžete se podívat na Instagram @alesaveronika nebo @animacni_program_pro_deti 😊.
+              Vítám vás! Jsem Veronika, terapeutka a mentorka na cestě osobního
+              rozvoje s více než 20 lety zkušeností. Pomáhám lidem všech
+              věkových kategorií, kteří chtějí nahlédnout do hlubin svého
+              vnitřního světa, uzdravit stará zranění, překonat strachy a znovu
+              objevit svou vnitřní sílu.
             </Typography>
           </Box>
         </Grid>
@@ -299,7 +295,6 @@ Miluju lidi, hudbu a ráda tančím. S přítelem hrajeme na svatbách, oslavá
           container
           alignItems={'center'}
           xs={12}
-          md={6}
           data-aos={isMd ? 'fade-right' : 'fade-up'}
         >
           <Grid container spacing={2}>
