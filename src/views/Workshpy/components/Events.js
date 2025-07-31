@@ -13,7 +13,7 @@ import SignInEventsForm from '../../../components/SignInEventsForm';
 
 export const query = graphql`
   {
-    allContentfulWorkshopAkce(sort: { dateOfEvent: ASC }) {
+    allContentfulWorkshopAkce(sort: { dateOfEvent: DESC }) {
       nodes {
         title
         slug

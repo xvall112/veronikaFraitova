@@ -11,7 +11,7 @@ import Grid from '@mui/material/Grid';
 
 export const query = graphql`
   {
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: {createdAt: DESC}) {
       nodes {
         image {
           title
