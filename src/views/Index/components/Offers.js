@@ -11,7 +11,7 @@ import { useTheme } from '@mui/material/styles';
 
 const mock = [
   {
-    title: 'Diagnostika těla',
+    title: 'Energetická analýza',
     img: (
       <StaticImage
         src="../../../images/oberon.png"

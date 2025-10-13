@@ -7,7 +7,7 @@ export const contact = {
 };
 
 export const offers = [
-  { title: 'Diagnostika těla', link: '/diagnostika-tela' },
+  { title: 'Energetická analýza', link: '/diagnostika-tela' },
   { title: 'Celostní terapie', link: '/celostni-terapie' },
   { title: 'Regresní terapie', link: '/regresni-terapie' },
   { title: 'Kvantová terapie', link: '/kvantova-terapie' },

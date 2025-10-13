@@ -5,8 +5,8 @@ const Konzultace = () => {
   return (
     <div>
       <Seo
-        title="Diagnostika těla"
-        description="Diagnostika a terapeutická práce s přístrojem OBERON."
+        title="Energetická analýza"
+        description="Energetická analýza těla s následnou METAterapií přístrojem OBERON SYSTEM - QUANTUM"
       />
       <DiagnostikaTelaView />
     </div>

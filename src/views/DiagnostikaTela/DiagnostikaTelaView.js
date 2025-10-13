@@ -14,7 +14,7 @@ const DiagnostikaTelaView = () => {
       <MainLayout>
         <Container>
           <Headline
-            title="Diagnostika a terapeutická práce s přístrojem OBERON"
+            title="Energetická analýza těla s následnou METAterapií přístrojem OBERON SYSTEM - QUANTUM"
             subtitle="Tělo s námi neustále komunikuje. Jen mu někdy nerozumíme.Přístroj OBERON je jemná, ale velmi přesná metoda, jak se na organismus podívat jiným způsobem. Na úrovni informací, frekvencí a energetických polí. Umožňuje nahlédnout pod povrch toho, co se v těle odehrává, často ještě dříve, než se objeví fyzické projevy nebo nemoc."
           />
         </Container>
@@ -66,6 +66,8 @@ Během několika minut se provede komplexní frekvenční sken těla – od org�
               'Podporuje samoléčebné procesy a harmonizaci těla. Díky metaterapii lze aktivně ovlivnit frekvenční rovnováhu v těle a nastartovat proces regenerace, detoxikace a celkové vitality.',
             ]}
           />
+          <br></br>
+          ⚠️ Přístroj nenahrazuje odbornou lékařskou péči. Slouží jako doplňková metoda v rámci celostního přístupu k zdraví.
         </Container>
         <Box bgcolor={'alternate.main'}>
           <Container>
