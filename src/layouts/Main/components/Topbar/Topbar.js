@@ -93,7 +93,7 @@ const Topbar = ({ onSidebarOpen }) => {
           <Box
             component={Link}
             color={'text.primary'}
-            href="https://herohero.com/valuableembaktvbfvoce"
+            href="https://herohero.co/valuableembaktvbfvoce"
             target="_blank"
             rel="noopener noreferrer"
             fontWeight={400}
