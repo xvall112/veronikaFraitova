@@ -93,12 +93,14 @@ const Topbar = ({ onSidebarOpen }) => {
           <Box
             component={Link}
             color={'text.primary'}
-            href="https://veronikafraitova.teachable.com/"
+            href="https://herohero.com/valuableembaktvbfvoce"
+            target="_blank"
+            rel="noopener noreferrer"
             fontWeight={400}
             sx={{ textDecoration: 'none !important' }}
           >
             <Stack direction="row" spacing={1}>
-              <Typography>On-line kurzy</Typography>
+              <Typography>HeroHero</Typography>
               {/* <Box
                 padding={0.5}
                 display={'inline-flex'}

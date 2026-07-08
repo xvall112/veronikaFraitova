@@ -77,11 +77,13 @@ const SidebarNav = () => {
           <Box
             component={Link}
             color={'text.primary'}
-            href="https://veronikafraitova.teachable.com/"
+            href="https://herohero.com/valuableembaktvbfvoce"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{ textDecoration: 'none !important' }}
           >
             <Stack direction="row" spacing={1}>
-              <Typography variant="h5">On-line kurzy</Typography>
+              <Typography variant="h5">HeroHero</Typography>
               {/* <Box
                 padding={0.5}
                 display={'inline-flex'}
