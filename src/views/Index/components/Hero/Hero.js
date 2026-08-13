@@ -43,7 +43,7 @@ const Hero = () => {
                 <br />
               </Typography>
               <Typography
-                variant="h1"
+                variant="h2"
                 fontWeight={700}
                 color={'primary'}
                 component={'span'}
@@ -54,20 +54,26 @@ const Hero = () => {
                   )} 0%)`,
                 }}
               >
-                Celostní terapie
+                Celostní terapie, Intuitivní vnímání, Remote Viewing
               </Typography>
             </Box>
             <Box marginBottom={3}>
               <Typography variant="h6" component="p" color="text.secondary">
-                Celostní hlubinné terapie.
+                Vnímám člověka v jeho celistvosti – tělo, mysl, duši i hlubší
+                vrstvy vědomí.
                 <br />
                 <br />
-                Měření diagnosticko-terapeutickým přístrojem a následná
-                harmonizace pomocí frekvencí a biorezonanční terapie.
+                Vnímám souvislosti vašeho tématu a společně s vámi je
+                pojmenováváme, zpracováváme a uvolňujeme. Otevíráme prostor pro
+                hlubší pochopení sebe, vnitřní napojení a vědomou transformaci.
                 <br />
                 <br />
-                Komplexní přístup, který podporuje vaši schopnost se léčit a
-                růst.
+                Komplexní přístup k aktivaci vlastních přirozených regeneračních
+                a sebeuzdravujících procesů těla.
+                <br />
+                <br />
+                Energetická analýza těla s následnou metaterapií přístrojem
+                Oberon System Quantum.
               </Typography>
             </Box>
             <Box

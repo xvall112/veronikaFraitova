@@ -13,10 +13,10 @@ export const offers = [
   { title: 'Kvantová terapie', link: '/kvantova-terapie' },
   { title: 'Energetická terapie', link: '/energeticka-terapie' },
   { title: 'Etikoterapie', link: '/etikoterapie' },
-  { title: 'Access Bars', link: '/access-bars' },
+  // { title: 'Access Bars', link: '/access-bars' },
   { title: 'Koučink', link: '/koucink' },
   { title: 'Konzultace', link: '/konzultace' },
-  { title: 'Pobyt v pyramidě', link: '/pyramida' },
+  // { title: 'Pobyt v pyramidě', link: '/pyramida' },
 ];
 
 export const navigation = [

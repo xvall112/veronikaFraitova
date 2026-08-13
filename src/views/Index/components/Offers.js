@@ -88,19 +88,19 @@ const mock = [
     ),
     slug: '/etikoterapie',
   },
-  {
-    title: 'Access Bars',
-    img: (
-      <StaticImage
-        src="../../../images/accessBars3.png"
-        alt="konzultace"
-        placeholder="blurred"
-        layout="fixed"
-        height={200}
-      />
-    ),
-    slug: '/access-bars',
-  },
+  // {
+  //   title: 'Access Bars',
+  //   img: (
+  //     <StaticImage
+  //       src="../../../images/accessBars3.png"
+  //       alt="konzultace"
+  //       placeholder="blurred"
+  //       layout="fixed"
+  //       height={200}
+  //     />
+  //   ),
+  //   slug: '/access-bars',
+  // },
   {
     title: 'Koučink NLP',
     img: (
@@ -114,19 +114,19 @@ const mock = [
     ),
     slug: '/koucink',
   },
-  {
-    title: 'Pobyt v pyramidě',
-    img: (
-      <StaticImage
-        src="../../../images/pyramida.png"
-        alt="koucink"
-        placeholder="blurred"
-        layout="fixed"
-        height={200}
-      />
-    ),
-    slug: '/pyramida',
-  },
+  // {
+  //   title: 'Pobyt v pyramidě',
+  //   img: (
+  //     <StaticImage
+  //       src="../../../images/pyramida.png"
+  //       alt="koucink"
+  //       placeholder="blurred"
+  //       layout="fixed"
+  //       height={200}
+  //     />
+  //   ),
+  //   slug: '/pyramida',
+  // },
   {
     title: 'Akce',
     img: (
